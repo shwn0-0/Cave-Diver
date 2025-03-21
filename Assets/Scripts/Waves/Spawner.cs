@@ -18,7 +18,7 @@ class Spawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Spawn(5));
+        StartCoroutine(Spawn(1));
     }
 
     public IEnumerator Spawn(int number)

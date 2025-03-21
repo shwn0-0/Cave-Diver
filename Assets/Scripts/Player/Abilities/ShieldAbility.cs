@@ -1,6 +1,6 @@
 using UnityEngine;
 
-class SheildAbility : IAbility
+class ShieldAbility : IAbility
 {
     private readonly float _cooldown;
     private readonly float _duration;
@@ -13,7 +13,7 @@ class SheildAbility : IAbility
     public string Name => "Sheild";
     public bool IsUpgraded { get; private set; } = false;
 
-    public SheildAbility(PlayerAbilitiesConfig config, PlayerStatus target)
+    public ShieldAbility(PlayerAbilitiesConfig config, PlayerStatus target)
     {
         _cooldown = config.ShieldAbilityCooldown;
         _duration = config.ShieldAbilityDuration;

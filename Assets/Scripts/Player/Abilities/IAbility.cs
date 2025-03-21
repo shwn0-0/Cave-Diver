@@ -1,4 +1,4 @@
-interface IAbility
+public interface IAbility
 {
     string Name { get; }
     bool IsAvailable { get; }

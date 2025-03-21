@@ -27,9 +27,9 @@ class EnemyController : MonoBehaviour, IController
 
     void Update()
     {
-        _currentState.Run();
-        HandleMovement();
         HandleCooldowns();
+        HandleMovement();
+        _currentState.Run();
     }
 
     private void HandleMovement()
@@ -70,8 +70,9 @@ class EnemyController : MonoBehaviour, IController
 
     public void BeAttacking()
     {
-        if (_attackCooldown > 0.0f) return;
+        if (_attacked) return;
         _attackCooldown = _attackTime;
+        _attacked = true;
 
         // TODO: Do attacking stuff
         if (_status.TargetStatus != null)

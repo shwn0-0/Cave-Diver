@@ -22,13 +22,14 @@ class Status : MonoBehaviour
     public float AttackSelfKnockforward => _config.AttackSelfKnockforward;
     public float DamageMultiplier { get; set; }
     public float Health { get; set; }
+    public float HealthPercent => Health / _config.MaxHealth;
     public bool IsDead => Health <= 0.0f;
     public bool IsInvulnerable
     {
         get => _isInvulnerable;
         set
         {
-            if (value) Shields = _config.MaxShields;
+            if (value) Shield = _config.MaxShields;
             _isInvulnerable = value;
         }
     }
@@ -36,7 +37,8 @@ class Status : MonoBehaviour
     public float KnockbackFriction => _config.KnockbackFriction;
     public float MoveSpeed => _config.MoveSpeed * MoveSpeedMultiplier;
     public float MoveSpeedMultiplier { get; set; }
-    public float Shields { get; set; }
+    public float Shield { get; set; }
+    public float ShieldPercent => Shield / _config.MaxShields;
     public Transform Target {
         get => _targetTransform;
         set {
@@ -57,7 +59,7 @@ class Status : MonoBehaviour
     void OnEnable()
     {
         Health = _config.MaxHealth;
-        Shields = _config.MaxHealth;
+        Shield = _config.MaxHealth;
         IsStunned = false;
         DamageMultiplier = 1.0f;
         MoveSpeedMultiplier = 1.0f;
@@ -76,11 +78,11 @@ class Status : MonoBehaviour
     public void PercentHeal(float percentage) =>
         Health = math.min(_config.MaxHealth, Health * (1f + percentage));
 
-    public void ApplyDamage(float damage)
+    public virtual void ApplyDamage(float damage)
     {
-        Debug.Log($"{this.GetType().Name} took {damage} damage!");
-        Health -= math.max(0, damage - Shields);
-        Shields = math.max(0, Shields - damage);
+        Debug.Log($"{GetType().Name} took {damage} damage!");
+        Health -= math.max(0, damage - Shield);
+        Shield = math.max(0, Shield - damage);
     }
 
     public void ApplyKnockbackFrom(Vector2 position, float knockbackForce) =>

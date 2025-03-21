@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IController
 {
-    [SerializeField] private PlayerAbilitiesConfig _abilitiesConfig;
-    [SerializeField] private GameObject _c4Prefab;
-    [SerializeField] private GameObject _lurePrefab;
-
-    private Vector2 _walkingDisplacement = Vector2.zero;
-    private Vector2 _knockbackVelocity = Vector2.zero;
+    private Vector2 _walkingVelocity;
+    private Vector2 _knockbackVelocity;
     private PlayerStatus _status;
     private Transform _transform;
     private readonly List<IAbility> _abilities = new();
@@ -19,38 +15,26 @@ public class PlayerController : MonoBehaviour, IController
     {
         _transform = transform;
         _status = GetComponent<PlayerStatus>();
-
-        // TODO: Player should select which abilities they want after a wave
-        _abilities.Add(new BoostAbility(_abilitiesConfig, _status));
-        _abilities.Add(new SheildAbility(_abilitiesConfig, _status));
-        _abilities.Add(new C4Ability(_abilitiesConfig, _status, _c4Prefab));
-        _abilities.Add(new LureAbility(_abilitiesConfig, _status, _lurePrefab));
-
-        // foreach (IAbility ability in _abilities)
-        // {
-        //     ability.Upgrade();
-        // }
     }
 
     void Update()
     {
         _abilities.ForEach(ability => ability.Update());
-
-        Vector2 _knockbackDisplacement = _knockbackVelocity * Time.deltaTime;
-        _knockbackVelocity -= _knockbackVelocity * _status.KnockbackFriction;
-        _transform.position += (Vector3)(_walkingDisplacement + _knockbackDisplacement);
+        HandleMovement();
 
         if (_status.IsDead)
-        {
-            gameObject.SetActive(false); // Set inactive when dead
-        }
+            Die();
     }
 
-    public void Move(Vector2 dir)
+    private void HandleMovement()
     {
-        float maxDisplacement = _status.MoveSpeed * Time.deltaTime;
-        _walkingDisplacement = dir.normalized * math.min(maxDisplacement, dir.magnitude);
+        Vector2 displacement = (_knockbackVelocity + _walkingVelocity) * Time.deltaTime;
+        _knockbackVelocity -= _knockbackVelocity * _status.KnockbackFriction; // static friction
+        _transform.position += (Vector3)displacement;
     }
+
+    public void Move(Vector2 dir) =>
+        _walkingVelocity = dir.normalized * _status.MoveSpeed;
 
     public void UseAbility(int number)
     {
@@ -65,6 +49,20 @@ public class PlayerController : MonoBehaviour, IController
         {
             Debug.Log($"{ability.Name} is on Cooldown.");
         }
+    }
+
+    public void UnlockAbility(IAbility ability) =>
+        _abilities.Add(ability);
+
+    public void UpgradeAbility(int number)
+    {
+        if (number > _abilities.Count)
+        {
+            Debug.Log($"Ability {number} not unlocked.");
+            return;
+        }
+        Debug.Log($"Upgraded Ability {number}.");
+        _abilities[number - 1].Upgrade();
     }
 
     public void Attack()
@@ -83,6 +81,11 @@ public class PlayerController : MonoBehaviour, IController
             enemy.ApplyDamage(_status.AttackDamage);
             enemy.ApplyKnockbackFrom(currentPos, _status.AttackKnockback);
         }
+    }
+
+    private void Die()
+    {
+        gameObject.SetActive(false); // Set inactive when dead
     }
 
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
