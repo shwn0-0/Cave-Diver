@@ -25,5 +25,7 @@ class PlayerAbilitiesConfig : ScriptableObject
 
     [Header("Lure Ability")]
     [SerializeField] private float _lureAbilityCooldown = 2.0f;
+    [SerializeField] private float _lureAbilityDuration = 2.0f;
     public float LureAbilityCooldown => _lureAbilityCooldown;
+    public float LureAbilityDuration => _lureAbilityDuration;
 }

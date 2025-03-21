@@ -4,8 +4,6 @@ using UnityEngine;
 
 class Lure : MonoBehaviour
 {
-    [SerializeField] private float _duration = 2.0f;
-
     private float _remainingTime;
     private bool _isActive = false;
     private bool _isUpgraded = false;
@@ -29,9 +27,9 @@ class Lure : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Init(bool isUpgraded)
+    public void Init(float duration, bool isUpgraded)
     {
-        _remainingTime = _duration + 0.1f; // Add some time for LureEffect to end before lure disappears
+        _remainingTime = duration;
         _isActive = true;
         _isUpgraded = isUpgraded;
     }
@@ -52,7 +50,7 @@ class Lure : MonoBehaviour
                     .First();
             }
 
-            enemy.AddEffect(new LuredEffect(_duration, target));
+            enemy.AddEffect(new LuredEffect(_remainingTime, target));
             _enemies.Add(enemy.transform);
         }
     }

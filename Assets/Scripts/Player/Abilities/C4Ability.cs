@@ -9,10 +9,11 @@ class C4Ability : IAbility
 
     private float _remainingCooldown;
 
+    public float Cooldown => _remainingCooldown;
     public bool IsAvailable => _remainingCooldown <= 0.0f;
+    public bool IsUpgraded { get; private set; } = false ;
     public string Name => "C4";
     public bool Placed => _c4 != null;
-    public bool IsUpgraded { get; private set; } = false ;
 
     public C4Ability(PlayerAbilitiesConfig config, PlayerStatus target, GameObject prefab)
     {

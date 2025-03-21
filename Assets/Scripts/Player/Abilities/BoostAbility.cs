@@ -9,9 +9,10 @@ class BoostAbility : IAbility
 
     private float _remainingCooldown;
 
+    public float Cooldown => _remainingCooldown;
     public bool IsAvailable => _remainingCooldown <= 0.0f;
-    public string Name => "Boost";
     public bool IsUpgraded { get; private set; } = false;
+    public string Name => "Boost";
 
     public BoostAbility(PlayerAbilitiesConfig config, PlayerStatus target)
     {

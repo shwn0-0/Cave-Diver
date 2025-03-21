@@ -9,9 +9,10 @@ class ShieldAbility : IAbility
 
     private float _remainingCooldown;
 
+    public float Cooldown => _remainingCooldown;
     public bool IsAvailable => _remainingCooldown <= 0.0f;
-    public string Name => "Sheild";
     public bool IsUpgraded { get; private set; } = false;
+    public string Name => "Sheild";
 
     public ShieldAbility(PlayerAbilitiesConfig config, PlayerStatus target)
     {
