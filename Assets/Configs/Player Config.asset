@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2c3deb5257ef4c43802a0607163b3eb, type: 3}
-  m_Name: Enemy Status Config
+  m_Name: Player Config
   m_EditorClassIdentifier: 
   _attackDamage: 10
   _attackAngle: 45
-  _attackRange: 1
-  _attackSpeed: 1
-  _attackKnockback: 0
+  _attackRange: 5
+  _attackSpeed: 5
+  _attackKnockback: 25
   _attackSelfKnockforward: 10
-  _maxHealth: 50
-  _maxShields: 0
-  _moveSpeed: 4
+  _maxHealth: 100
+  _maxShields: 100
+  _moveSpeed: 5
   _knockbackFriction: 0.005

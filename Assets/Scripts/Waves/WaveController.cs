@@ -24,6 +24,8 @@ class WaveController : MonoBehaviour
 
     void Start()
     {
+        _player.AddUpgrade(Upgrade.C4Ability);
+        _player.AddUpgrade(Upgrade.C4Ability);
         NextWave();
     }
 
