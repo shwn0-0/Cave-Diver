@@ -9,41 +9,73 @@ abstract class Status : MonoBehaviour
 
     private readonly List<IStatusEffect> _effects = new();
     private bool _isInvulnerable = false;
+    private float _bonusHealth = 0f;
+    private float _bonusSheild = 0f;
 
-    public float AttackDamage => _config.AttackDamage * DamageMultiplier;
+    public float AbilityHaste { get; set; }
+    public float AttackDamage => (_config.AttackDamage + BonusDamage) * DamageMultiplier;
     public float AttackAngle => _config.AttackAngle;
     public float AttackRange => _config.AttackRange;
-    public float AttackSpeed => _config.AttackSpeed;
+    public float AttackSpeed => _config.AttackSpeed * AttackSpeedMultiplier;
+    public float AttackSpeedMultiplier { get; set; }
     public float AttackKnockback => _config.AttackKnockback;
     public float AttackSelfKnockforward => _config.AttackSelfKnockforward;
+    public float BonusDamage { get; set; }
+    public float BonusHealth { 
+        get => _bonusHealth;
+        set {
+            // NOTE: HUD gets updated when health changes so need to update health last.
+            var oldValue = _bonusHealth;
+            _bonusHealth = value;
+            Health += _bonusHealth - oldValue; // Add new value and subtract old value
+        } 
+    }
+    public float BonusMoveSpeed { get; set; }
+    public float BonusShield {
+        get => _bonusSheild;
+        set {
+            // NOTE: HUD gets updated when shield changes so need to update shield last.
+            var oldValue = _bonusSheild;
+            _bonusSheild = value;
+            Shield += _bonusSheild - oldValue; // Add new value and subtract old value
+        }
+    }
     public float DamageMultiplier { get; set; }
-    public float Health { get; set; }
-    public float HealthPercent => Health / _config.MaxHealth;
+    public virtual float Health { get; set; }
+    public float MaxHealth => _config.MaxHealth + BonusHealth;
     public bool IsControllable { get; set; }
     public bool IsDead => Health <= 0.0f;
-    public virtual bool IsInvulnerable
+    public bool IsInvulnerable
     {
         get => _isInvulnerable;
         set
         {
-            if (value) Shield = _config.MaxShields;
+            if (value) Shield = MaxShield;
             _isInvulnerable = value;
         }
     }
     public bool IsStunned { get; set; }
     public float KnockbackFriction => _config.KnockbackFriction;
-    public float MoveSpeed => _config.MoveSpeed * MoveSpeedMultiplier;
+    public float MoveSpeed => (_config.MoveSpeed + BonusMoveSpeed) * MoveSpeedMultiplier;
     public float MoveSpeedMultiplier { get; set; }
-    public float Shield { get; set; }
-    public float ShieldPercent => Shield / _config.MaxShields;
+    public virtual float Shield { get; set; }
+    public float MaxShield => _config.MaxShield + BonusShield;
 
     public virtual void Init()
     {
-        Health = _config.MaxHealth;
-        Shield = _config.MaxHealth;
-        IsStunned = false;
         DamageMultiplier = 1.0f;
         MoveSpeedMultiplier = 1.0f;
+        AttackSpeedMultiplier = 1.0f;
+
+        AbilityHaste = 0f;
+        BonusDamage = 0f;
+        BonusHealth = 0f;
+        BonusMoveSpeed = 0f;
+        BonusShield = 0f;
+
+        Health = MaxHealth;
+        Shield = MaxShield;
+        IsStunned = false;
     }
 
     public void AddEffect(IStatusEffect effect) =>
@@ -57,7 +89,7 @@ abstract class Status : MonoBehaviour
     }
 
     public void PercentHeal(float percentage) =>
-        Health = math.min(_config.MaxHealth, Health * (1f + percentage));
+        Health = math.min(MaxHealth, Health * (1f + percentage));
 
     public virtual void ApplyDamage(float damage)
     {

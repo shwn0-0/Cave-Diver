@@ -6,6 +6,7 @@ class WaveController : MonoBehaviour
     private Spawner[] _spawners;
     private ObjectCache _objCache;
     private UpgradesController _upgradesController;
+    private WaveNumberDisplay _waveNumberDisplay;
     private readonly HashSet<EnemyStatus> _enemies = new();
     private int _waveCount;
     private PlayerStatus _player;
@@ -17,12 +18,12 @@ class WaveController : MonoBehaviour
         _spawners = FindObjectsByType<Spawner>(FindObjectsSortMode.None);
         _objCache = FindFirstObjectByType<ObjectCache>();
         _upgradesController = FindFirstObjectByType<UpgradesController>(FindObjectsInactive.Include);
+        _waveNumberDisplay = FindFirstObjectByType<WaveNumberDisplay>(FindObjectsInactive.Include);
         _player = FindFirstObjectByType<PlayerStatus>();
     }
 
     void Start()
     {
-        _player.AddUpgrade(Upgrade.ShieldAbility);
         NextWave();
     }
 
@@ -64,13 +65,14 @@ class WaveController : MonoBehaviour
         if (_enemies.Count > 0)
             return;
 
+        _waveNumberDisplay.DisplayWave(_waveCount + 1);
         _player.IsControllable = true;
+        _player.transform.position = new(0.0f,0.0f,0.0f); // FIXME: Maybe don't insta tp the player
         foreach (var spawner in _spawners)
         {
             // TODO: Give spawner a list of enemies to spawn instead of doing this
             for (int i = 0; i < (_waveCount + 1) * 2; i++)
             {
-                Debug.Log($"Spawning Enemy for Wave {_waveCount + 1}");
                 var enemy = spawner.Spawn(ObjectType.Slime);
                 _enemies.Add(enemy);
             }
@@ -79,7 +81,6 @@ class WaveController : MonoBehaviour
 
     public void OnDeath(EnemyStatus enemy)
     {
-        Debug.Log("Enemy Died");
         _enemies.Remove(enemy);
         _objCache.ReturnObject(enemy.Type, enemy);
 

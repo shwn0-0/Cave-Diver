@@ -1,24 +1,22 @@
 class IdleState : State
 {
-    public IdleState(EnemyController controller) : base(controller) { }
-
-    public override void Run()
+    public override void Run(EnemyController controller)
     {
-        if (_controller.IsDead)
+        if (controller.IsDead)
         {
-            _controller.ChangeStates(new DeadState(_controller));
+            controller.ChangeStates(Dead);
         }
-        else if (_controller.IsStunned)
+        else if (controller.IsStunned)
         {
-            _controller.ChangeStates(new StunnedState(_controller));
+            controller.ChangeStates(Stunned);
         }
-        else if (_controller.IsTargetInRange)
+        else if (controller.IsTargetInRange)
         {
-            _controller.ChangeStates(new AttackState(_controller));
+            controller.ChangeStates(Attack);
         }
         else
         {
-            _controller.ChangeStates(new RunningState(_controller));
+            controller.ChangeStates(Running);
         }
     }
 }

@@ -1,9 +1,7 @@
 class DeadState : State
-{
-    public DeadState(EnemyController controller) : base(controller) { }
-
-    public override void Run()
+{    
+    public override void Run(EnemyController controller)
     {
-        _controller.Die();
+        controller.Die();
     }
 }

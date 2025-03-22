@@ -1,11 +1,10 @@
 class State
 {
-    protected readonly EnemyController _controller;
+    public static State Idle { get; } = new IdleState();
+    public static State Attack { get; } = new AttackState();
+    public static State Running { get; } = new RunningState();
+    public static State Stunned { get; } = new StunnedState();
+    public static State Dead { get; } = new DeadState();
 
-    protected State(EnemyController controller)
-    {
-        _controller = controller;
-    }
-
-    public virtual void Run() {}
+    public virtual void Run(EnemyController controller) {}
 }

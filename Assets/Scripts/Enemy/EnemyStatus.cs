@@ -1,6 +1,6 @@
 using UnityEngine;
 
-class EnemyStatus : Status
+class EnemyStatus : Status, ICacheableObject
 {
     private EnemyController _controller;
     private Status _targetStatus;
@@ -17,7 +17,7 @@ class EnemyStatus : Status
         }
     }
     public Status TargetStatus => _targetStatus;
-    public ObjectType Type { get; set; }
+    public ObjectType Type { get; private set; }
 
     public void Awake()
     {
@@ -25,15 +25,34 @@ class EnemyStatus : Status
         _transform = transform;
     }
 
-    public override void Init()
+    public void Init(IObjectConfig objConfig)
     {
-        Debug.Log("Calling the Init function");
-        base.Init();
-        gameObject.SetActive(true);
-        _controller.ChangeStates(new IdleState(_controller));
-        IsControllable = true;
+        if (objConfig is Config config)
+        {
+            base.Init();
+            Type = config.type;
+            Target = config.target;
+            _controller.ChangeStates(State.Idle);
+            IsControllable = true;
+        }
+        else
+        {
+            Debug.LogError("Passed Invalid Config to EnemyStatus");
+        }
     }
 
     public override void ApplyKnockbackFrom(Vector2 position, float knockbackForce) =>
         _controller.ApplyKnockbackFrom(position, knockbackForce);
+
+    public readonly struct Config : IObjectConfig
+    {
+        public readonly Transform target;
+        public readonly ObjectType type;
+
+        public Config(Transform target, ObjectType type)
+        {
+            this.target = target;
+            this.type = type;
+        }
+    }
 }

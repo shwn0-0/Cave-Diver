@@ -5,7 +5,7 @@ class BoostAbility : IAbility
     private readonly float _amount;
     private readonly float _cooldown;
     private readonly float _duration;
-    private readonly PlayerStatus _target;
+    private readonly PlayerStatus _player;
 
     private float _remainingCooldown;
 
@@ -14,23 +14,23 @@ class BoostAbility : IAbility
     public bool IsUpgraded { get; private set; } = false;
     public string Name => "Boost";
 
-    public BoostAbility(PlayerAbilitiesConfig config, PlayerStatus target)
+    public BoostAbility(PlayerAbilitiesConfig config, PlayerStatus player)
     {
         _amount = config.BoostAbilityAmount;
         _cooldown = config.BoostAbilityCooldown;
         _duration = config.BoostAbilityDuration;
-        _target = target;
+        _player = player;
     }
 
     public bool Activate()
     {
         if (!IsAvailable) return false;
+        _remainingCooldown = _cooldown * (1 - _player.AbilityHaste);
 
-        _remainingCooldown = _cooldown;
-        _target.AddEffect(new SpeedBoostEffect(_amount, _duration));
+        _player.AddEffect(new SpeedBoostEffect(_amount, _duration));
 
         if (IsUpgraded)
-            _target.AddEffect(new DamageBoostEffect(_amount, _duration));
+            _player.AddEffect(new DamageBoostEffect(_amount, _duration));
 
         return true;
     }

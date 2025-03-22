@@ -21,7 +21,7 @@ class StatusConfig : ScriptableObject
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _maxShields;
     public float MaxHealth => _maxHealth;
-    public float MaxShields => _maxShields;
+    public float MaxShield => _maxShields;
 
     [Header("Movement")]
     [SerializeField] private float _moveSpeed;

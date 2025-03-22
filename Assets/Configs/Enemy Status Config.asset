@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c3deb5257ef4c43802a0607163b3eb, type: 3}
   m_Name: Enemy Status Config
   m_EditorClassIdentifier: 
-  _attackDamage: 20
+  _attackDamage: 10
   _attackAngle: 45
   _attackRange: 1
   _attackSpeed: 1

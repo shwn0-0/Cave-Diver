@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class C4 : MonoBehaviour
+class C4 : MonoBehaviour, ICacheableObject
 {
     private readonly HashSet<EnemyStatus> _enemies = new();
     private bool _isActive;
-    private bool _isUpgraded;
     private float _remainingTime;
     private Transform _transform;
     private Config _config;
@@ -27,7 +26,7 @@ class C4 : MonoBehaviour
         {
             enemy.ApplyDamage(_config.damage);
             enemy.ApplyKnockbackFrom(_transform.position, _config.knockbackForce);
-            if (_isUpgraded)
+            if (_config.isUpgraded)
                 enemy.AddEffect(new StunnedEffect(_config.stunDuration));
         }
 
@@ -35,15 +34,16 @@ class C4 : MonoBehaviour
         _isActive = false;
     }
 
-    public void Init(Config config, Vector3 position, bool isUpgraded)
+    public void Init(IObjectConfig objConfig)
     {
-        _config = config;
-        _remainingTime = config.duration;
-        _isUpgraded = isUpgraded;
-        gameObject.SetActive(true);
-        _transform = transform;
-        _transform.position = position;
-        _isActive = true;
+        if (objConfig is Config config)
+        {
+            _config = config;
+            _remainingTime = config.duration;
+            _transform = transform;
+            _isActive = true;
+        }
+
     }
 
     public void Trigger() => _remainingTime = 0.0f;
@@ -66,19 +66,21 @@ class C4 : MonoBehaviour
         }
     }
 
-    public readonly struct Config
+    public readonly struct Config : IObjectConfig
     {
         public readonly float damage;
         public readonly float duration;
         public readonly float knockbackForce;
         public readonly float stunDuration;
+        public readonly bool isUpgraded;
 
-        public Config(float damage, float duration, float knockbackForce, float stunDuration)
+        public Config(float damage, float duration, float knockbackForce, float stunDuration, bool isUpgraded)
         {
             this.duration = duration;
             this.damage = damage;
             this.knockbackForce = knockbackForce;
             this.stunDuration = stunDuration;
+            this.isUpgraded = isUpgraded;
         }
     }
 }

@@ -5,7 +5,7 @@ class ShieldAbility : IAbility
     private readonly float _cooldown;
     private readonly float _duration;
     private readonly float _healPercentage;
-    private readonly PlayerStatus _target;
+    private readonly PlayerStatus _player;
 
     private float _remainingCooldown;
 
@@ -14,23 +14,23 @@ class ShieldAbility : IAbility
     public bool IsUpgraded { get; private set; } = false;
     public string Name => "Sheild";
 
-    public ShieldAbility(PlayerAbilitiesConfig config, PlayerStatus target)
+    public ShieldAbility(PlayerAbilitiesConfig config, PlayerStatus player)
     {
         _cooldown = config.ShieldAbilityCooldown;
         _duration = config.ShieldAbilityDuration;
         _healPercentage = config.ShieldAbilityHealPercentage;
-        _target = target;
+        _player = player;
     }
 
     public bool Activate()
     {
         if (!IsAvailable) return false;
-        _remainingCooldown = _cooldown;
+        _remainingCooldown = _cooldown * (1 - _player.AbilityHaste);
 
-        _target.AddEffect(new ShieldEffect(_duration));
+        _player.AddEffect(new ShieldEffect(_duration));
 
         if (IsUpgraded)
-            _target.PercentHeal(_healPercentage);
+            _player.PercentHeal(_healPercentage);
 
         return true;
     }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-class Lure : MonoBehaviour
+class Lure : MonoBehaviour, ICacheableObject
 {
     private readonly List<Transform> _enemies = new();
 
@@ -28,14 +28,19 @@ class Lure : MonoBehaviour
         _isActive = false;
     }
 
-    public void Init(float duration, Vector3 position, bool isUpgraded)
+    public void Init(IObjectConfig objConfig)
     {
-        _remainingTime = duration;
-        _isUpgraded = isUpgraded;
-        gameObject.SetActive(true);
-        _transform = transform;
-        _transform.position = position;
-        _isActive = true;
+        if (objConfig is Config config)
+        {
+            _remainingTime = config.duration;
+            _isUpgraded = config.isUpgraded;
+            _transform = transform;
+            _isActive = true;
+        }
+        else
+        {
+            Debug.LogError("Passed Invalid Config to Lure");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -60,6 +65,18 @@ class Lure : MonoBehaviour
 
             enemy.AddEffect(new LuredEffect(_remainingTime, target));
             _enemies.Add(enemy.transform);
+        }
+    }
+
+    public readonly struct Config : IObjectConfig
+    {
+        public readonly float duration;
+        public readonly bool isUpgraded;
+
+        public Config(float duration, bool isUpgraded)
+        {
+            this.duration = duration;
+            this.isUpgraded = isUpgraded;
         }
     }
 }

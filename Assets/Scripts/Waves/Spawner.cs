@@ -4,27 +4,21 @@ using static UnityEngine.Random;
 
 class Spawner : MonoBehaviour
 {
-    [SerializeField] private Transform _player;
     [SerializeField] private float radius = 5f;
 
     private Transform _transform;
     private ObjectCache _objCache;
+    private Transform _player;
 
     void Awake()
     {
         _transform = transform;
         _objCache = FindFirstObjectByType<ObjectCache>();
+        _player = FindAnyObjectByType<PlayerStatus>().transform;
     }
 
-    public EnemyStatus Spawn(ObjectType type)
-    {
-        EnemyStatus enemy = _objCache.GetObject<EnemyStatus>(type);
-        enemy.Type = type;
-        enemy.transform.position = RandomPosition();
-        enemy.Target = _player;
-        enemy.Init();
-        return enemy;
-    }
+    public EnemyStatus Spawn(ObjectType type) => 
+        _objCache.GetObject<EnemyStatus>(type, RandomPosition(), new EnemyStatus.Config(_player, type));
 
     // Generate a random position in the half circle infront of spawner
     private Vector3 RandomPosition()

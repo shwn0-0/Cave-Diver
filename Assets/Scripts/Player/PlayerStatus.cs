@@ -1,24 +1,29 @@
+using System;
 using UnityEngine;
 
 class PlayerStatus : Status
 {
     [SerializeField] private PlayerAbilitiesConfig _abilitiesConfig;
-    
+
     private HUDController _hudController;
     private PlayerController _controller;
     private ObjectCache _objCache;
 
-    public override bool IsInvulnerable
-    {
-        get => base.IsInvulnerable;
-        set
-        {
-            base.IsInvulnerable = value;
-            Debug.Log(_hudController);
-            _hudController.SetShieldPercent(ShieldPercent);
-        }
+    public override float Health { 
+        get => base.Health;
+        set {
+            base.Health = value;
+            _hudController.SetHealth(Health, MaxHealth);
+        } 
     }
-
+ 
+    public override float Shield { 
+        get => base.Shield;
+        set {
+            base.Shield = value;
+            _hudController.SetShield(Shield, MaxShield);
+        } 
+    }
 
     void Awake()
     {
@@ -33,32 +38,29 @@ class PlayerStatus : Status
         switch (upgrade)
         {
             case Upgrade.BoostAbility:
-                BoostAbility boostAbility = _controller.GetAbility<BoostAbility>();
-                if (boostAbility != null)
-                    boostAbility.Upgrade();
-                else
-                    UnlockAbility(new BoostAbility(_abilitiesConfig, this));
-                break;
             case Upgrade.ShieldAbility:
-                ShieldAbility shieldAbility = _controller.GetAbility<ShieldAbility>();
-                if (shieldAbility != null)
-                    shieldAbility.Upgrade();
-                else
-                    UnlockAbility(new ShieldAbility(_abilitiesConfig, this));
-                break;
             case Upgrade.LureAbility:
-                LureAbility lureAbility = _controller.GetAbility<LureAbility>();
-                if (lureAbility != null)
-                    lureAbility.Upgrade();
-                else
-                    UnlockAbility(new LureAbility(_abilitiesConfig, this, _objCache));
-                break;
             case Upgrade.C4Ability:
-                C4Ability c4Ability = _controller.GetAbility<C4Ability>();
-                if (c4Ability != null)
-                    c4Ability.Upgrade();
-                else
-                    UnlockAbility(new C4Ability(_abilitiesConfig, this, _objCache));
+                HandleAbilityUpgrade(upgrade);
+                break;
+            // FIXME: Create config for magic numbers and add max values as well
+            case Upgrade.AttackDamage:
+                BonusDamage += 2f;
+                break;
+            case Upgrade.AttackSpeed:
+                AttackSpeedMultiplier += 0.5f;
+                break;
+            case Upgrade.AbilityHaste:
+                AbilityHaste += 0.05f;
+                break;
+            case Upgrade.MoveSpeed:
+                BonusMoveSpeed += 0.25f;
+                break;
+            case Upgrade.Health:
+                BonusHealth += 25f;
+                break;
+            case Upgrade.Shield:
+                BonusShield += 25f;
                 break;
             default:
                 Debug.LogError($"Unhandled Upgrade {upgrade}");
@@ -72,13 +74,38 @@ class PlayerStatus : Status
         _hudController.UnlockAbility(ability);
     }
 
-    public override void ApplyDamage(float damage)
-    {
-        base.ApplyDamage(damage);
-        _hudController.SetHealthPercent(HealthPercent);
-        _hudController.SetShieldPercent(ShieldPercent);
-    }
-
     public override void ApplyKnockbackFrom(Vector2 position, float knockbackForce) =>
         _controller.ApplyKnockbackFrom(position, knockbackForce);
+
+    public bool HasUpgradeableAbility(Upgrade upgrade) {
+        IAbility ability = GetUpgradeAbility(upgrade);
+        return ability != null  && !ability.IsUpgraded;
+    }
+
+    private void HandleAbilityUpgrade(Upgrade upgrade)
+    {
+        IAbility ability = GetUpgradeAbility(upgrade);
+        if (ability == null)
+            UnlockAbility(CreateUpgradeAbility(upgrade));
+        else if (!ability.IsUpgraded)
+            ability.Upgrade();
+    }
+
+    private IAbility GetUpgradeAbility(Upgrade upgrade) => upgrade switch
+    {
+        Upgrade.BoostAbility => _controller.GetAbility<BoostAbility>(),
+        Upgrade.ShieldAbility => _controller.GetAbility<ShieldAbility>(),
+        Upgrade.LureAbility => _controller.GetAbility<LureAbility>(),
+        Upgrade.C4Ability => _controller.GetAbility<C4Ability>(),
+        _ => null
+    };
+
+    private IAbility CreateUpgradeAbility(Upgrade upgrade) => upgrade switch
+    {
+        Upgrade.BoostAbility => new BoostAbility(_abilitiesConfig, this),
+        Upgrade.ShieldAbility => new ShieldAbility(_abilitiesConfig, this),
+        Upgrade.LureAbility => new LureAbility(_abilitiesConfig, this, _objCache),
+        Upgrade.C4Ability => new C4Ability(_abilitiesConfig, this, _objCache),
+        _ => null
+    };
 }

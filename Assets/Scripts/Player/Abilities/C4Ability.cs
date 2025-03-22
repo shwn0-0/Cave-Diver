@@ -3,8 +3,7 @@ using UnityEngine;
 class C4Ability : IAbility
 {
     private readonly ObjectCache _cache;
-    private readonly float _cooldown;
-    private readonly C4.Config _config;
+    private readonly PlayerAbilitiesConfig _config;
     private readonly PlayerStatus _player;
 
     private C4 _c4;
@@ -19,8 +18,7 @@ class C4Ability : IAbility
     public C4Ability(PlayerAbilitiesConfig config, PlayerStatus player, ObjectCache cache)
     {
         _cache = cache;
-        _cooldown = config.C4AbilityCooldown;
-        _config = new(config.C4AbilityDamage, config.C4AbilityDuration, config.C4AbilityKnockbackForce, config.C4AbilityStunDuration);
+        _config = config;
         _player = player;
     }
 
@@ -35,9 +33,11 @@ class C4Ability : IAbility
             return true;
         }
 
-        _c4 = _cache.GetObject<C4>(ObjectType.C4);
-        _c4.Init(_config, _player.transform.position, IsUpgraded);
-
+        _c4 = _cache.GetObject<C4>(
+            ObjectType.C4,
+            _player.transform.position,
+            new C4.Config(_config.C4AbilityDamage, _config.C4AbilityDuration, _config.C4AbilityKnockbackForce, _config.C4AbilityStunDuration, IsUpgraded)
+        );
         return true;
     }
 
@@ -45,7 +45,7 @@ class C4Ability : IAbility
     {
         if (Placed && !_c4.IsActive)
         {
-            _remainingCooldown = _cooldown;
+            _remainingCooldown = _config.C4AbilityCooldown * (1 - _player.AbilityHaste);
             _cache.ReturnObject(ObjectType.C4, _c4);
             _c4 = null;
         }

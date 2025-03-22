@@ -9,7 +9,6 @@ class EnemyController : MonoBehaviour
     private Vector2 _knockbackVelocity;
     private Vector2 _walkingDisplacement;
     private bool _attacked;
-    private float _attackTime;
     private float _attackCooldown;
     private WaveController _waveController;
 
@@ -23,7 +22,6 @@ class EnemyController : MonoBehaviour
         _waveController = FindFirstObjectByType<WaveController>();
         _transform = transform;
         _status = GetComponent<EnemyStatus>();
-        _attackTime = 1 / _status.AttackSpeed;
     }
 
     void Update()
@@ -31,7 +29,7 @@ class EnemyController : MonoBehaviour
         if (!_status.IsControllable) return;
         HandleCooldowns();
         HandleMovement();
-        _currentState.Run();
+        _currentState.Run(this);
     }
 
     private void HandleMovement()
@@ -73,11 +71,11 @@ class EnemyController : MonoBehaviour
     public void BeAttacking()
     {
         if (_attacked) return;
-        _attackCooldown = _attackTime;
+        _attackCooldown = 1 / _status.AttackSpeed;
         _attacked = true;
 
         // TODO: Do attacking stuff
-        if (_status.TargetStatus != null)
+        if (_status.TargetStatus != null && !_status.TargetStatus.IsDead)
         {
             _status.TargetStatus.ApplyDamage(_status.AttackDamage);
             _status.TargetStatus.ApplyKnockbackFrom(_transform.position, _status.AttackKnockback);

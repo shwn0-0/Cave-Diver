@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 class UpgradesController : MonoBehaviour
 {
@@ -11,17 +12,18 @@ class UpgradesController : MonoBehaviour
     public void Awake()
     {
         _abilityUpgradeButtons = GetComponentsInChildren<UpgradeButton>().Where(btn => btn.IsAbilityUpgrade).ToArray();
-        _playerStatus = FindFirstObjectByType<PlayerStatus>();
-        _waveController = FindFirstObjectByType<WaveController>();
+        _playerStatus = FindAnyObjectByType<PlayerStatus>();
+        _waveController = FindAnyObjectByType<WaveController>();
     }
 
-    public void Show(int count, bool upgradeAbilities)
+    public void Show(int count, bool addAbilities)
     {
         gameObject.SetActive(true);
         _remainingUpgrades = count;
+        Assert.IsNotNull(_playerStatus);
         foreach (UpgradeButton button in _abilityUpgradeButtons)
         {
-            button.Enabled = upgradeAbilities;
+            button.IsEnabled = addAbilities || _playerStatus.HasUpgradeableAbility(button.Upgrade);
         }
     }
 

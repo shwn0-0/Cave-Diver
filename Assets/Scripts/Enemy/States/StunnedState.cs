@@ -1,20 +1,18 @@
 class StunnedState : State
 {
-    public StunnedState(EnemyController controller) : base(controller) { }
-
-    public override void Run()
+    public override void Run(EnemyController controller)
     {
-        if (_controller.IsDead)
+        if (controller.IsDead)
         {
-            _controller.ChangeStates(new DeadState(_controller));
+            controller.ChangeStates(Dead);
         }
-        else if (!_controller.IsStunned)
+        else if (!controller.IsStunned)
         {
-            _controller.ChangeStates(new IdleState(_controller));
+            controller.ChangeStates(Idle);
         }
         else
         {
-            _controller.BeStunned();
+            controller.BeStunned();
         }
     }
 }

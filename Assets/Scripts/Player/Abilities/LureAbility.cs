@@ -2,8 +2,7 @@ using UnityEngine;
 
 class LureAbility : IAbility
 {
-    private readonly float _cooldown;
-    private readonly float _duration;
+    private readonly PlayerAbilitiesConfig _config;
     private readonly ObjectCache _cache;
     private readonly PlayerStatus _player;
 
@@ -19,17 +18,19 @@ class LureAbility : IAbility
     public LureAbility(PlayerAbilitiesConfig config, PlayerStatus player, ObjectCache cache)
     {
         _cache = cache;
-        _cooldown = config.LureAbilityCooldown;
-        _duration = config.LureAbilityDuration;
+        _config = config;
         _player = player;
     }
 
     public bool Activate()
     {
         if (!IsAvailable) return false;
-        _remainingCooldown = _cooldown + _duration;
-        _lure = _cache.GetObject<Lure>(ObjectType.Lure);
-        _lure.Init(_duration, _player.transform.position, IsUpgraded);
+        _remainingCooldown = _config.LureAbilityCooldown * (1 - _player.AbilityHaste);
+        _lure = _cache.GetObject<Lure>(
+            ObjectType.Lure,
+            _player.transform.position, 
+            new Lure.Config(_config.LureAbilityDuration, IsUpgraded)
+        );
         return true;
     }
 

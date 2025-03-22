@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ class SliderController : MonoBehaviour
 
     RectTransform _transform;
     Image _image;
+    TextMeshProUGUI _amountText;
     float _maxWidth;
     float _height;
     float _currentPercent = 1f;
@@ -26,6 +28,7 @@ class SliderController : MonoBehaviour
     void Awake()
     {
         _transform = GetComponent<RectTransform>();
+        _amountText = GetComponentInChildren<TextMeshProUGUI>();
         _image = GetComponent<Image>();
         var rect = _transform.rect;
         _maxWidth = rect.width;
@@ -49,8 +52,11 @@ class SliderController : MonoBehaviour
         _image.color = Color.HSVToRGB(ColorHueLerp(end, start, t), 1.0f, 1.0f);
     }
 
-    public void SetWidthPercent(float percent) =>
-        _targetPercent = percent;
+    public void SetAmount(float current, float max)
+    {
+        _amountText.SetText($"{current} / {max}");
+        _targetPercent = current / max;
+    }
 
     private float ColorHueLerp(Color a, Color b, float t)
     {

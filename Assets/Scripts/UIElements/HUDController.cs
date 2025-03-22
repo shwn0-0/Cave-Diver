@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -18,11 +19,11 @@ class HUDController : MonoBehaviour
         _healthSlider = sliders.Where(slider => slider.ID == SliderController.SliderID.Health).Single();
     }
 
-    public void SetHealthPercent(float percent) =>
-        _healthSlider.SetWidthPercent(percent);
+    public void SetHealth(float current, float max) =>
+        _healthSlider.SetAmount(current, max);
 
-    public void SetShieldPercent(float percent) =>
-        _shieldSlider.SetWidthPercent(percent);
+    public void SetShield(float current, float max) =>
+        _shieldSlider.SetAmount(current, max);
 
     public void UnlockAbility(IAbility ability) =>
         _abilityControllers[_numAbilities++].SetAbility(ability);

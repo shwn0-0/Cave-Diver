@@ -1,11 +1,11 @@
-using System;
 using System.Collections.Generic;
+using NUnit.Framework.Internal.Builders;
 using UnityEngine;
 
 enum ObjectType
 {
     Lure,
-    C4,    Slime
+    C4, Slime
 }
 
 class ObjectCache : MonoBehaviour
@@ -34,15 +34,15 @@ class ObjectCache : MonoBehaviour
         _ => null,
     };
 
-    public T GetObject<T>(ObjectType type) where T : MonoBehaviour
+    public T GetObject<T>(ObjectType type, Vector3 position, IObjectConfig objConfig) where T : ICacheableObject
     {
         Queue<GameObject> objectQueue = GetObjectQueue(type);
-
-        GameObject obj = (objectQueue.Count == 0) ?
-            Instantiate(GetPrefab(type)) :
-            objectQueue.Dequeue();
-
-        return obj.GetComponent<T>();
+        GameObject gameObj = (objectQueue.Count == 0) ? Instantiate(GetPrefab(type)) : objectQueue.Dequeue();
+        gameObj.SetActive(true);
+        gameObj.transform.position = position;
+        T obj = gameObj.GetComponent<T>();
+        obj.Init(objConfig);
+        return obj;
     }
 
     public void ReturnObject(ObjectType type, MonoBehaviour obj)
