@@ -5,6 +5,7 @@ class C4Ability : IAbility
     private readonly float _cooldown;
     private readonly GameObject _prefab;
     private readonly PlayerStatus _target;
+    private readonly C4.Config _config;
     private C4 _c4;
 
     private float _remainingCooldown;
@@ -18,6 +19,7 @@ class C4Ability : IAbility
     public C4Ability(PlayerAbilitiesConfig config, PlayerStatus target, GameObject prefab)
     {
         _cooldown = config.C4AbilityCooldown;
+        _config = new(config.C4AbilityDamage, config.C4AbilityDuration, config.C4AbilityKnockbackForce, config.C4AbilityStunDuration);
         _prefab = prefab;
         _target = target;
     }
@@ -36,7 +38,7 @@ class C4Ability : IAbility
         // TODO: Eventually make an Object system to cache objects so we don't have to always instantiate a new one
         GameObject c4Obj = Object.Instantiate(_prefab, _target.transform.position, Quaternion.identity);
         _c4 = c4Obj.GetComponent<C4>();
-        _c4.Init(IsUpgraded);
+        _c4.Init(_config, IsUpgraded);
 
         return true;
     }

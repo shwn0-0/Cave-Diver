@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class AbilityController : MonoBehaviour
 {
     [SerializeField] AbilityUIConfig _config;
-    [SerializeField] TextMeshProUGUI _cooldownText;    
     [SerializeField, Range(1, 4)] int _id;
 
-    public int ID => _id;
+    private TextMeshProUGUI _cooldownText;    
+    private IAbility _ability;
+    private Image _image;
 
-    IAbility _ability;
-    Image _image;
+    public int ID => _id;
 
     void Awake()
     {

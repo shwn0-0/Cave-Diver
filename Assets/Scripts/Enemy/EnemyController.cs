@@ -1,7 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-class EnemyController : MonoBehaviour, IController
+class EnemyController : MonoBehaviour
 {
     private State _currentState;
     private EnemyStatus _status;

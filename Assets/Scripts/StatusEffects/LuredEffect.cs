@@ -14,9 +14,16 @@ class LuredEffect : IStatusEffect
 
     public IEnumerator Apply(Status status)
     {
-        Transform oldTarget = status.Target;
-        status.Target = _target;
-        yield return new WaitForSeconds(_duration);
-        status.Target = oldTarget;
+        if (status is EnemyStatus enemyStatus)
+        {
+            Transform oldTarget = enemyStatus.Target;
+            enemyStatus.Target = _target;
+            yield return new WaitForSeconds(_duration);
+            enemyStatus.Target = oldTarget;
+        }
+        else
+        {
+            Debug.LogError($"Lure applied to invalid status {status.GetType().Name}");
+        }
     }
 }

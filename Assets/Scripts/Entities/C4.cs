@@ -3,16 +3,12 @@ using UnityEngine;
 
 class C4 : MonoBehaviour
 {
-    [SerializeField] private float _duration = 2.0f;
-    [SerializeField] private float _stunDuration = 2.0f;
-    [SerializeField] private float _damage = 10.0f;
-    [SerializeField] private float _knockbackForce = 1.0f;
-
     private readonly HashSet<EnemyStatus> _enemies = new();
     private bool _isActive;
     private bool _isUpgraded;
     private float _remainingTime;
     private Transform _transform;
+    private Config _config;
 
     public bool IsActive => _isActive;
 
@@ -34,10 +30,10 @@ class C4 : MonoBehaviour
 
         foreach (EnemyStatus enemy in _enemies)
         {
-            enemy.ApplyDamage(_damage);
-            enemy.ApplyKnockbackFrom(_transform.position, _knockbackForce);
+            enemy.ApplyDamage(_config.damage);
+            enemy.ApplyKnockbackFrom(_transform.position, _config.knockbackForce);
             if (_isUpgraded)
-                enemy.AddEffect(new StunnedEffect(_stunDuration));
+                enemy.AddEffect(new StunnedEffect(_config.stunDuration));
         }
 
         _enemies.Clear();
@@ -45,9 +41,10 @@ class C4 : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Init(bool isUpgraded)
+    public void Init(Config config, bool isUpgraded)
     {
-        _remainingTime = _duration;
+        _config = config;
+        _remainingTime = _config.duration;
         _isActive = true;
         _isUpgraded = isUpgraded;
     }
@@ -69,6 +66,22 @@ class C4 : MonoBehaviour
         {
             EnemyStatus enemy = collider.GetComponent<EnemyStatus>();
             _enemies.Remove(enemy);
+        }
+    }
+
+    public readonly struct Config
+    {
+        public readonly float damage;
+        public readonly float duration;
+        public readonly float knockbackForce;
+        public readonly float stunDuration;
+
+        public Config(float damage, float duration, float knockbackForce, float stunDuration)
+        {
+            this.duration = duration;
+            this.damage = damage;
+            this.knockbackForce = knockbackForce;
+            this.stunDuration = stunDuration;
         }
     }
 }

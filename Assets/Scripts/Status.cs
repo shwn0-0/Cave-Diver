@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-class Status : MonoBehaviour
+abstract class Status : MonoBehaviour
 {
-    [SerializeField] StatusConfig _config;
+    [SerializeField] private StatusConfig _config;
 
     private readonly List<IStatusEffect> _effects = new();
     private bool _isInvulnerable;
-    private Status _targetStatus;
-    private Transform _targetTransform;
-    private IController _controller;
-    private Transform _transform;
 
     public float AttackDamage => _config.AttackDamage * DamageMultiplier;
-    public float AttackRadius => _config.AttackRadius;
+    public float AttackAngle => _config.AttackAngle;
     public float AttackRange => _config.AttackRange;
     public float AttackSpeed => _config.AttackSpeed;
     public float AttackKnockback => _config.AttackKnockback;
@@ -24,7 +20,7 @@ class Status : MonoBehaviour
     public float Health { get; set; }
     public float HealthPercent => Health / _config.MaxHealth;
     public bool IsDead => Health <= 0.0f;
-    public bool IsInvulnerable
+    public virtual bool IsInvulnerable
     {
         get => _isInvulnerable;
         set
@@ -39,22 +35,6 @@ class Status : MonoBehaviour
     public float MoveSpeedMultiplier { get; set; }
     public float Shield { get; set; }
     public float ShieldPercent => Shield / _config.MaxShields;
-    public Transform Target {
-        get => _targetTransform;
-        set {
-            _targetTransform = value;
-            value.TryGetComponent(out _targetStatus);
-        }
-    }
-    public Status TargetStatus => _targetStatus;
-    public bool IsTargetInRange =>
-        Target != null && Vector2.Distance(_transform.position, Target.position) <= AttackRange;
-
-    void Awake()
-    {
-        _controller = GetComponent<IController>();
-        _transform = transform;
-    }
 
     void OnEnable()
     {
@@ -80,11 +60,11 @@ class Status : MonoBehaviour
 
     public virtual void ApplyDamage(float damage)
     {
+        if (IsInvulnerable) return;
         Debug.Log($"{GetType().Name} took {damage} damage!");
         Health -= math.max(0, damage - Shield);
         Shield = math.max(0, Shield - damage);
     }
 
-    public void ApplyKnockbackFrom(Vector2 position, float knockbackForce) =>
-        _controller.ApplyKnockbackFrom(position, knockbackForce);
+    public abstract void ApplyKnockbackFrom(Vector2 position, float knockbackForce);
 }

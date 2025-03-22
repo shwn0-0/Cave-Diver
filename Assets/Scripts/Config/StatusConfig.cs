@@ -5,13 +5,13 @@ class StatusConfig : ScriptableObject
 {
     [Header("Attacking")]
     [SerializeField] private float _attackDamage;
-    [SerializeField] private float _attackRadius;
+    [SerializeField] private float _attackAngle;
     [SerializeField] private float _attackRange;
     [SerializeField] private float _attackSpeed;
     [SerializeField] private float _attackKnockback;
     [SerializeField] private float _attackSelfKnockforward;
     public float AttackDamage => _attackDamage;
-    public float AttackRadius => _attackRadius;
+    public float AttackAngle => _attackAngle;
     public float AttackRange => _attackRange;
     public float AttackSpeed => _attackSpeed;
     public float AttackKnockback => _attackKnockback;

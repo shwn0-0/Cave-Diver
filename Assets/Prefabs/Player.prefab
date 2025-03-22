@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7702402572954918230}
   - component: {fileID: 1760992695849237502}
   - component: {fileID: 1295339460890191332}
+  - component: {fileID: 6617101426219656305}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -221,9 +222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d255f5b95346ddb6de3858daaa378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _abilitiesConfig: {fileID: 11400000, guid: 34244ea51ee9c411a849cae4b92f8f12, type: 2}
-  _c4Prefab: {fileID: 4904952347191140751, guid: 516df9db78adf471ea637020ede74c0b, type: 3}
-  _lurePrefab: {fileID: 5677899292928935592, guid: 977c31ecb3c114d9f8a4615df339523b, type: 3}
 --- !u!114 &1295339460890191332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +235,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: dc9670dbd8624466cb46641ad72e12ad, type: 2}
+  _abilitiesConfig: {fileID: 11400000, guid: 34244ea51ee9c411a849cae4b92f8f12, type: 2}
+  _c4Prefab: {fileID: 4904952347191140751, guid: 516df9db78adf471ea637020ede74c0b, type: 3}
+  _lurePrefab: {fileID: 5677899292928935592, guid: 977c31ecb3c114d9f8a4615df339523b, type: 3}
+--- !u!58 &6617101426219656305
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303425210373626327}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 7

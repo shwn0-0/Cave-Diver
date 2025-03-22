@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour, IController
+public class PlayerController : MonoBehaviour
 {
     private Vector2 _walkingVelocity;
     private Vector2 _knockbackVelocity;
@@ -76,7 +78,7 @@ public class PlayerController : MonoBehaviour, IController
         foreach (EnemyStatus enemy in _enemies)
         {
             Vector2 enemyDirection = (Vector2)enemy.transform.position - currentPos;
-            if (enemyDirection.magnitude > _status.AttackRange || Vector2.Angle(targetDirection, enemyDirection) > _status.AttackRadius)
+            if (enemyDirection.magnitude > _status.AttackRange || Vector2.Angle(targetDirection, enemyDirection) > _status.AttackAngle)
                 continue;
             enemy.ApplyDamage(_status.AttackDamage);
             enemy.ApplyKnockbackFrom(currentPos, _status.AttackKnockback);
@@ -90,12 +92,17 @@ public class PlayerController : MonoBehaviour, IController
 
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
     {
+        if (knockback <= float.Epsilon) return;
+
         Vector2 currentPosition = _transform.position;
         Vector2 direction = currentPosition - position;
         float distance = direction.magnitude;
         float inverseSquaredDistance = math.min(1 / (distance * distance), 2);
         _knockbackVelocity += inverseSquaredDistance * knockback * direction.normalized;
     }
+
+    public T GetAbility<T>() =>
+        _abilities.Where(a => a is T).Select(a => (T)a).SingleOrDefault();
 
     // Maintain a set of nearby enemies
     void OnTriggerEnter2D(Collider2D collision)

@@ -18,6 +18,8 @@ class SliderController : MonoBehaviour
     Image _image;
     float _maxWidth;
     float _height;
+    float _currentPercent = 1f;
+    float _targetPercent = 1f;
 
     public SliderID ID => _id;
 
@@ -30,12 +32,24 @@ class SliderController : MonoBehaviour
         _height = rect.height;
     }
 
-    public void SetWidthPercent(float percent)
+    void Update()
     {
-        _transform.sizeDelta = new(_maxWidth * percent, _height);
-        float t = percent * math.step(0.1f, percent); // set t to 0 if below 10% so bar is red at 10%
+        if (_currentPercent - _targetPercent >= float.Epsilon)
+        {
+            _currentPercent -= Time.deltaTime;
+            HandleWidthPercent();
+        }
+    }
+
+    private void HandleWidthPercent()
+    {
+        _transform.sizeDelta = new(_maxWidth * _currentPercent, _height);
+        float t = _currentPercent * math.step(0.1f, _currentPercent); // set t to 0 if below 10% so bar is red at 10%
         _image.color = Color.HSVToRGB(ColorHueLerp(end, start, t), 1.0f, 1.0f);
     }
+
+    public void SetWidthPercent(float percent) =>
+        _targetPercent = percent;
 
     private float ColorHueLerp(Color a, Color b, float t)
     {
