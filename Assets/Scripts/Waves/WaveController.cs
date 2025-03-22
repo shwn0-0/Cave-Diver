@@ -88,9 +88,15 @@ class WaveController : MonoBehaviour
         {
             // TODO: Add delays between wave start and end
             _waveCount += 1;
+
+            if (_waveCount % 5 == 0)
+            {
+                _player.UnlockAbilitySlot();
+            }
+
             _player.IsControllable = false;
             // FIXME: Currently player is only able to upgrade abilities on waves with multiple 5. Make it so they don't get fucked if they missed upgrading.
-            _upgradesController.Show(1, _waveCount % 5 == 0); // FIXME: This should change based on the mode
+            _upgradesController.Show(1); // FIXME: This should change based on the mode
         }
     }
 }

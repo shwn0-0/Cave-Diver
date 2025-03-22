@@ -8,6 +8,7 @@ class PlayerStatus : Status
     private HUDController _hudController;
     private PlayerController _controller;
     private ObjectCache _objCache;
+    public int _abilitySlots = 0;
 
     public override float Health { 
         get => base.Health;
@@ -32,6 +33,8 @@ class PlayerStatus : Status
         _objCache = FindFirstObjectByType<ObjectCache>();
         Init();
     }
+
+    public void UnlockAbilitySlot() => _abilitySlots += 1;
 
     public void AddUpgrade(Upgrade upgrade)
     {
@@ -79,7 +82,11 @@ class PlayerStatus : Status
 
     public bool HasUpgradeableAbility(Upgrade upgrade) {
         IAbility ability = GetUpgradeAbility(upgrade);
-        return ability != null  && !ability.IsUpgraded;
+
+        if (ability == null)
+            return _abilitySlots > _controller.AbilityCount;
+        else
+            return !ability.IsUpgraded;
     }
 
     private void HandleAbilityUpgrade(Upgrade upgrade)

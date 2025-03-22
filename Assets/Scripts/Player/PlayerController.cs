@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private readonly List<IAbility> _abilities = new();
     private readonly HashSet<EnemyStatus> _enemies = new();
 
+    public int AbilityCount => _abilities.Count;
+
     void Start()
     {
         _transform = transform;

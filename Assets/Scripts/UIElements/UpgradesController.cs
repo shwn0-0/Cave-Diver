@@ -16,14 +16,13 @@ class UpgradesController : MonoBehaviour
         _waveController = FindAnyObjectByType<WaveController>();
     }
 
-    public void Show(int count, bool addAbilities)
+    public void Show(int count)
     {
         gameObject.SetActive(true);
         _remainingUpgrades = count;
-        Assert.IsNotNull(_playerStatus);
         foreach (UpgradeButton button in _abilityUpgradeButtons)
         {
-            button.IsEnabled = addAbilities || _playerStatus.HasUpgradeableAbility(button.Upgrade);
+            button.IsEnabled = _playerStatus.HasUpgradeableAbility(button.Upgrade);
         }
     }
 
