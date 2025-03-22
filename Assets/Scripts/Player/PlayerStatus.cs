@@ -1,14 +1,12 @@
-using System.Linq;
 using UnityEngine;
 
 class PlayerStatus : Status
 {
     [SerializeField] private PlayerAbilitiesConfig _abilitiesConfig;
-    [SerializeField] private GameObject _c4Prefab;
-    [SerializeField] private GameObject _lurePrefab;
     
     private HUDController _hudController;
     private PlayerController _controller;
+    private ObjectCache _objCache;
 
 
     public override bool IsInvulnerable
@@ -26,6 +24,7 @@ class PlayerStatus : Status
     {
         _controller = GetComponent<PlayerController>();
         _hudController = FindFirstObjectByType<HUDController>();
+        _objCache = FindFirstObjectByType<ObjectCache>();
     }
 
     public void AddUpgrade(Upgrade upgrade)
@@ -51,14 +50,14 @@ class PlayerStatus : Status
                 if (lureAbility != null)
                     lureAbility.Upgrade();
                 else
-                    UnlockAbility(new LureAbility(_abilitiesConfig, this, _lurePrefab));
+                    UnlockAbility(new LureAbility(_abilitiesConfig, this, _objCache));
                 break;
             case Upgrade.C4Ability:
                 C4Ability c4Ability = _controller.GetAbility<C4Ability>();
                 if (c4Ability != null)
                     c4Ability.Upgrade();
                 else
-                    UnlockAbility(new C4Ability(_abilitiesConfig, this, _c4Prefab));
+                    UnlockAbility(new C4Ability(_abilitiesConfig, this, _objCache));
                 break;
             default:
                 Debug.LogError($"Unhandled Upgrade {upgrade}");

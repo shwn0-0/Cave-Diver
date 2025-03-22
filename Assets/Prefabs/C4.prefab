@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7880277267529985224
 Transform:
   m_ObjectHideFlags: 0
@@ -101,10 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b039b82ce47a1465d9092e35f5f9ad99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 2
-  _stunDuration: 2
-  _damage: 10
-  _knockbackForce: 25
 --- !u!58 &-8934231963303171544
 CircleCollider2D:
   m_ObjectHideFlags: 0

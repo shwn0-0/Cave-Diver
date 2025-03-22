@@ -4,8 +4,8 @@ class LureAbility : IAbility
 {
     private readonly float _cooldown;
     private readonly float _duration;
-    private readonly GameObject _prefab;
-    private readonly PlayerStatus _target;
+    private readonly ObjectCache _cache;
+    private readonly PlayerStatus _player;
 
     private Lure _lure;
     private float _remainingCooldown;
@@ -16,24 +16,20 @@ class LureAbility : IAbility
     public bool IsUpgraded { get; private set; } = false ;
     public string Name => "Lure";
 
-    public LureAbility(PlayerAbilitiesConfig config, PlayerStatus target, GameObject prefab)
+    public LureAbility(PlayerAbilitiesConfig config, PlayerStatus player, ObjectCache cache)
     {
+        _cache = cache;
         _cooldown = config.LureAbilityCooldown;
         _duration = config.LureAbilityDuration;
-        _prefab = prefab;
-        _target = target;
+        _player = player;
     }
 
     public bool Activate()
     {
         if (!IsAvailable) return false;
         _remainingCooldown = _cooldown + _duration;
-
-        // TODO: Eventually make an Object system to cache objects so we don't have to always instantiate a new one
-        GameObject lureObj = Object.Instantiate(_prefab, _target.transform.position, Quaternion.identity);
-        _lure = lureObj.GetComponent<Lure>();
-        _lure.Init(_duration, IsUpgraded);
-
+        _lure = _cache.GetObject<Lure>(ObjectType.Lure);
+        _lure.Init(_duration, _player.transform.position, IsUpgraded);
         return true;
     }
 
@@ -41,8 +37,7 @@ class LureAbility : IAbility
     {
         if (IsPlaced && !_lure.IsActive)
         {
-            // TODO: Better cleanup if we save the object.
-            // Object.Destroy(_lure.gameObject);
+            _cache.ReturnObject(ObjectType.Lure, _lure);
             _lure = null;
         } else if (_remainingCooldown > 0.0f)
         {

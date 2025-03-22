@@ -28,8 +28,6 @@ class UpgradesController : MonoBehaviour
         _playerStatus.AddUpgrade(upgrade);
         _remainingUpgrades -= 1;
         if (_remainingUpgrades == 0)
-        {
             gameObject.SetActive(false);
-        }
     }
 }

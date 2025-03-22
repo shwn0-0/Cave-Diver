@@ -12,11 +12,6 @@ class C4 : MonoBehaviour
 
     public bool IsActive => _isActive;
 
-    void Start()
-    {
-        _transform = transform;
-    }
-
     void Update()
     {
         if (!_isActive) return;
@@ -38,15 +33,17 @@ class C4 : MonoBehaviour
 
         _enemies.Clear();
         _isActive = false;
-        gameObject.SetActive(false);
     }
 
-    public void Init(Config config, bool isUpgraded)
+    public void Init(Config config, Vector3 position, bool isUpgraded)
     {
         _config = config;
-        _remainingTime = _config.duration;
-        _isActive = true;
+        _remainingTime = config.duration;
         _isUpgraded = isUpgraded;
+        gameObject.SetActive(true);
+        _transform = transform;
+        _transform.position = position;
+        _isActive = true;
     }
 
     public void Trigger() => _remainingTime = 0.0f;

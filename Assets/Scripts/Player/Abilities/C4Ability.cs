@@ -2,12 +2,12 @@ using UnityEngine;
 
 class C4Ability : IAbility
 {
+    private readonly ObjectCache _cache;
     private readonly float _cooldown;
-    private readonly GameObject _prefab;
-    private readonly PlayerStatus _target;
     private readonly C4.Config _config;
-    private C4 _c4;
+    private readonly PlayerStatus _player;
 
+    private C4 _c4;
     private float _remainingCooldown;
 
     public float Cooldown => _remainingCooldown;
@@ -16,12 +16,12 @@ class C4Ability : IAbility
     public string Name => "C4";
     public bool Placed => _c4 != null;
 
-    public C4Ability(PlayerAbilitiesConfig config, PlayerStatus target, GameObject prefab)
+    public C4Ability(PlayerAbilitiesConfig config, PlayerStatus player, ObjectCache cache)
     {
+        _cache = cache;
         _cooldown = config.C4AbilityCooldown;
         _config = new(config.C4AbilityDamage, config.C4AbilityDuration, config.C4AbilityKnockbackForce, config.C4AbilityStunDuration);
-        _prefab = prefab;
-        _target = target;
+        _player = player;
     }
 
     public bool Activate()
@@ -35,10 +35,8 @@ class C4Ability : IAbility
             return true;
         }
 
-        // TODO: Eventually make an Object system to cache objects so we don't have to always instantiate a new one
-        GameObject c4Obj = Object.Instantiate(_prefab, _target.transform.position, Quaternion.identity);
-        _c4 = c4Obj.GetComponent<C4>();
-        _c4.Init(_config, IsUpgraded);
+        _c4 = _cache.GetObject<C4>(ObjectType.C4);
+        _c4.Init(_config, _player.transform.position, IsUpgraded);
 
         return true;
     }
@@ -48,8 +46,7 @@ class C4Ability : IAbility
         if (Placed && !_c4.IsActive)
         {
             _remainingCooldown = _cooldown;
-            // TODO: Better cleanup if we save the object.
-            Object.Destroy(_c4.gameObject);
+            _cache.ReturnObject(ObjectType.C4, _c4);
             _c4 = null;
         }
         else if (!IsAvailable)

@@ -5,7 +5,6 @@ using static UnityEngine.Random;
 
 class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemyPrefab;
     [SerializeField] private Transform _player;
     [SerializeField] private float radius = 5f;
 
@@ -16,18 +15,14 @@ class Spawner : MonoBehaviour
         _transform = transform;
     }
 
-    void Start()
-    {
-        StartCoroutine(Spawn(1));
-    }
-
-    public IEnumerator Spawn(int number)
+    public IEnumerator Spawn(GameObject enemy, int number)
     {
         for (int i = 0; i < number; i++)
         {
-            var obj = Instantiate(_enemyPrefab, RandomPosition(), quaternion.identity);
-            var enemy = obj.GetComponent<EnemyStatus>();
-            enemy.Target = _player;
+            enemy.transform.position = RandomPosition();
+            var enemyStatus = enemy.GetComponent<EnemyStatus>();
+            enemyStatus.Target = _player;
+            enemy.SetActive(true);
             yield return new WaitForSeconds(Range(0.5f, 1f)); // Delay between spawns
         }
     }
