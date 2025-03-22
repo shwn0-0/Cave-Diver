@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26f50fdb98ae4295a3fa373cd77d19a, type: 3}
   m_Name: Player Abilities Config
   m_EditorClassIdentifier: 
-  _boostEffectDuration: 2
-  _boostEffectCooldown: 2
+  _boostAbilityDuration: 2
+  _boostAbilityCooldown: 2
+  _boostAbilityAmount: 1
+  _shieldAbilityDuration: 2
+  _shieldAbilityCooldown: 2
+  _shieldAbilityHealPercentage: 0.1
+  _c4AbilityCooldown: 2
+  _c4AbilityDamage: 10
+  _c4AbilityDuration: 2
+  _c4AbilityStunDuration: 2
+  _c4AbilityKnockbackForce: 25
+  _lureAbilityCooldown: 2
+  _lureAbilityDuration: 2

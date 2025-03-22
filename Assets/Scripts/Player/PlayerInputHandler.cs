@@ -3,11 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    PlayerController _controller;
+    private PlayerController _controller;
+    private WaveController _waveController;
 
-    void Start()
+    void Awake()
     {
         _controller = GetComponent<PlayerController>();
+        _waveController = FindFirstObjectByType<WaveController>();
     }
 
     void OnMove(InputValue input) =>
@@ -28,5 +30,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (!input.isPressed) return;
         _controller.UseAbility(number);
+    }
+
+    void OnPause(InputValue input)
+    {
+        if (!input.isPressed) return;
+        _waveController.TogglePause();
     }
 }

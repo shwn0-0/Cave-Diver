@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!_status.IsControllable) return;
         _abilities.ForEach(ability => ability.Update());
         HandleMovement();
 
@@ -35,11 +36,14 @@ public class PlayerController : MonoBehaviour
         _transform.position += (Vector3)displacement;
     }
 
-    public void Move(Vector2 dir) =>
+    public void Move(Vector2 dir)
+    {    
         _walkingVelocity = dir.normalized * _status.MoveSpeed;
+    }
 
     public void UseAbility(int number)
     {
+        if (!_status.IsControllable) return;
         if (number > _abilities.Count)
         {
             Debug.Log($"Ability {number} not unlocked.");
@@ -69,6 +73,8 @@ public class PlayerController : MonoBehaviour
 
     public void Attack()
     {
+        if (!_status.IsControllable) return;
+
         Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 currentPos = _transform.position;
         Vector2 targetDirection = targetPos - currentPos;
@@ -108,16 +114,12 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
-        {
             _enemies.Add(collision.GetComponent<EnemyStatus>());
-        }
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.CompareTag("Enemy"))
-        {
             _enemies.Remove(collider.GetComponent<EnemyStatus>());
-        }
     }
 }

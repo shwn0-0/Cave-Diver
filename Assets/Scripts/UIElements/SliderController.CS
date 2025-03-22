@@ -34,9 +34,10 @@ class SliderController : MonoBehaviour
 
     void Update()
     {
-        if (_currentPercent - _targetPercent >= float.Epsilon)
+        float difference = _targetPercent - _currentPercent;
+        if (math.abs(difference) >= float.Epsilon)
         {
-            _currentPercent -= Time.deltaTime;
+            _currentPercent += math.sign(difference) * Time.deltaTime;
             HandleWidthPercent();
         }
     }

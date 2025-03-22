@@ -5,13 +5,14 @@ using UnityEngine;
 enum ObjectType
 {
     Lure,
-    C4
+    C4,    Slime
 }
 
 class ObjectCache : MonoBehaviour
 {
     [SerializeField] GameObject _lurePrefab;
     [SerializeField] GameObject _c4Prefab;
+    [SerializeField] GameObject _slimePrefab;
 
     private readonly Dictionary<ObjectType, Queue<GameObject>> _objectQueues = new();
 
@@ -29,6 +30,7 @@ class ObjectCache : MonoBehaviour
     {
         ObjectType.Lure => _lurePrefab,
         ObjectType.C4 => _c4Prefab,
+        ObjectType.Slime => _slimePrefab,
         _ => null,
     };
 

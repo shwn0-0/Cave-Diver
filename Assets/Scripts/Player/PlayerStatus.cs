@@ -8,13 +8,13 @@ class PlayerStatus : Status
     private PlayerController _controller;
     private ObjectCache _objCache;
 
-
     public override bool IsInvulnerable
     {
         get => base.IsInvulnerable;
         set
         {
             base.IsInvulnerable = value;
+            Debug.Log(_hudController);
             _hudController.SetShieldPercent(ShieldPercent);
         }
     }
@@ -25,6 +25,7 @@ class PlayerStatus : Status
         _controller = GetComponent<PlayerController>();
         _hudController = FindFirstObjectByType<HUDController>();
         _objCache = FindFirstObjectByType<ObjectCache>();
+        Init();
     }
 
     public void AddUpgrade(Upgrade upgrade)

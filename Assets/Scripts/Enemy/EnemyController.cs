@@ -11,15 +11,16 @@ class EnemyController : MonoBehaviour
     private bool _attacked;
     private float _attackTime;
     private float _attackCooldown;
+    private WaveController _waveController;
 
     public bool IsStunned => _status.IsStunned;
     public bool IsDead => _status.IsDead;
     public bool IsTargetInRange => _status.IsTargetInRange;
     public bool FinishedAttacking => _attacked;
 
-    void Start()
+    void Awake()
     {
-        _currentState = new IdleState(this);    
+        _waveController = FindFirstObjectByType<WaveController>();
         _transform = transform;
         _status = GetComponent<EnemyStatus>();
         _attackTime = 1 / _status.AttackSpeed;
@@ -27,6 +28,7 @@ class EnemyController : MonoBehaviour
 
     void Update()
     {
+        if (!_status.IsControllable) return;
         HandleCooldowns();
         HandleMovement();
         _currentState.Run();
@@ -87,10 +89,10 @@ class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Dead");
         // TODO: Play death animation.
         // TODO: After death animation finished, fade and then cleanup gameObject.
-        gameObject.SetActive(false);
+        _status.IsControllable = false;
+        _waveController.OnDeath(_status);
     }
 
     public void ApplyKnockbackFrom(Vector2 position, float knockback)

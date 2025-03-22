@@ -1,4 +1,3 @@
-using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using static UnityEngine.Random;
@@ -8,23 +7,23 @@ class Spawner : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private float radius = 5f;
 
-    Transform _transform;
+    private Transform _transform;
+    private ObjectCache _objCache;
 
     void Awake()
     {
         _transform = transform;
+        _objCache = FindFirstObjectByType<ObjectCache>();
     }
 
-    public IEnumerator Spawn(GameObject enemy, int number)
+    public EnemyStatus Spawn(ObjectType type)
     {
-        for (int i = 0; i < number; i++)
-        {
-            enemy.transform.position = RandomPosition();
-            var enemyStatus = enemy.GetComponent<EnemyStatus>();
-            enemyStatus.Target = _player;
-            enemy.SetActive(true);
-            yield return new WaitForSeconds(Range(0.5f, 1f)); // Delay between spawns
-        }
+        EnemyStatus enemy = _objCache.GetObject<EnemyStatus>(type);
+        enemy.Type = type;
+        enemy.transform.position = RandomPosition();
+        enemy.Target = _player;
+        enemy.Init();
+        return enemy;
     }
 
     // Generate a random position in the half circle infront of spawner

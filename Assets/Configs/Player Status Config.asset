@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player Status Config
   m_EditorClassIdentifier: 
   _attackDamage: 10
-  _attackRadius: 45
+  _attackAngle: 45
   _attackRange: 5
   _attackSpeed: 5
   _attackKnockback: 25

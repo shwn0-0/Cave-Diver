@@ -8,7 +8,7 @@ abstract class Status : MonoBehaviour
     [SerializeField] private StatusConfig _config;
 
     private readonly List<IStatusEffect> _effects = new();
-    private bool _isInvulnerable;
+    private bool _isInvulnerable = false;
 
     public float AttackDamage => _config.AttackDamage * DamageMultiplier;
     public float AttackAngle => _config.AttackAngle;
@@ -19,6 +19,7 @@ abstract class Status : MonoBehaviour
     public float DamageMultiplier { get; set; }
     public float Health { get; set; }
     public float HealthPercent => Health / _config.MaxHealth;
+    public bool IsControllable { get; set; }
     public bool IsDead => Health <= 0.0f;
     public virtual bool IsInvulnerable
     {
@@ -36,7 +37,7 @@ abstract class Status : MonoBehaviour
     public float Shield { get; set; }
     public float ShieldPercent => Shield / _config.MaxShields;
 
-    void OnEnable()
+    public virtual void Init()
     {
         Health = _config.MaxHealth;
         Shield = _config.MaxHealth;
@@ -61,7 +62,6 @@ abstract class Status : MonoBehaviour
     public virtual void ApplyDamage(float damage)
     {
         if (IsInvulnerable) return;
-        Debug.Log($"{GetType().Name} took {damage} damage!");
         Health -= math.max(0, damage - Shield);
         Shield = math.max(0, Shield - damage);
     }

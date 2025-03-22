@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy Status Config
   m_EditorClassIdentifier: 
   _attackDamage: 20
-  _attackRadius: 45
+  _attackAngle: 45
   _attackRange: 1
   _attackSpeed: 1
   _attackKnockback: 0

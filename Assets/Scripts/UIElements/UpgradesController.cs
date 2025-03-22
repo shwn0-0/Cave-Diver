@@ -5,12 +5,14 @@ class UpgradesController : MonoBehaviour
 {
     private UpgradeButton[] _abilityUpgradeButtons;
     private PlayerStatus _playerStatus;
+    private WaveController _waveController;
     private int _remainingUpgrades = 0;
 
     public void Awake()
     {
         _abilityUpgradeButtons = GetComponentsInChildren<UpgradeButton>().Where(btn => btn.IsAbilityUpgrade).ToArray();
         _playerStatus = FindFirstObjectByType<PlayerStatus>();
+        _waveController = FindFirstObjectByType<WaveController>();
     }
 
     public void Show(int count, bool upgradeAbilities)
@@ -27,7 +29,10 @@ class UpgradesController : MonoBehaviour
     {
         _playerStatus.AddUpgrade(upgrade);
         _remainingUpgrades -= 1;
-        if (_remainingUpgrades == 0)
+        if (_remainingUpgrades <= 0)
+        {
+            _waveController.NextWave();
             gameObject.SetActive(false);
+        }
     }
 }
