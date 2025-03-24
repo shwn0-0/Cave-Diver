@@ -15,11 +15,8 @@ public class PlayerInputHandler : MonoBehaviour
     void OnMove(InputValue input) =>
         _controller.Move(input.Get<Vector2>());
 
-    void OnAttack(InputValue input)
-    {
-        if (!input.isPressed) return;
-        _controller.Attack();
-    }
+    void OnAttack(InputValue input) =>
+        _controller.Attack(input.isPressed);
 
     void OnAbility1(InputValue input) => OnAbility(input, 1);
     void OnAbility2(InputValue input) => OnAbility(input, 2);

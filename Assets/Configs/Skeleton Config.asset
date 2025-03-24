@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c3deb5257ef4c43802a0607163b3eb, type: 3}
   m_Name: Skeleton Config
   m_EditorClassIdentifier: 
-  _attackDamage: 40
+  _attackDamage: 20
   _attackAngle: 0
-  _attackRange: 3
-  _attackSpeed: 0.25
-  _attackKnockback: 10
+  _attackRange: 2
+  _attackSpeed: 0.5
+  _attackKnockback: 0
   _attackSelfKnockforward: 10
-  _maxHealth: 50
+  _stunOnAttack: 0
+  _stunDuration: 0
+  _maxHealth: 30
   _maxShields: 0
-  _moveSpeed: 2
-  _knockbackFriction: 0.01
+  _moveSpeed: 3
+  _knockbackFriction: 0.005

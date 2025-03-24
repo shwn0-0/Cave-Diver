@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using static UnityEngine.Random;
@@ -17,8 +19,20 @@ class Spawner : MonoBehaviour
         _player = FindAnyObjectByType<PlayerStatus>().transform;
     }
 
-    public EnemyStatus Spawn(ObjectType type) => 
-        _objCache.GetObject<EnemyStatus>(type, RandomPosition(), new EnemyStatus.Config(_player, type));
+    public void Spawn(ObjectType type, int count, Action<EnemyStatus> OnSpawn) {
+        if (count <= 0) return;
+        StartCoroutine(HandleEnemySpawns(type, count, OnSpawn));
+    }
+
+    public IEnumerator HandleEnemySpawns(ObjectType type, int count, Action<EnemyStatus> OnSpawn)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            EnemyStatus enemy = _objCache.GetObject<EnemyStatus>(type, RandomPosition(), new EnemyStatus.Config(_player, type));
+            OnSpawn(enemy);
+            yield return new WaitForSeconds(0.5f); // FIXME: Make this delay configurable
+        }
+    }
 
     // Generate a random position in the half circle infront of spawner
     private Vector3 RandomPosition()

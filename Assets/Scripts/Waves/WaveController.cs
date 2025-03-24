@@ -1,31 +1,34 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 class WaveController : MonoBehaviour
 {
+    [SerializeField] WavesConfig _config;
+
     private Spawner[] _spawners;
     private ObjectCache _objCache;
     private UpgradesController _upgradesController;
     private WaveNumberDisplay _waveNumberDisplay;
+    private Animator _camerasAnimator;
     private readonly HashSet<EnemyStatus> _enemies = new();
-    private int _waveCount;
+    private int _waveNumber = 1;
     private PlayerStatus _player;
     private bool isPaused;
 
 
     void Awake()
     {
+        _camerasAnimator = GetComponent<Animator>();
         _spawners = FindObjectsByType<Spawner>(FindObjectsSortMode.None);
         _objCache = FindFirstObjectByType<ObjectCache>();
-        _upgradesController = FindFirstObjectByType<UpgradesController>(FindObjectsInactive.Include);
-        _waveNumberDisplay = FindFirstObjectByType<WaveNumberDisplay>(FindObjectsInactive.Include);
         _player = FindFirstObjectByType<PlayerStatus>();
+        _upgradesController = FindFirstObjectByType<UpgradesController>();
+        _waveNumberDisplay = FindFirstObjectByType<WaveNumberDisplay>();
     }
 
     void Start()
     {
-        _player.AddUpgrade(Upgrade.C4Ability);
-        _player.AddUpgrade(Upgrade.C4Ability);
         NextWave();
     }
 
@@ -63,16 +66,19 @@ class WaveController : MonoBehaviour
         if (_enemies.Count > 0)
             return;
 
-        _waveNumberDisplay.DisplayWave(_waveCount + 1);
-        _player.IsControllable = true;
-        _player.transform.position = new(0.0f,0.0f,0.0f); // FIXME: Maybe don't insta tp the player
-        foreach (var spawner in _spawners)
-        {
-            // TODO: Give spawner a list of enemies to spawn instead of doing this
-            _enemies.Add(spawner.Spawn(ObjectType.Slime));
-            _enemies.Add(spawner.Spawn(ObjectType.Orc));
-            _enemies.Add(spawner.Spawn(ObjectType.Skeleton));
-        }
+        StartCoroutine(HandleWaveStart());
+    }
+
+    private void OnSpawn(EnemyStatus enemy)
+    {
+        _enemies.Add(enemy);
+    }
+
+    private int Split(int total, int n, int curr)
+    {
+        int amount = total / n;
+        int overlap = total % n;
+        return amount + ((curr < overlap) ? 1 : 0);
     }
 
     public void OnDeath(EnemyStatus enemy)
@@ -81,18 +87,37 @@ class WaveController : MonoBehaviour
         _objCache.ReturnObject(enemy.Type, enemy);
 
         if (_enemies.Count == 0)
+            StartCoroutine(HandleWaveEnd());
+    }
+
+    private IEnumerator HandleWaveStart()
+    {
+        _player.transform.position = Vector3.zero;
+        _camerasAnimator.SetTrigger("Start Wave");
+
+        yield return _waveNumberDisplay.DisplayWave(_waveNumber);
+        _player.IsControllable = true;
+    
+        var (num_slimes, num_skeletons, num_orcs) = _config.NumEnemies(_waveNumber);
+
+        for (int i = 0; i < _spawners.Length; i++)
         {
-            // TODO: Add delays between wave start and end
-            _waveCount += 1;
-
-            if (_waveCount % 5 == 0)
-            {
-                _player.UnlockAbilitySlot();
-            }
-
-            _player.IsControllable = false;
-            // FIXME: Currently player is only able to upgrade abilities on waves with multiple 5. Make it so they don't get fucked if they missed upgrading.
-            _upgradesController.Show(1); // FIXME: This should change based on the mode
+            _spawners[i].Spawn(ObjectType.Orc, Split(num_orcs, _spawners.Length, i), OnSpawn);
+            _spawners[i].Spawn(ObjectType.Skeleton, Split(num_skeletons, _spawners.Length, i), OnSpawn);
+            _spawners[i].Spawn(ObjectType.Slime, Split(num_slimes, _spawners.Length, i), OnSpawn);
         }
+    }
+
+    private IEnumerator HandleWaveEnd()
+    {
+        _waveNumber += 1;
+
+        if (_waveNumber % 5 == 0)
+            _player.UnlockAbilitySlot();
+
+        yield return new WaitForSeconds(1f);
+        _upgradesController.Show(1); // FIXME: This should change based on the mode
+        _player.IsControllable = false;
+        _camerasAnimator.SetTrigger("End Wave");
     }
 }

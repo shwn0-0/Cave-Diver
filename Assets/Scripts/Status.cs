@@ -44,7 +44,7 @@ abstract class Status : MonoBehaviour
     public virtual float Health { get; set; }
     public float MaxHealth => _config.MaxHealth + BonusHealth;
     public bool IsControllable { get; set; }
-    public bool IsDead => Health <= 0.0f;
+    public bool IsDead => Health <= 0f;
     public bool IsInvulnerable
     {
         get => _isInvulnerable;
@@ -96,8 +96,8 @@ abstract class Status : MonoBehaviour
     public virtual void ApplyDamage(float damage)
     {
         if (IsInvulnerable) return;
-        Health -= math.max(0, damage - Shield);
-        Shield = math.max(0, Shield - damage);
+        Health = math.max(0f, Health - math.max(0f, damage - Shield));
+        Shield = math.max(0f, Shield - damage);
     }
 
     public abstract void ApplyKnockbackFrom(Vector2 position, float knockbackForce);

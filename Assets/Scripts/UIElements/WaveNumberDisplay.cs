@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine;
 class WaveNumberDisplay : MonoBehaviour
 {
     private TextMeshProUGUI _text;
-    private float t;
+    private float t = 1f;
     Action<Color, float> _currentEffect;
     readonly float _duration = 3f;
 
@@ -17,26 +18,22 @@ class WaveNumberDisplay : MonoBehaviour
 
     void Update()
     {
+        if (t >= 1f) return;
         HandleEffect();
     }
 
-    public void DisplayWave(int number)
+    public IEnumerator DisplayWave(int number)
     {
-        gameObject.SetActive(true);
         _text.SetText($"Wave {number}");
         t = 0f;
         _currentEffect = FadeEffect(2f/3f);
+        yield return new WaitForSeconds(_duration);
     }
 
     private void HandleEffect()
     {
         t += Time.deltaTime / _duration;
         _currentEffect(Color.black, t);
-
-        if (t >= 1f)
-        {
-            gameObject.SetActive(false);
-        }
     }
 
     private Action<Color, float> FadeEffect(float delay)

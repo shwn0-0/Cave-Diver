@@ -18,6 +18,8 @@ MonoBehaviour:
   _attackSpeed: 1
   _attackKnockback: 0
   _attackSelfKnockforward: 10
+  _stunOnAttack: 0
+  _stunDuration: 0
   _maxHealth: 20
   _maxShields: 0
   _moveSpeed: 4

@@ -1,24 +1,35 @@
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 class UpgradesController : MonoBehaviour
 {
     private UpgradeButton[] _abilityUpgradeButtons;
     private PlayerStatus _playerStatus;
     private WaveController _waveController;
+    private CanvasGroup _canvasGroup;
     private int _remainingUpgrades = 0;
+    private float _targetAlpha;
+    private float _duration = 0.5f;
 
     public void Awake()
     {
+        _canvasGroup = GetComponent<CanvasGroup>();
         _abilityUpgradeButtons = GetComponentsInChildren<UpgradeButton>().Where(btn => btn.IsAbilityUpgrade).ToArray();
         _playerStatus = FindAnyObjectByType<PlayerStatus>();
         _waveController = FindAnyObjectByType<WaveController>();
     }
 
+    void Update()
+    {
+        if (math.abs(_targetAlpha - _canvasGroup.alpha) <= float.Epsilon) return;
+        _canvasGroup.alpha += math.sign(_targetAlpha - _canvasGroup.alpha) * Time.deltaTime / _duration;
+        _canvasGroup.interactable = _canvasGroup.alpha > 0.90f;
+    }
+
     public void Show(int count)
     {
-        gameObject.SetActive(true);
+        _targetAlpha = 1f;
         _remainingUpgrades = count;
         foreach (UpgradeButton button in _abilityUpgradeButtons)
         {
@@ -28,12 +39,13 @@ class UpgradesController : MonoBehaviour
 
     public void OnUpgrade(Upgrade upgrade)
     {
-        _playerStatus.AddUpgrade(upgrade);
-        _remainingUpgrades -= 1;
         if (_remainingUpgrades <= 0)
         {
+            _targetAlpha = 0f;
             _waveController.NextWave();
-            gameObject.SetActive(false);
+            return;
         }
+        _playerStatus.AddUpgrade(upgrade);
+        _remainingUpgrades -= 1;
     }
 }

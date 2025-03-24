@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackDamage: 40
   _attackAngle: 0
-  _attackRange: 3
+  _attackRange: 4
   _attackSpeed: 0.25
-  _attackKnockback: 30
+  _attackKnockback: 100
   _attackSelfKnockforward: 10
   _stunOnAttack: 1
   _stunDuration: 0.5
