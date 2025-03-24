@@ -34,6 +34,7 @@ class EnemyController : MonoBehaviour
     // going through the effort of updating the State Machine now. Maybe enemies just get tired
     // after trying to attack or something idk.
     public bool FinishedAttacking => _attacked && _attackCooldown <= 0f;
+    private Vector2 TargetDirection => (_status.Target.position - _transform.position).normalized;
 
     void Awake()
     {
@@ -46,9 +47,13 @@ class EnemyController : MonoBehaviour
     void Update()
     {
         if (!_status.IsControllable) return;
-        _currentState.Run(this);
         HandleCooldowns();
         HandleMovement();
+
+        var direction = TargetDirection;
+        _animator.SetFloat("dx", direction.x);
+        _animator.SetFloat("dy", direction.y);
+        _currentState.Run(this);
     }
 
     private void HandleMovement()
@@ -85,13 +90,8 @@ class EnemyController : MonoBehaviour
     public void BeRunning()
     {
         // TODO: Add fancy path finding
-        Vector2 direction = _status.Target.position - _transform.position;
-        Vector2 normalizedDirection = direction.normalized;
-        float maxDisplacement = _status.MoveSpeed * Time.deltaTime;
-        _walkingDisplacement = normalizedDirection * math.min(maxDisplacement, direction.magnitude);
+        _walkingDisplacement = _status.MoveSpeed * Time.deltaTime * TargetDirection;
         _animator.SetBool("IsRunning", true);
-        _animator.SetFloat("dx", normalizedDirection.x);
-        _animator.SetFloat("dy", normalizedDirection.y);
     }
 
     public void BeStunned()
@@ -111,11 +111,7 @@ class EnemyController : MonoBehaviour
             _status.TargetStatus.ApplyKnockbackFrom(_transform.position, _status.AttackKnockback);
         }
 
-        Vector2 targetDirection = (_status.Target.position - _transform.position).normalized;
-        _knockbackVelocity += _status.AttackSelfKnockforward * targetDirection;
-
-        _animator.SetFloat("dx", targetDirection.x);
-        _animator.SetFloat("dy", targetDirection.y);
+        _knockbackVelocity += _status.AttackSelfKnockforward * TargetDirection;
         _animator.SetTrigger("Attack");
     }
 

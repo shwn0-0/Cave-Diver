@@ -1,6 +1,6 @@
-using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 class HUDController : MonoBehaviour
 {
@@ -17,6 +17,8 @@ class HUDController : MonoBehaviour
 
         _shieldSlider = sliders.Where(slider => slider.ID == SliderController.SliderID.Shield).Single();
         _healthSlider = sliders.Where(slider => slider.ID == SliderController.SliderID.Health).Single();
+        Assert.IsNotNull(_shieldSlider);
+        Assert.IsNotNull(_healthSlider);
     }
 
     public void SetHealth(float current, float max) =>

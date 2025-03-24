@@ -31,6 +31,10 @@ class PlayerStatus : Status
         _controller = GetComponent<PlayerController>();
         _hudController = FindFirstObjectByType<HUDController>();
         _objCache = FindFirstObjectByType<ObjectCache>();
+    }
+
+    void Start()
+    {
         Init();
     }
 

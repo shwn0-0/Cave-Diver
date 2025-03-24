@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lurePrefab: {fileID: 5677899292928935592, guid: 977c31ecb3c114d9f8a4615df339523b, type: 3}
   _c4Prefab: {fileID: 4904952347191140751, guid: 516df9db78adf471ea637020ede74c0b, type: 3}
-  _slimePrefab: {fileID: 2877803573172989038, guid: 7f4a88b53bd5546aab1011834d22db2a, type: 3}
+  _slimePrefab: {fileID: 2149842760737757600, guid: 7515be1228bf746cca7cbd84d7c18828, type: 3}
+  _orcPrefab: {fileID: 4387552481955422491, guid: 0334406842f56434f848de359e2f2a65, type: 3}
 --- !u!114 &7290750602323643130
 MonoBehaviour:
   m_ObjectHideFlags: 0

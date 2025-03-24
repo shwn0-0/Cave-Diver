@@ -75,9 +75,9 @@ class WaveController : MonoBehaviour
             // TODO: Give spawner a list of enemies to spawn instead of doing this
             for (int i = 0; i < (_waveCount + 1) * 2; i++)
             {
-                var enemy = spawner.Spawn(ObjectType.Slime);
-                _enemies.Add(enemy);
+                _enemies.Add(spawner.Spawn(ObjectType.Slime));
             }
+            _enemies.Add(spawner.Spawn(ObjectType.Orc));
         }
     }
 
