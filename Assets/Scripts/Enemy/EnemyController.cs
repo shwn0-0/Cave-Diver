@@ -117,7 +117,9 @@ class EnemyController : MonoBehaviour
             if (_status.TargetStatus != null && !_status.TargetStatus.IsDead)
             {
                 _status.TargetStatus.ApplyDamage(_status.AttackDamage);
-                _status.TargetStatus.ApplyKnockbackFrom(_transform.position, _status.AttackKnockback);
+                _status.TargetStatus.ApplyKnockbackFrom(_transform.position, _status.AttackKnockback);            
+                if (_status.StunOnAttack)
+                    _status.TargetStatus.AddEffect(new StunnedEffect(_status.StunDuration));
             }
         }
     }

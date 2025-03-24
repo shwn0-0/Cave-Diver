@@ -8,7 +8,7 @@ class PlayerStatus : Status
     private HUDController _hudController;
     private PlayerController _controller;
     private ObjectCache _objCache;
-    public int _abilitySlots = 0;
+    private int _abilitySlots = 0;
 
     public override float Health { 
         get => base.Health;

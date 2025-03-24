@@ -60,6 +60,8 @@ abstract class Status : MonoBehaviour
     public float MoveSpeedMultiplier { get; set; }
     public virtual float Shield { get; set; }
     public float MaxShield => _config.MaxShield + BonusShield;
+    public bool StunOnAttack => _config.StunOnAttack;
+    public float StunDuration => _config.StunDuration;
 
     public virtual void Init()
     {

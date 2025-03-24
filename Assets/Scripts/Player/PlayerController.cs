@@ -25,10 +25,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!_status.IsControllable) return;
         _abilities.ForEach(ability => ability.Update());
-        HandleMovement();
 
         if (_status.IsDead)
             Die();
+        else if (_status.IsStunned)
+            BeStunned();
+
+        HandleMovement();
     }
 
     private void HandleMovement()
@@ -40,12 +43,13 @@ public class PlayerController : MonoBehaviour
 
     public void Move(Vector2 dir)
     {    
+        if (_status.IsStunned) return;
         _walkingVelocity = dir.normalized * _status.MoveSpeed;
     }
 
     public void UseAbility(int number)
     {
-        if (!_status.IsControllable) return;
+        if (!_status.IsControllable || _status.IsStunned) return;
         if (number > _abilities.Count)
         {
             Debug.Log($"Ability {number} not unlocked.");
@@ -59,23 +63,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void UnlockAbility(IAbility ability) =>
-        _abilities.Add(ability);
-
-    public void UpgradeAbility(int number)
-    {
-        if (number > _abilities.Count)
-        {
-            Debug.Log($"Ability {number} not unlocked.");
-            return;
-        }
-        Debug.Log($"Upgraded Ability {number}.");
-        _abilities[number - 1].Upgrade();
-    }
-
     public void Attack()
     {
-        if (!_status.IsControllable) return;
+        if (!_status.IsControllable || _status.IsStunned) return;
 
         Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 currentPos = _transform.position;
@@ -95,7 +85,12 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        gameObject.SetActive(false); // Set inactive when dead
+        _status.IsControllable = false; // Stop player from doing anything if dead
+    }
+
+    private void BeStunned()
+    {
+        _walkingVelocity = Vector2.zero;
     }
 
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
@@ -109,8 +104,11 @@ public class PlayerController : MonoBehaviour
         _knockbackVelocity += inverseSquaredDistance * knockback * direction.normalized;
     }
 
+    public void UnlockAbility(IAbility ability) =>
+        _abilities.Add(ability);
+
     public T GetAbility<T>() =>
-        _abilities.Where(a => a is T).Select(a => (T)a).SingleOrDefault();
+        (T)_abilities.Where(a => a is T).SingleOrDefault();
 
     // Maintain a set of nearby enemies
     void OnTriggerEnter2D(Collider2D collision)

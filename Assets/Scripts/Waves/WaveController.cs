@@ -33,17 +33,13 @@ class WaveController : MonoBehaviour
     {
         // Show Pause Screen if game paused
         if (isPaused)
-        {
-            isPaused = false;
             UnPause();
-        }
         else
-        {
-            isPaused = true;
             Pause();
-        }
+        isPaused = !isPaused;
     }
 
+    // TODO: Also account for entities
     private void Pause()
     {
         _player.IsControllable = false;
