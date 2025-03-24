@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
@@ -120,7 +119,7 @@ public class PlayerController : MonoBehaviour
     public void UnlockAbility(IAbility ability) =>
         _abilities.Add(ability);
 
-    public T GetAbility<T>() =>
+    public T GetAbility<T>() where T : IAbility =>
         (T)_abilities.Where(a => a is T).SingleOrDefault();
 
     // Maintain a set of nearby enemies
