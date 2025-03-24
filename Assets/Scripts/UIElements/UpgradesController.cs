@@ -24,7 +24,7 @@ class UpgradesController : MonoBehaviour
     {
         if (math.abs(_targetAlpha - _canvasGroup.alpha) <= float.Epsilon) return;
         _canvasGroup.alpha += math.sign(_targetAlpha - _canvasGroup.alpha) * Time.deltaTime / _duration;
-        _canvasGroup.interactable = _canvasGroup.alpha > 0.90f;
+        _canvasGroup.blocksRaycasts = _canvasGroup.alpha > 0.90f;
     }
 
     public void Show(int count)
@@ -39,13 +39,13 @@ class UpgradesController : MonoBehaviour
 
     public void OnUpgrade(Upgrade upgrade)
     {
+        if (_remainingUpgrades <= 0) return; // Prevent spamming buttons to get free upgrades
+        _remainingUpgrades -= 1;
+        _playerStatus.AddUpgrade(upgrade);
         if (_remainingUpgrades <= 0)
         {
             _targetAlpha = 0f;
             _waveController.NextWave();
-            return;
         }
-        _playerStatus.AddUpgrade(upgrade);
-        _remainingUpgrades -= 1;
     }
 }
