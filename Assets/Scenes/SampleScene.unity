@@ -334,6 +334,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 870822290059385910, guid: a5f64235b75dd4b219bf46d981ef19a7, type: 3}
+      propertyPath: _skeletonPrefab
+      value: 
+      objectReference: {fileID: 8565711583839314170, guid: 3a276e5fa4a8449d4af66f8a53c0f7c4, type: 3}
     - target: {fileID: 4867346655503833676, guid: a5f64235b75dd4b219bf46d981ef19a7, type: 3}
       propertyPath: m_Name
       value: GameController

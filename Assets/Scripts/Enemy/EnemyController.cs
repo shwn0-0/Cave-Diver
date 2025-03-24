@@ -105,14 +105,21 @@ class EnemyController : MonoBehaviour
         _attackCooldown = 1 / _status.AttackSpeed;
         _attacked = true;
 
-        if (_status.TargetStatus != null && !_status.TargetStatus.IsDead)
-        {
-            _status.TargetStatus.ApplyDamage(_status.AttackDamage);
-            _status.TargetStatus.ApplyKnockbackFrom(_transform.position, _status.AttackKnockback);
-        }
-
-        _knockbackVelocity += _status.AttackSelfKnockforward * TargetDirection;
         _animator.SetTrigger("Attack");
+    }
+
+    public void AnimationEventHandler(string animEvent)
+    {
+        if (animEvent == "Hit")
+        {
+            _knockbackVelocity += _status.AttackSelfKnockforward * TargetDirection;
+
+            if (_status.TargetStatus != null && !_status.TargetStatus.IsDead)
+            {
+                _status.TargetStatus.ApplyDamage(_status.AttackDamage);
+                _status.TargetStatus.ApplyKnockbackFrom(_transform.position, _status.AttackKnockback);
+            }
+        }
     }
 
     public void Die()

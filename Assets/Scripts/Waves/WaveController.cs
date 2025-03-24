@@ -73,11 +73,9 @@ class WaveController : MonoBehaviour
         foreach (var spawner in _spawners)
         {
             // TODO: Give spawner a list of enemies to spawn instead of doing this
-            for (int i = 0; i < (_waveCount + 1) * 2; i++)
-            {
-                _enemies.Add(spawner.Spawn(ObjectType.Slime));
-            }
+            _enemies.Add(spawner.Spawn(ObjectType.Slime));
             _enemies.Add(spawner.Spawn(ObjectType.Orc));
+            _enemies.Add(spawner.Spawn(ObjectType.Skeleton));
         }
     }
 
