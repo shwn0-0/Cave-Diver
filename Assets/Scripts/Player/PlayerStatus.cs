@@ -66,7 +66,7 @@ class PlayerStatus : Status
                 BonusDamage += 2f;
                 break;
             case Upgrade.AttackSpeed:
-                AttackSpeedMultiplier += 0.5f;
+                AttackSpeedMultiplier += 0.25f;
                 break;
             case Upgrade.AbilityHaste:
                 AbilityHaste += 0.05f;

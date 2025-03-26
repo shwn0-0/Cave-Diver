@@ -4,6 +4,8 @@ class DemoEffect : IStatusEffect
 {
     public IEnumerator Apply(Status target)
     {
-        throw new System.NotImplementedException();
+        target.DamageMultiplier = 0f;
+        target.Health = 1f;
+        yield return null;
     }
 }
