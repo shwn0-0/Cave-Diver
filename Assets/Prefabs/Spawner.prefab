@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7862a9799a4bb4817d5bd590a24cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 2877803573172989038, guid: 7f4a88b53bd5546aab1011834d22db2a, type: 3}
-  _player: {fileID: 0}
-  radius: 5
+  _maxRadius: 7
+  _minRadius: 2
+  _spawnDelay: 1.5

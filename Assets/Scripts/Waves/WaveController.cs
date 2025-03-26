@@ -9,7 +9,9 @@ class WaveController : MonoBehaviour
     private Spawner[] _spawners;
     private ObjectCache _objCache;
     private UpgradesController _upgradesController;
+    private HUDController _hudController;
     private WaveNumberDisplay _waveNumberDisplay;
+    private SceneController _sceneController;
     private Animator _camerasAnimator;
     private readonly HashSet<EnemyStatus> _enemies = new();
     private int _waveNumber = 1;
@@ -25,10 +27,13 @@ class WaveController : MonoBehaviour
         _player = FindFirstObjectByType<PlayerStatus>();
         _upgradesController = FindFirstObjectByType<UpgradesController>();
         _waveNumberDisplay = FindFirstObjectByType<WaveNumberDisplay>();
+        _hudController = FindFirstObjectByType<HUDController>();
+        _sceneController = FindFirstObjectByType<SceneController>();
     }
 
     void Start()
     {
+        _hudController.Show();
         NextWave();
     }
 
@@ -71,6 +76,8 @@ class WaveController : MonoBehaviour
 
     private void OnSpawn(EnemyStatus enemy)
     {
+        if (_sceneController.IsDemoMode)
+            enemy.AddEffect(new DemoEffect());
         _enemies.Add(enemy);
     }
 
@@ -88,6 +95,12 @@ class WaveController : MonoBehaviour
 
         if (_enemies.Count == 0)
             StartCoroutine(HandleWaveEnd());
+    }
+
+    public void OnDeath(PlayerStatus player)
+    {
+        // Do something nice
+        _sceneController.GoToMainMenu();
     }
 
     private IEnumerator HandleWaveStart()

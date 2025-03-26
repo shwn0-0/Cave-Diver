@@ -23,4 +23,4 @@ MonoBehaviour:
   _maxHealth: 20
   _maxShields: 0
   _moveSpeed: 4
-  _knockbackFriction: 0.005
+  _knockbackFriction: 0.1

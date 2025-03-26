@@ -6,17 +6,19 @@ using static UnityEngine.Random;
 
 class Spawner : MonoBehaviour
 {
-    [SerializeField] private float radius = 5f;
+    [SerializeField] private float _maxRadius = 7f;
+    [SerializeField] private float _minRadius = 2f;
+    [SerializeField] private float _spawnDelay = 1f;
 
     private Transform _transform;
     private ObjectCache _objCache;
-    private Transform _player;
+    private Rigidbody2D _player;
 
     void Awake()
     {
         _transform = transform;
         _objCache = FindFirstObjectByType<ObjectCache>();
-        _player = FindAnyObjectByType<PlayerStatus>().transform;
+        _player = FindAnyObjectByType<PlayerStatus>().GetComponent<Rigidbody2D>();
     }
 
     public void Spawn(ObjectType type, int count, Action<EnemyStatus> OnSpawn) {
@@ -30,7 +32,7 @@ class Spawner : MonoBehaviour
         {
             EnemyStatus enemy = _objCache.GetObject<EnemyStatus>(type, RandomPosition(), new EnemyStatus.Config(_player, type));
             OnSpawn(enemy);
-            yield return new WaitForSeconds(0.5f); // FIXME: Make this delay configurable
+            yield return new WaitForSeconds(_spawnDelay);
         }
     }
 
@@ -38,7 +40,7 @@ class Spawner : MonoBehaviour
     private Vector3 RandomPosition()
     {
         float angle = Range(-math.PIHALF, math.PIHALF); // Generate a random angle between -PI/2 and PI/2.
-        float r = Range(0.5f, radius); // Generate random radius between 0.5 and radius.
+        float r = Range(_minRadius, _maxRadius); // Generate random radius between 0.5 and radius.
         
         float dx = r * math.cos(angle);
         float dy = r * math.sin(angle);

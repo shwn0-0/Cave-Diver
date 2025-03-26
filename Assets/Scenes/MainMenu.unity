@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 765185273}
   - component: {fileID: 765185272}
   - component: {fileID: 765185271}
+  - component: {fileID: 765185274}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -495,10 +496,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1853857875}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: OnMainMenuButtonClick
-        m_Mode: 5
+      - m_Target: {fileID: 765185274}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -545,6 +546,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765185269}
   m_CullTransparentMesh: 1
+--- !u!114 &765185274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765185269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38caca3799e043d3b9a2d6b3f580e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: 2
 --- !u!1 &865580760
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +571,7 @@ GameObject:
   - component: {fileID: 865580764}
   - component: {fileID: 865580763}
   - component: {fileID: 865580762}
+  - component: {fileID: 865580765}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -628,10 +643,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1853857875}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: OnMainMenuButtonClick
-        m_Mode: 5
+      - m_Target: {fileID: 865580765}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -678,6 +693,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865580760}
   m_CullTransparentMesh: 1
+--- !u!114 &865580765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865580760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38caca3799e043d3b9a2d6b3f580e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: 0
 --- !u!1 &1090856966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1035,7 @@ GameObject:
   - component: {fileID: 1572378061}
   - component: {fileID: 1572378060}
   - component: {fileID: 1572378059}
+  - component: {fileID: 1572378062}
   m_Layer: 5
   m_Name: Demo
   m_TagString: Untagged
@@ -1078,10 +1107,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1853857875}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: OnMainMenuButtonClick
-        m_Mode: 5
+      - m_Target: {fileID: 1572378062}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1128,6 +1157,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572378057}
   m_CullTransparentMesh: 1
+--- !u!114 &1572378062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572378057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38caca3799e043d3b9a2d6b3f580e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: 1
 --- !u!1 &1767390433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,50 +1308,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767390433}
   m_CullTransparentMesh: 1
---- !u!1 &1853857873
-GameObject:
+--- !u!1001 &2649105189025523475
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1853857874}
-  - component: {fileID: 1853857875}
-  m_Layer: 0
-  m_Name: SceneController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1853857874
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853857873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.459867, y: -2.6705275, z: -0.21189445}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1853857875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853857873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b00c7c393574f1c982bda602e1142c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.459867
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6705275
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.21189445
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670060056949492759, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318880353374357398, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
+      propertyPath: m_Name
+      value: SceneController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06eabac7d194944ea8011d70363c4995, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1317,4 +1372,4 @@ SceneRoots:
   - {fileID: 362120155}
   - {fileID: 1163049365}
   - {fileID: 1090856969}
-  - {fileID: 1853857874}
+  - {fileID: 2649105189025523475}

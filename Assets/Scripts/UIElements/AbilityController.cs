@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -50,4 +51,7 @@ public class AbilityController : MonoBehaviour
         _image.sprite = _config.GetSprite(ability);
         _image.color = _config.UnlockedColor;
     }
+
+    public void SetAvailable() =>
+        _image.color = _config.UnlockedColor;
 }

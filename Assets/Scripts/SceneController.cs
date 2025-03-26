@@ -14,24 +14,12 @@ public class SceneController : MonoBehaviour
         else DontDestroyOnLoad(gameObject);
     }
 
-
-    public void OnMainMenuButtonClick(string btn)
+    public void GoToMainScene(bool IsDemo = false)
     {
-        switch (btn)
-        {
-            case "Demo":
-                IsDemoMode = true;
-                SceneManager.LoadSceneAsync("MainScene");
-                break;
-            case "Play":
-                SceneManager.LoadSceneAsync("MainScene");
-                break;
-            case "Quit":
-                // TODO: Handle quit
-                break;
-            default:
-                Debug.LogError("Unhandled MainMenu Button");
-                break;
-        }
+        IsDemoMode = IsDemo;
+        SceneManager.LoadSceneAsync("MainScene");
     }
+
+    public void GoToMainMenu() =>
+        SceneManager.LoadSceneAsync("MainMenu");
 }

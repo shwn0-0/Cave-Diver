@@ -4,12 +4,12 @@ using UnityEngine;
 
 class Lure : MonoBehaviour, ICacheableObject
 {
-    private readonly List<Transform> _enemies = new();
+    private readonly List<Rigidbody2D> _enemies = new();
 
     private float _remainingTime;
     private bool _isActive = false;
     private bool _isUpgraded = false;
-    private Transform _transform;
+    private Rigidbody2D _rb;
 
     public bool IsActive => _isActive;
 
@@ -34,7 +34,7 @@ class Lure : MonoBehaviour, ICacheableObject
         {
             _remainingTime = config.duration;
             _isUpgraded = config.isUpgraded;
-            _transform = transform;
+            _rb = GetComponent<Rigidbody2D>();
             _isActive = true;
         }
         else
@@ -48,9 +48,8 @@ class Lure : MonoBehaviour, ICacheableObject
         if (collider.CompareTag("Enemy"))
         {
             EnemyStatus enemy = collider.GetComponent<EnemyStatus>();
-            Debug.Log("Applying Lure to Enemy");
 
-            Transform target;
+            Rigidbody2D target;
             if (_isUpgraded && _enemies.Count >= 1)
             {
                 Vector2 position = enemy.transform.position;
@@ -60,11 +59,11 @@ class Lure : MonoBehaviour, ICacheableObject
             }
             else
             {
-                target = _transform;
+                target = _rb;
             }
 
             enemy.AddEffect(new LuredEffect(_remainingTime, target));
-            _enemies.Add(enemy.transform);
+            _enemies.Add(enemy.GetComponent<Rigidbody2D>());
         }
     }
 

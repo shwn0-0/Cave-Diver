@@ -1,45 +1,34 @@
-using System.Collections;
-using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
-// TODO: When reusing object Slime is still the dead sprite
-
 class EnemyController : MonoBehaviour
 {
-    private static readonly string[] ANIMATION_DEATH_STATES =
-    {
-        "Dead.DieUp",
-        "Dead.DieDown",
-        "Dead.DieLeft",
-        "Dead.DieRight"
-    };
-
     private Animator _animator;
     private float _attackCooldown;
     private bool _attacked;
     private State _currentState;
     private Vector2 _knockbackVelocity;
     private EnemyStatus _status;
-    private Transform _transform;
-    private Vector2 _walkingDisplacement;
+    private Vector2 _walkingVelocity;
     private WaveController _waveController;
+    private Rigidbody2D _rb;
 
     public bool IsStunned => _status.IsStunned;
     public bool IsDead => _status.IsDead;
-    public bool IsTargetInRange => _status.IsTargetInRange;
+    public bool IsTargetInRange =>
+        _status.Target != null && Vector2.Distance(_rb.position, _status.Target.position) <= _status.AttackRange;
 
     // Avoid frequent state flips by staying in AttackState until after Attack is off cooldown
     // It would be better to stay in Idle until we can attack but I don't feel like
     // going through the effort of updating the State Machine now. Maybe enemies just get tired
     // after trying to attack or something idk.
     public bool FinishedAttacking => _attacked && _attackCooldown <= 0f;
-    private Vector2 TargetDirection => (_status.Target.position - _transform.position).normalized;
+    private Vector2 TargetDirection => (_status.Target.position - _rb.position).normalized;
 
     void Awake()
     {
         _waveController = FindFirstObjectByType<WaveController>();
-        _transform = transform;
+        _rb = GetComponent<Rigidbody2D>();
         _status = GetComponent<EnemyStatus>();
         _animator = GetComponent<Animator>();
     }
@@ -48,7 +37,6 @@ class EnemyController : MonoBehaviour
     {
         if (!_status.IsControllable) return;
         HandleCooldowns();
-        HandleMovement();
 
         var direction = TargetDirection;
         _animator.SetFloat("dx", direction.x);
@@ -56,11 +44,16 @@ class EnemyController : MonoBehaviour
         _currentState.Run(this);
     }
 
+    void FixedUpdate()
+    {
+        if (!_status.IsControllable) return;
+        HandleMovement();
+    }
+
     private void HandleMovement()
     {
-        Vector2 knockbackDisplacement = _knockbackVelocity * Time.deltaTime;
+        _rb.MovePosition(_rb.position + (_walkingVelocity + _knockbackVelocity) * Time.fixedDeltaTime);
         _knockbackVelocity -= _knockbackVelocity * _status.KnockbackFriction; // static friction applied to knockback only
-        _transform.position += (Vector3)(_walkingDisplacement + knockbackDisplacement);
     }
 
     private void HandleCooldowns()
@@ -74,7 +67,7 @@ class EnemyController : MonoBehaviour
         if (newState is not RunningState)
         {
             _animator.SetBool("IsRunning", false);
-            _walkingDisplacement = Vector2.zero;
+            _walkingVelocity = Vector2.zero;
         }
 
         if (newState is not StunnedState)
@@ -90,7 +83,7 @@ class EnemyController : MonoBehaviour
     public void BeRunning()
     {
         // TODO: Add fancy path finding
-        _walkingDisplacement = _status.MoveSpeed * Time.deltaTime * TargetDirection;
+        _walkingVelocity = _status.MoveSpeed * TargetDirection;
         _animator.SetBool("IsRunning", true);
     }
 
@@ -105,52 +98,41 @@ class EnemyController : MonoBehaviour
         _attackCooldown = 1 / _status.AttackSpeed;
         _attacked = true;
 
-        _animator.SetTrigger("Attack");
+        if (_status.TargetStatus == null || !_status.TargetStatus.IsDead)
+            _animator.SetTrigger("Attack");
     }
 
     public void AnimationEventHandler(string animEvent)
     {
         if (animEvent == "Hit")
         {
-            _knockbackVelocity += _status.AttackSelfKnockforward * TargetDirection;
+            _knockbackVelocity = _status.AttackSelfKnockforward * TargetDirection;
 
-            if (_status.TargetStatus != null && !_status.TargetStatus.IsDead)
+            if (_status.TargetStatus != null && !_status.TargetStatus.IsDead && IsTargetInRange)
             {
                 _status.TargetStatus.ApplyDamage(_status.AttackDamage);
-                _status.TargetStatus.ApplyKnockbackFrom(_transform.position, _status.AttackKnockback);            
+                _status.TargetStatus.ApplyKnockbackFrom(_rb.position, _status.AttackKnockback);            
                 if (_status.StunOnAttack)
                     _status.TargetStatus.AddEffect(new StunnedEffect(_status.StunDuration));
             }
+        }
+        else if (animEvent == "Die")
+        {
+            _waveController.OnDeath(_status);
         }
     }
 
     public void Die()
     {
+        _knockbackVelocity = Vector2.zero; // fix enemy flying off when being reused
         _status.IsControllable = false;
-        StartCoroutine(HandleDying());
-    }
-
-    private IEnumerator HandleDying()
-    {
         _animator.SetTrigger("Die");
-
-        // Wait until we enter a death animation state
-        while (!ANIMATION_DEATH_STATES.Any(state => _animator.GetCurrentAnimatorStateInfo(0).IsName(state)))
-            yield return null;
-
-        // Wait until animation stops
-        while (math.frac(_animator.GetCurrentAnimatorStateInfo(0).normalizedTime) < 0.99f)
-            yield return null;
-
-        _waveController.OnDeath(_status);
     }
 
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
     {
-        Vector2 currentPosition = _transform.position;
-        Vector2 direction = currentPosition - position;
-        float distance = direction.magnitude;
-        float inverseSquaredDistance = math.clamp(1 / (distance * distance), 1, 2);
-        _knockbackVelocity += inverseSquaredDistance * knockback * direction.normalized;
+        if (knockback <= float.Epsilon) return;
+        Vector2 direction = (Vector2)_rb.position - position;
+        _knockbackVelocity = knockback * direction.normalized;
     }
 }

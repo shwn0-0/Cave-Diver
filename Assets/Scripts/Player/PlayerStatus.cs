@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 class PlayerStatus : Status
@@ -38,7 +37,10 @@ class PlayerStatus : Status
         Init();
     }
 
-    public void UnlockAbilitySlot() => _abilitySlots += 1;
+    public void UnlockAbilitySlot() {
+        _abilitySlots += 1;
+        _hudController.UnlockAbilitySlot();
+    }
 
     public void AddUpgrade(Upgrade upgrade)
     {

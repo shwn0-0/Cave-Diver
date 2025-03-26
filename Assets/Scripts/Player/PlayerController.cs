@@ -10,15 +10,17 @@ public class PlayerController : MonoBehaviour
     private Vector2 _walkingVelocity;
     private Vector2 _knockbackVelocity;
     private PlayerStatus _status;
-    private Transform _transform;
+    private Rigidbody2D _rb;
+    private WaveController _waveController;
     private readonly List<IAbility> _abilities = new();
     private readonly HashSet<EnemyStatus> _enemies = new();
 
     public int AbilityCount => _abilities.Count;
 
-    void Start()
+    void Awake()
     {
-        _transform = transform;
+        _rb = GetComponent<Rigidbody2D>();
+        _waveController = FindFirstObjectByType<WaveController>();
         _status = GetComponent<PlayerStatus>();
     }
 
@@ -33,15 +35,19 @@ public class PlayerController : MonoBehaviour
         else
             HandleAttack();
 
-        HandleMovement();
         HandleCooldowns();
+    }
+
+    void FixedUpdate()
+    {
+        if (!_status.IsControllable) return;
+        HandleMovement();
     }
 
     private void HandleMovement()
     {
-        Vector2 displacement = (_knockbackVelocity + _walkingVelocity) * Time.deltaTime;
+        _rb.MovePosition(_rb.position + (_knockbackVelocity + _walkingVelocity) * Time.fixedDeltaTime);
         _knockbackVelocity -= _knockbackVelocity * _status.KnockbackFriction; // static friction
-        _transform.position += (Vector3)displacement;
     }
 
     private void HandleCooldowns()
@@ -57,9 +63,9 @@ public class PlayerController : MonoBehaviour
         _attackCooldown += 1 / _status.AttackSpeed;
 
         Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 currentPos = _transform.position;
-        Vector2 targetDirection = targetPos - currentPos;
-        _knockbackVelocity += _status.AttackSelfKnockforward * targetDirection.normalized;
+        Vector2 currentPos = _rb.position;
+        Vector2 targetDirection = (targetPos - currentPos).normalized;
+        _knockbackVelocity += _status.AttackSelfKnockforward * targetDirection;
 
         // Apply Damage and Knockback to enemies in range
         foreach (EnemyStatus enemy in _enemies)
@@ -74,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move(Vector2 dir)
     {    
-        if (_status.IsStunned) return;
+        if (_status.IsStunned || !_status.IsControllable) return;
         _walkingVelocity = dir.normalized * _status.MoveSpeed;
     }
 
@@ -98,7 +104,8 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        _status.IsControllable = false; // Stop player from doing anything if dead
+        // TODO: Play death animation and then call on death
+        _waveController.OnDeath(_status);
     }
 
     private void BeStunned()
@@ -109,11 +116,8 @@ public class PlayerController : MonoBehaviour
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
     {
         if (knockback <= float.Epsilon) return;
-
-        Vector2 direction = (Vector2)_transform.position - position;
-        float distance = direction.magnitude;
-        float inverseSquaredDistance = math.min(1 / (distance * distance), 2);
-        _knockbackVelocity += inverseSquaredDistance * knockback * direction.normalized;
+        Vector2 direction = _rb.position - position;
+        _knockbackVelocity += knockback * direction.normalized;
     }
 
     public void UnlockAbility(IAbility ability) =>
