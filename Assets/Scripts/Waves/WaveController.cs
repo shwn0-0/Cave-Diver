@@ -124,13 +124,22 @@ class WaveController : MonoBehaviour
     private IEnumerator HandleWaveEnd()
     {
         _waveNumber += 1;
-
-        if (_waveNumber % 5 == 0)
-            _player.UnlockAbilitySlot();
-
         yield return new WaitForSeconds(1f);
-        _upgradesController.Show(1); // FIXME: This should change based on the mode
         _player.IsControllable = false;
+        if (_sceneController.IsDemoMode)
+        {
+            _upgradesController.Show(4);
+            _player.UnlockAbilitySlot(4);
+        }
+        else if (_waveNumber % 5 == 0)
+        {
+            _player.UnlockAbilitySlot();
+            _upgradesController.Show(2);
+        }
+        else    
+        {
+            _upgradesController.Show(1);
+        }
         _camerasAnimator.SetTrigger("End Wave");
     }
 }

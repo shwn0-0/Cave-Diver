@@ -4,13 +4,14 @@ using UnityEngine;
 
 class HUDController : MonoBehaviour
 {
+    [SerializeField] private float _fadeDuration = 0.5f;
+
     private AbilityController[] _abilityControllers;
     private CanvasGroup _canvasGroup;
     private SliderController _shieldSlider;
     private SliderController _healthSlider;
     private float _targetAlpha;
-    private float _duration = 0.5f;
-    private int _numAbilities = 0; 
+    private int _numAbilities = 0;
 
     void Awake()
     {
@@ -25,7 +26,7 @@ class HUDController : MonoBehaviour
     void Update()
     {
         if (math.abs(_targetAlpha - _canvasGroup.alpha) <= float.Epsilon) return;
-        _canvasGroup.alpha += math.sign(_targetAlpha - _canvasGroup.alpha) * Time.deltaTime / _duration;
+        _canvasGroup.alpha += math.sign(_targetAlpha - _canvasGroup.alpha) * Time.deltaTime / _fadeDuration;
         _canvasGroup.blocksRaycasts = _canvasGroup.alpha > 0.90f;
     }
 
@@ -35,11 +36,18 @@ class HUDController : MonoBehaviour
     public void SetShield(float current, float max) =>
         _shieldSlider.SetAmount(current, max);
 
-    public void UnlockAbilitySlot() =>
-        _abilityControllers[_numAbilities].SetAvailable();
+    public void UnlockAbilitySlot(int count)
+    {
+        int max = math.min(count, _abilityControllers.Length - _numAbilities);
+        for (int i = 0; i < max; i++)
+            _abilityControllers[_numAbilities + i].SetAvailable();
+    }
 
-    public void UnlockAbility(IAbility ability) =>
+    public void UnlockAbility(IAbility ability)
+    {
+        if (_numAbilities == _abilityControllers.Length) return;
         _abilityControllers[_numAbilities++].SetAbility(ability);
+    }
 
     public void Show() => _targetAlpha = 1f;
     public void Hide() => _targetAlpha = 0f;

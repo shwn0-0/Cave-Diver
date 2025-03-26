@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 class PlayerStatus : Status
@@ -9,21 +10,27 @@ class PlayerStatus : Status
     private ObjectCache _objCache;
     private int _abilitySlots = 0;
 
-    public override float Health { 
+    public override float Health
+    {
         get => base.Health;
-        set {
+        set
+        {
             base.Health = value;
             _hudController.SetHealth(Health, MaxHealth);
-        } 
+        }
     }
- 
-    public override float Shield { 
+
+    public override float Shield
+    {
         get => base.Shield;
-        set {
+        set
+        {
             base.Shield = value;
             _hudController.SetShield(Shield, MaxShield);
-        } 
+        }
     }
+
+    public int AbilitySlots => _abilitySlots;
 
     void Awake()
     {
@@ -37,9 +44,11 @@ class PlayerStatus : Status
         Init();
     }
 
-    public void UnlockAbilitySlot() {
-        _abilitySlots += 1;
-        _hudController.UnlockAbilitySlot();
+    public void UnlockAbilitySlot(int count = 1)
+    {
+        count = math.clamp(count, 0, 4 - _abilitySlots);
+        _abilitySlots += count;
+        _hudController.UnlockAbilitySlot(count);
     }
 
     public void AddUpgrade(Upgrade upgrade)
@@ -63,7 +72,7 @@ class PlayerStatus : Status
                 AbilityHaste += 0.05f;
                 break;
             case Upgrade.MoveSpeed:
-                BonusMoveSpeed += 0.25f;
+                BonusMoveSpeed += 0.5f;
                 break;
             case Upgrade.Health:
                 BonusHealth += 25f;
@@ -86,13 +95,12 @@ class PlayerStatus : Status
     public override void ApplyKnockbackFrom(Vector2 position, float knockbackForce) =>
         _controller.ApplyKnockbackFrom(position, knockbackForce);
 
-    public bool HasUpgradeableAbility(Upgrade upgrade) {
+    public bool HasUpgradeableAbility(Upgrade upgrade)
+    {
         IAbility ability = GetUpgradeAbility(upgrade);
-
-        if (ability == null)
-            return _abilitySlots > _controller.AbilityCount;
-        else
-            return !ability.IsUpgraded;
+        return (ability != null) ? 
+            !ability.IsUpgraded
+            : _abilitySlots > _controller.AbilityCount;
     }
 
     private void HandleAbilityUpgrade(Upgrade upgrade)

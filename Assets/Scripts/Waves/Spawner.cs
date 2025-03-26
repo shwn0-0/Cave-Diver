@@ -8,6 +8,7 @@ class Spawner : MonoBehaviour
 {
     [SerializeField] private float _maxRadius = 7f;
     [SerializeField] private float _minRadius = 2f;
+    [SerializeField] private float _angle = 45;
     [SerializeField] private float _spawnDelay = 1f;
 
     private Transform _transform;
@@ -39,11 +40,11 @@ class Spawner : MonoBehaviour
     // Generate a random position in the half circle infront of spawner
     private Vector3 RandomPosition()
     {
-        float angle = Range(-math.PIHALF, math.PIHALF); // Generate a random angle between -PI/2 and PI/2.
-        float r = Range(_minRadius, _maxRadius); // Generate random radius between 0.5 and radius.
-        
-        float dx = r * math.cos(angle);
-        float dy = r * math.sin(angle);
+        float angle = Range(-_angle, _angle);
+        float r = Range(_minRadius, _maxRadius);
+
+        float dx = r * math.cos(math.radians(angle));
+        float dy = r * math.sin(math.radians(angle));
         
         return _transform.position + _transform.TransformDirection(new Vector3(dx, dy, 0f));
     }
