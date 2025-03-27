@@ -132,7 +132,22 @@ class EnemyController : MonoBehaviour
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
     {
         if (knockback <= float.Epsilon) return;
-        Vector2 direction = (Vector2)_rb.position - position;
+        Vector2 direction = _rb.position - position;
         _knockbackVelocity = knockback * direction.normalized;
+    }
+
+    public void Reset()
+    {
+        ChangeStates(State.Idle);
+
+        // Reset the animator the IDLE so enemies don't spawn attacking
+        _animator.SetFloat("dx", 0);
+        _animator.SetFloat("dy", 0);
+        _animator.SetBool("IsStunned", false);
+        _animator.SetBool("IsRunning", false);
+        _animator.ResetTrigger("Attack");
+        _animator.ResetTrigger("Die");
+        _animator.Update(0f);
+        _animator.Play("Idle.IdleDown", 0, 0f);
     }
 }

@@ -6,6 +6,6 @@ public interface IAbility
     float Cooldown { get; }
 
     bool Activate();
-    void Update();
+    void Update(bool IsControllable);
     void Upgrade();
 }

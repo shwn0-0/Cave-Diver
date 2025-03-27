@@ -8,8 +8,16 @@ class C4 : MonoBehaviour, ICacheableObject
     private float _remainingTime;
     private Transform _transform;
     private Config _config;
+    private Animator _animator;
 
     public bool IsActive => _isActive;
+    public bool IsTriggered { get; private set; }
+
+    void Awake()
+    {
+        _transform = transform;
+        _animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -21,7 +29,8 @@ class C4 : MonoBehaviour, ICacheableObject
             return;
         }
 
-
+        _animator.SetTrigger("Trigger");
+        IsTriggered = true;
         foreach (EnemyStatus enemy in _enemies)
         {
             enemy.ApplyDamage(_config.damage);
@@ -31,7 +40,6 @@ class C4 : MonoBehaviour, ICacheableObject
         }
 
         _enemies.Clear();
-        _isActive = false;
     }
 
     public void Init(IObjectConfig objConfig)
@@ -40,13 +48,18 @@ class C4 : MonoBehaviour, ICacheableObject
         {
             _config = config;
             _remainingTime = config.duration;
-            _transform = transform;
+            IsTriggered = false;
             _isActive = true;
         }
-
     }
 
     public void Trigger() => _remainingTime = 0.0f;
+
+    public void AnimationEventHandler(string animEvent)
+    {
+        if (animEvent == "Exploded")
+            _isActive = false;
+    }
 
     void OnTriggerEnter2D(Collider2D collider)
     {

@@ -41,15 +41,20 @@ class C4Ability : IAbility
         return true;
     }
 
-    public void Update()
+    public void Update(bool IsControllable)
     {
-        if (Placed && !_c4.IsActive)
+        if (Placed)
         {
-            _remainingCooldown = _config.C4AbilityCooldown * (1 - _player.AbilityHaste);
-            _cache.ReturnObject(ObjectType.C4, _c4);
-            _c4 = null;
+            if (_c4.IsTriggered && _remainingCooldown < float.Epsilon)
+                _remainingCooldown = _config.C4AbilityCooldown * (1 - _player.AbilityHaste);
+            
+            if (!_c4.IsActive)
+            {
+                _cache.ReturnObject(ObjectType.C4, _c4);
+                _c4 = null;
+            }
         }
-        else if (!IsAvailable)
+        else if (!IsAvailable && IsControllable)
         {
             _remainingCooldown -= Time.deltaTime;
         }

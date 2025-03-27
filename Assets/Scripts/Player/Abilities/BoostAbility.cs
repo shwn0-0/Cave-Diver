@@ -35,9 +35,9 @@ class BoostAbility : IAbility
         return true;
     }
 
-    public void Update()
+    public void Update(bool IsControllable)
     {
-        if (!IsAvailable)
+        if (!IsAvailable && IsControllable)
             _remainingCooldown -= Time.deltaTime;
     }
 

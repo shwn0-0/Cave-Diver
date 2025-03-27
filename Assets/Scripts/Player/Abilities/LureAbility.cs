@@ -34,13 +34,13 @@ class LureAbility : IAbility
         return true;
     }
 
-    public void Update()
+    public void Update(bool IsControllable)
     {
         if (IsPlaced && !_lure.IsActive)
         {
             _cache.ReturnObject(ObjectType.Lure, _lure);
             _lure = null;
-        } else if (_remainingCooldown > 0.0f)
+        } else if (_remainingCooldown > 0.0f && IsControllable)
         {
             _remainingCooldown -= Time.deltaTime;
         }

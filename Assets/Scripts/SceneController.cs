@@ -3,15 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    public static SceneController Instance { get; private set; }
     public bool IsDemoMode { get; private set; }
-
 
     void Awake()
     {
-        // Singleton
-        SceneController[] controllers = FindObjectsByType<SceneController>(FindObjectsSortMode.None);
-        if (controllers.Length > 1) Destroy(gameObject); 
-        else DontDestroyOnLoad(gameObject);
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(gameObject); 
+        } 
+        else
+        { 
+            Instance = this; 
+            DontDestroyOnLoad(Instance);
+        } 
     }
 
     public void GoToMainScene(bool IsDemo = false)

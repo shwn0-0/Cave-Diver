@@ -4,12 +4,12 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerController _controller;
-    private WaveController _waveController;
+    private GameController _gameController;
 
     void Awake()
     {
         _controller = GetComponent<PlayerController>();
-        _waveController = FindFirstObjectByType<WaveController>();
+        _gameController = FindFirstObjectByType<GameController>();
     }
 
     void OnMove(InputValue input) =>
@@ -32,6 +32,6 @@ public class PlayerInputHandler : MonoBehaviour
     void OnPause(InputValue input)
     {
         if (!input.isPressed) return;
-        _waveController.TogglePause();
+        _gameController.TogglePause();
     }
 }

@@ -40,7 +40,7 @@ class SliderController : MonoBehaviour
         float difference = _targetPercent - _currentPercent;
         if (math.abs(difference) >= float.Epsilon)
         {
-            _currentPercent += math.sign(difference) * Time.deltaTime;
+            _currentPercent += math.min(math.sign(difference) * Time.unscaledDeltaTime, difference);
             HandleWidthPercent();
         }
     }
@@ -54,8 +54,9 @@ class SliderController : MonoBehaviour
 
     public void SetAmount(float current, float max)
     {
-        _amountText.SetText($"{current} / {max}");
-        _targetPercent = current / max;
+        _amountText.SetText($"{math.round(current)} / {math.round(max)}");
+        float percent = current / max;
+        _targetPercent = math.round(100f * percent) / 100f; // round to nearest percent
     }
 
     private float ColorHueLerp(Color a, Color b, float t)

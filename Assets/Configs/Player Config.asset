@@ -16,8 +16,8 @@ MonoBehaviour:
   _attackAngle: 45
   _attackRange: 5
   _attackSpeed: 1.5
-  _attackKnockback: 5
-  _attackSelfKnockforward: 20
+  _attackKnockback: 25
+  _attackSelfKnockforward: 15
   _stunOnAttack: 0
   _stunDuration: 0
   _maxHealth: 100

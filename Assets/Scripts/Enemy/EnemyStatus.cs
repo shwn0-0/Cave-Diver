@@ -26,9 +26,9 @@ class EnemyStatus : Status, ICacheableObject
         if (objConfig is Config config)
         {
             base.Init();
+            _controller.Reset();
             Type = config.type;
             Target = config.target;
-            _controller.ChangeStates(State.Idle);
             IsControllable = true;
         }
         else

@@ -1,17 +1,16 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private bool _isHoldingAttack;
     private float _attackCooldown;
-    private Vector2 _walkingVelocity;
+    private Vector2 _dir;
     private Vector2 _knockbackVelocity;
     private PlayerStatus _status;
     private Rigidbody2D _rb;
-    private WaveController _waveController;
+    private GameController _gameController;
     private readonly List<IAbility> _abilities = new();
     private readonly HashSet<EnemyStatus> _enemies = new();
 
@@ -20,12 +19,14 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _waveController = FindFirstObjectByType<WaveController>();
+        _gameController = FindFirstObjectByType<GameController>();
         _status = GetComponent<PlayerStatus>();
     }
 
     void Update()
     {
+        _abilities.ForEach(ability => ability.Update(_status.IsControllable));
+
         if (!_status.IsControllable) return;
 
         if (_status.IsDead)
@@ -46,13 +47,13 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        _rb.MovePosition(_rb.position + (_knockbackVelocity + _walkingVelocity) * Time.fixedDeltaTime);
+        Vector2 walkingVelocity = _dir * _status.MoveSpeed;
+        _rb.MovePosition(_rb.position + (_knockbackVelocity + walkingVelocity) * Time.fixedDeltaTime);
         _knockbackVelocity -= _knockbackVelocity * _status.KnockbackFriction; // static friction
     }
 
     private void HandleCooldowns()
     {
-        _abilities.ForEach(ability => ability.Update());
         if (_attackCooldown > 0f)
             _attackCooldown -= Time.deltaTime;
     }
@@ -78,22 +79,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Move(Vector2 dir)
-    {    
-        if (_status.IsStunned || !_status.IsControllable) return;
-        _walkingVelocity = dir.normalized * _status.MoveSpeed;
-    }
+    public void Move(Vector2 dir) => _dir = dir;
 
     public void UseAbility(int number)
     {
-        if (!_status.IsControllable || _status.IsStunned) return;
-        if (number > _abilities.Count)
-        {
-            Debug.Log($"Ability {number} not unlocked.");
-            return;
-        }
-        Debug.Log($"Using Ability {number}.");
-        var ability = _abilities[number - 1];
+        if (!_status.IsControllable || _status.IsStunned || number > _abilities.Count) return;
+
+        IAbility ability = _abilities[number - 1];
         if (!ability.Activate())
         {
             Debug.Log($"{ability.Name} is on Cooldown.");
@@ -105,12 +97,12 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         // TODO: Play death animation and then call on death
-        _waveController.OnDeath(_status);
+        _gameController.OnDeath(_status);
     }
 
     private void BeStunned()
     {
-        _walkingVelocity = Vector2.zero;
+        _dir = Vector2.zero;
     }
 
     public void ApplyKnockbackFrom(Vector2 position, float knockback)

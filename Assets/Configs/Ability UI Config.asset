@@ -15,3 +15,7 @@ MonoBehaviour:
   _lockedColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
   _unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   _cooldownColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+  _boostAbilityIcon: {fileID: -5573809522775833097, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
+  _shieldAbilityIcon: {fileID: -6982349727415611825, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
+  _c4AbilityIcon: {fileID: 6540540548935961993, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
+  _lureAbilityIcon: {fileID: 4545377945811096002, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}

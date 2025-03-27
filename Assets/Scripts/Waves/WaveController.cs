@@ -8,75 +8,35 @@ class WaveController : MonoBehaviour
 
     private Spawner[] _spawners;
     private ObjectCache _objCache;
-    private UpgradesController _upgradesController;
-    private HUDController _hudController;
-    private WaveNumberDisplay _waveNumberDisplay;
-    private SceneController _sceneController;
-    private Animator _camerasAnimator;
     private readonly HashSet<EnemyStatus> _enemies = new();
-    private int _waveNumber = 1;
-    private PlayerStatus _player;
-    private bool isPaused;
+    private GameController _gameController;
+    private int _waveNumber;
 
+    public int CurrentWave => _waveNumber;
 
     void Awake()
     {
-        _camerasAnimator = GetComponent<Animator>();
         _spawners = FindObjectsByType<Spawner>(FindObjectsSortMode.None);
         _objCache = FindFirstObjectByType<ObjectCache>();
-        _player = FindFirstObjectByType<PlayerStatus>();
-        _upgradesController = FindFirstObjectByType<UpgradesController>();
-        _waveNumberDisplay = FindFirstObjectByType<WaveNumberDisplay>();
-        _hudController = FindFirstObjectByType<HUDController>();
-        _sceneController = FindFirstObjectByType<SceneController>();
-    }
-
-    void Start()
-    {
-        _hudController.Show();
-        NextWave();
-    }
-
-    public void TogglePause()
-    {
-        // Show Pause Screen if game paused
-        if (isPaused)
-            UnPause();
-        else
-            Pause();
-        isPaused = !isPaused;
-    }
-
-    // TODO: Also account for entities
-    private void Pause()
-    {
-        _player.IsControllable = false;
-        foreach (var enemy in _enemies)
-        {
-            enemy.IsControllable = false;
-        }
-    }
-
-    private void UnPause()
-    {
-        _player.IsControllable = true;
-        foreach (var enemy in _enemies)
-        {
-            enemy.IsControllable = true;
-        }
+        _gameController = GetComponent<GameController>();
     }
 
     public void NextWave()
     {
-        if (_enemies.Count > 0)
-            return;
+        _waveNumber += 1;
+        var (num_slimes, num_skeletons, num_orcs) = _config.NumEnemies(_waveNumber);
 
-        StartCoroutine(HandleWaveStart());
+        for (int i = 0; i < _spawners.Length; i++)
+        {
+            _spawners[i].Spawn(ObjectType.Orc, Split(num_orcs, _spawners.Length, i), OnSpawn);
+            _spawners[i].Spawn(ObjectType.Skeleton, Split(num_skeletons, _spawners.Length, i), OnSpawn);
+            _spawners[i].Spawn(ObjectType.Slime, Split(num_slimes, _spawners.Length, i), OnSpawn);
+        }
     }
 
     private void OnSpawn(EnemyStatus enemy)
     {
-        if (_sceneController.IsDemoMode)
+        if (_gameController.IsDemoMode)
             enemy.AddEffect(new DemoEffect());
         _enemies.Add(enemy);
     }
@@ -94,52 +54,6 @@ class WaveController : MonoBehaviour
         _objCache.ReturnObject(enemy.Type, enemy);
 
         if (_enemies.Count == 0)
-            StartCoroutine(HandleWaveEnd());
-    }
-
-    public void OnDeath(PlayerStatus player)
-    {
-        // Do something nice
-        _sceneController.GoToMainMenu();
-    }
-
-    private IEnumerator HandleWaveStart()
-    {
-        _player.transform.position = Vector3.zero;
-        _camerasAnimator.SetTrigger("Start Wave");
-
-        yield return _waveNumberDisplay.DisplayWave(_waveNumber);
-        _player.IsControllable = true;
-    
-        var (num_slimes, num_skeletons, num_orcs) = _config.NumEnemies(_waveNumber);
-
-        for (int i = 0; i < _spawners.Length; i++)
-        {
-            _spawners[i].Spawn(ObjectType.Orc, Split(num_orcs, _spawners.Length, i), OnSpawn);
-            _spawners[i].Spawn(ObjectType.Skeleton, Split(num_skeletons, _spawners.Length, i), OnSpawn);
-            _spawners[i].Spawn(ObjectType.Slime, Split(num_slimes, _spawners.Length, i), OnSpawn);
-        }
-    }
-
-    private IEnumerator HandleWaveEnd()
-    {
-        _waveNumber += 1;
-        yield return new WaitForSeconds(1f);
-        _player.IsControllable = false;
-        if (_sceneController.IsDemoMode)
-        {
-            _upgradesController.Show(4);
-            _player.UnlockAbilitySlot(4);
-        }
-        else if (_waveNumber % 5 == 0)
-        {
-            _player.UnlockAbilitySlot();
-            _upgradesController.Show(2);
-        }
-        else    
-        {
-            _upgradesController.Show(1);
-        }
-        _camerasAnimator.SetTrigger("End Wave");
+            _gameController.OnWaveEnd();
     }
 }

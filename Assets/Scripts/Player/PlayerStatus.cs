@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -98,9 +99,16 @@ class PlayerStatus : Status
     public bool HasUpgradeableAbility(Upgrade upgrade)
     {
         IAbility ability = GetUpgradeAbility(upgrade);
-        return (ability != null) ? 
-            !ability.IsUpgraded
-            : _abilitySlots > _controller.AbilityCount;
+        return ability != null && !ability.IsUpgraded;
+    }
+
+    public bool HasAvailableSlot(Upgrade upgrade)
+    {
+        if (_abilitySlots <= _controller.AbilityCount)
+            return false;
+
+        IAbility ability = GetUpgradeAbility(upgrade);
+        return ability == null;
     }
 
     private void HandleAbilityUpgrade(Upgrade upgrade)
