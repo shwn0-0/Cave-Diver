@@ -5,6 +5,7 @@ using UnityEngine;
 class WaveController : MonoBehaviour
 {
     [SerializeField] WavesConfig _config;
+    [SerializeField] WavesConfig _demoConfig;
 
     private Spawner[] _spawners;
     private ObjectCache _objCache;
@@ -13,6 +14,7 @@ class WaveController : MonoBehaviour
     private int _waveNumber;
 
     public int CurrentWave => _waveNumber;
+    private WavesConfig Config => SceneController.Instance.IsDemoMode ? _demoConfig : _config;
 
     void Awake()
     {
@@ -24,12 +26,12 @@ class WaveController : MonoBehaviour
     public void NextWave()
     {
         _waveNumber += 1;
-        var (num_slimes, num_skeletons, num_orcs) = _config.NumEnemies(_waveNumber);
+        var (num_slimes, num_trolls, num_orcs) = Config.NumEnemies(_waveNumber);
 
         for (int i = 0; i < _spawners.Length; i++)
         {
             _spawners[i].Spawn(ObjectType.Orc, Split(num_orcs, _spawners.Length, i), OnSpawn);
-            _spawners[i].Spawn(ObjectType.Skeleton, Split(num_skeletons, _spawners.Length, i), OnSpawn);
+            _spawners[i].Spawn(ObjectType.Troll, Split(num_trolls, _spawners.Length, i), OnSpawn);
             _spawners[i].Spawn(ObjectType.Slime, Split(num_slimes, _spawners.Length, i), OnSpawn);
         }
     }

@@ -184,7 +184,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -198,7 +198,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -222,7 +222,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1359,7 +1359,57 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Troll_0: -4141237505901376896
+      Troll_1: -7451482207120939691
+      Troll_10: -3042651299107158348
+      Troll_11: -8277137167989421733
+      Troll_12: 5347160291020821430
+      Troll_13: 609770028925632910
+      Troll_14: 5321128599893363640
+      Troll_15: -9221496278253763683
+      Troll_16: -2301039100694261693
+      Troll_17: 3113948346304661661
+      Troll_18: -483568906825959847
+      Troll_19: 8756698101548076370
+      Troll_2: 8944168604821174728
+      Troll_20: 1757458738234371858
+      Troll_21: 8855288954557329779
+      Troll_22: -158261666698950834
+      Troll_23: -5027499998910296608
+      Troll_24: 7344047068610012347
+      Troll_25: -5189229842167950857
+      Troll_26: -8922338459969329103
+      Troll_27: -6917200571972458781
+      Troll_28: 4562645663332489011
+      Troll_29: -1593865960672119391
+      Troll_3: -4046203348500515339
+      Troll_30: -5604432288741374420
+      Troll_31: 6163194462197619679
+      Troll_32: 3920429245100464001
+      Troll_33: -2973760148128546736
+      Troll_34: 8939769723773609178
+      Troll_35: 6980626773221165910
+      Troll_36: -4239367591019186974
+      Troll_37: 4520493906154380748
+      Troll_38: -3194932328340067952
+      Troll_39: 2757401339743829324
+      Troll_4: -6723060215839816300
+      Troll_40: -972104471503351763
+      Troll_41: 1704453309097123368
+      Troll_42: -558533445510780655
+      Troll_43: 2760338616475841910
+      Troll_44: -3812304161915815854
+      Troll_45: -7030413934514694735
+      Troll_46: 8853656674101471905
+      Troll_47: -5743237731960635242
+      Troll_48: 972743838768675543
+      Troll_49: -425243973899191411
+      Troll_5: 2419447850579705196
+      Troll_6: -5102841981447997625
+      Troll_7: -6030637640244830344
+      Troll_8: 8534696117921491148
+      Troll_9: 8932795621683053447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

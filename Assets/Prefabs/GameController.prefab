@@ -51,7 +51,7 @@ MonoBehaviour:
   _c4Prefab: {fileID: 4904952347191140751, guid: 516df9db78adf471ea637020ede74c0b, type: 3}
   _slimePrefab: {fileID: 2149842760737757600, guid: 7515be1228bf746cca7cbd84d7c18828, type: 3}
   _orcPrefab: {fileID: 4387552481955422491, guid: 0334406842f56434f848de359e2f2a65, type: 3}
-  _skeletonPrefab: {fileID: 8565711583839314170, guid: 3a276e5fa4a8449d4af66f8a53c0f7c4, type: 3}
+  _trollPrefab: {fileID: 8565711583839314170, guid: 3a276e5fa4a8449d4af66f8a53c0f7c4, type: 3}
 --- !u!114 &7290750602323643130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: 8f10673e647d0483992e85c6930193ee, type: 2}
+  _demoConfig: {fileID: 11400000, guid: bb78cdb1829ce47dfb8f98d00c6762c8, type: 2}
 --- !u!114 &6002968993817289449
 MonoBehaviour:
   m_ObjectHideFlags: 0

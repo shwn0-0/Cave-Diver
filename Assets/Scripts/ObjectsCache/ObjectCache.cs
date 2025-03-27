@@ -8,7 +8,7 @@ enum ObjectType
     C4, 
     Slime,
     Orc,
-    Skeleton
+    Troll
 }
 
 class ObjectCache : MonoBehaviour
@@ -17,7 +17,7 @@ class ObjectCache : MonoBehaviour
     [SerializeField] GameObject _c4Prefab;
     [SerializeField] GameObject _slimePrefab;
     [SerializeField] GameObject _orcPrefab;
-    [SerializeField] GameObject _skeletonPrefab;
+    [SerializeField] GameObject _trollPrefab;
 
     private readonly Dictionary<ObjectType, Queue<GameObject>> _objectQueues = new();
 
@@ -37,7 +37,7 @@ class ObjectCache : MonoBehaviour
         ObjectType.C4 => _c4Prefab,
         ObjectType.Slime => _slimePrefab,
         ObjectType.Orc => _orcPrefab,
-        ObjectType.Skeleton => _skeletonPrefab,
+        ObjectType.Troll => _trollPrefab,
         _ => null,
     };
 

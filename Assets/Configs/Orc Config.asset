@@ -22,5 +22,5 @@ MonoBehaviour:
   _stunDuration: 0.5
   _maxHealth: 50
   _maxShields: 0
-  _moveSpeed: 2
+  _moveSpeed: 3
   _knockbackFriction: 0.5

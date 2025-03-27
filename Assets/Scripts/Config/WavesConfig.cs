@@ -8,10 +8,10 @@ class WavesConfig : ScriptableObject
     [SerializeField, Min(1)] int slimeIncreasePeriod;
     [SerializeField, Min(1)] int slimeIncreaseAmount;
 
-    [Header("Skeleton")]
-    [SerializeField, Min(0)] int skeletonStartAmount;
-    [SerializeField, Min(1)] int skeletonIncreasePeriod;
-    [SerializeField, Min(1)] int skeletonIncreaseAmount;
+    [Header("Troll")]
+    [SerializeField, Min(0)] int trollStartAmount;
+    [SerializeField, Min(1)] int trollIncreasePeriod;
+    [SerializeField, Min(1)] int trollIncreaseAmount;
 
     [Header("Orc")]
     [SerializeField, Min(0)] int orcStartAmount;
@@ -21,15 +21,15 @@ class WavesConfig : ScriptableObject
 
     private int NumSlimes(int waveNumber) => 
         slimeStartAmount + (slimeIncreaseAmount * (waveNumber / slimeIncreasePeriod));
-    private int NumSkeletons(int waveNumber) => 
-        skeletonStartAmount + (skeletonIncreaseAmount * (waveNumber / skeletonIncreasePeriod));
+    private int NumTrolls(int waveNumber) => 
+        trollStartAmount + (trollIncreaseAmount * (waveNumber / trollIncreasePeriod));
     private int NumOrcs(int waveNumber) => 
         orcStartAmount + (orcIncreaseAmount * (waveNumber / orcIncreasePeriod));
 
     public (int, int, int) NumEnemies(int waveNumber) =>
         (
             NumSlimes(waveNumber),
-            NumSkeletons(waveNumber),
+            NumTrolls(waveNumber),
             NumOrcs(waveNumber)
         );
 }
