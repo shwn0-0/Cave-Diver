@@ -51,7 +51,8 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        bool isRunning = _dir.magnitude > float.Epsilon;
+        Vector2 walkingVelocity =  _status.IsControllable ? _dir * _status.MoveSpeed : Vector2.zero;
+        bool isRunning = walkingVelocity.magnitude > float.Epsilon;
         _animator.SetBool("IsRunning", isRunning);
 
         // Only update direction if we're actually moving
@@ -61,7 +62,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetFloat("dy", _dir.y);
         }
 
-        _rb.MovePosition(Position + (_knockbackVelocity + _dir * _status.MoveSpeed) * Time.fixedDeltaTime);
+        _rb.MovePosition(Position + (_knockbackVelocity + walkingVelocity) * Time.fixedDeltaTime);
         _knockbackVelocity -= _knockbackVelocity * _status.KnockbackFriction; // static friction
     }
 
@@ -120,7 +121,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Move(Vector2 dir) => _dir = dir;
+    public void Move(Vector2 dir)
+    {
+        if (_status.IsControllable)
+            _dir = dir;
+    }
 
     public void UseAbility(int number)
     {
