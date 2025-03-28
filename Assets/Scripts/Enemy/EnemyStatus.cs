@@ -15,6 +15,7 @@ class EnemyStatus : Status, ICacheableObject
     }
     public Status TargetStatus => _targetStatus;
     public ObjectType Type { get; private set; }
+    public Vector2 Position => _controller.Position;
 
     public void Awake()
     {

@@ -1,0 +1,11 @@
+animated sprite sheet block size:
+
+>>> Warrior 80x80
+
+Warrior_dagger_attacks	/ every 6 frames "dagger attack" for side
+Warrior_idle		/ every 10 frames "idle" for side
+Warrior_special_moves	/ first 14 frames "special1", next 4 frames "special2"
+Warrior_sword_attacks	/ first 6 frames "first attack" , next 4 frames "attack continued" , last 4 frames "special attack"
+Warrir_walk_run		/ first 8 frames "walk" , next 4 frames "run"
+
+url: https://szadiart.itch.io/fantasylandswarrior

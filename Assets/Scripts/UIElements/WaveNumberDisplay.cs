@@ -26,21 +26,35 @@ class WaveNumberDisplay : MonoBehaviour
     {
         _text.SetText($"Wave {number}");
         t = 0f;
-        _currentEffect = FadeEffect(2f/3f);
+        _currentEffect = FadeEffect(2f / 3f);
         yield return new WaitForSeconds(_duration);
+    }
+
+    public IEnumerator DisplayPlayerDead()
+    {
+        _text.SetText($"You Died!");
+        t = 0f;
+        _currentEffect = NoEffect;
+        yield return null;
     }
 
     private void HandleEffect()
     {
         t += Time.deltaTime / _duration;
-        _currentEffect(Color.black, t);
+        _currentEffect?.Invoke(Color.black, t);
+    }
+
+    private void NoEffect(Color color, float t)
+    {
+        _text.color = color;
     }
 
     private Action<Color, float> FadeEffect(float delay)
     {
-        return (color, t) => {
+        return (color, t) =>
+        {
             float a = math.step(1 - delay, 1 - t); // Hold at 1 for delay seconds
-            a += math.step(delay, t) * math.lerp(1, 0, (t - delay) * (1/(1 - delay))); // Lerp between 1 and 0 after delay seconds
+            a += math.step(delay, t) * math.lerp(1, 0, (t - delay) * (1 / (1 - delay))); // Lerp between 1 and 0 after delay seconds
             color.a = a;
             _text.color = color;
         };

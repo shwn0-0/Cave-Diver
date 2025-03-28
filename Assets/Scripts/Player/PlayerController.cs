@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private bool _isHoldingAttack;
     private float _attackCooldown;
+    private Animator _animator;
     private Vector2 _dir;
     private Vector2 _knockbackVelocity;
     private PlayerStatus _status;
@@ -13,14 +14,18 @@ public class PlayerController : MonoBehaviour
     private GameController _gameController;
     private readonly List<IAbility> _abilities = new();
     private readonly HashSet<EnemyStatus> _enemies = new();
+    private readonly List<EnemyStatus> _enemiesToDamage = new();
+    private Vector2 _targetDirection;
 
     public int AbilityCount => _abilities.Count;
+    public Vector2 Position => _rb.position;
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _gameController = FindFirstObjectByType<GameController>();
         _status = GetComponent<PlayerStatus>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -41,14 +46,22 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!_status.IsControllable) return;
         HandleMovement();
     }
 
     private void HandleMovement()
     {
-        Vector2 walkingVelocity = _dir * _status.MoveSpeed;
-        _rb.MovePosition(_rb.position + (_knockbackVelocity + walkingVelocity) * Time.fixedDeltaTime);
+        bool isRunning = _dir.magnitude > float.Epsilon;
+        _animator.SetBool("IsRunning", isRunning);
+
+        // Only update direction if we're actually moving
+        if (isRunning)
+        {
+            _animator.SetFloat("dx", _dir.x);
+            _animator.SetFloat("dy", _dir.y);
+        }
+
+        _rb.MovePosition(Position + (_knockbackVelocity + _dir * _status.MoveSpeed) * Time.fixedDeltaTime);
         _knockbackVelocity -= _knockbackVelocity * _status.KnockbackFriction; // static friction
     }
 
@@ -64,18 +77,46 @@ public class PlayerController : MonoBehaviour
         _attackCooldown += 1 / _status.AttackSpeed;
 
         Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 currentPos = _rb.position;
-        Vector2 targetDirection = (targetPos - currentPos).normalized;
-        _knockbackVelocity += _status.AttackSelfKnockforward * targetDirection;
+        Vector2 currentPos = Position;
+        _targetDirection = (targetPos - currentPos).normalized;
 
-        // Apply Damage and Knockback to enemies in range
         foreach (EnemyStatus enemy in _enemies)
         {
-            Vector2 enemyDirection = (Vector2)enemy.transform.position - currentPos;
-            if (enemyDirection.magnitude > _status.AttackRange || Vector2.Angle(targetDirection, enemyDirection) > _status.AttackAngle)
+            Vector2 enemyDirection = enemy.Position - currentPos;
+            if (enemyDirection.magnitude > _status.AttackRange || Vector2.Angle(_targetDirection, enemyDirection) > _status.AttackAngle)
                 continue;
-            enemy.ApplyDamage(_status.AttackDamage);
-            enemy.ApplyKnockbackFrom(currentPos, _status.AttackKnockback);
+            
+            _enemiesToDamage.Add(enemy);
+        }
+
+        _animator.SetFloat("aDx", _targetDirection.x);
+        _animator.SetFloat("aDy", _targetDirection.y);
+        // Set both directions in case player doesn't move after/during attack
+        _animator.SetFloat("dx", _targetDirection.x);
+        _animator.SetFloat("dy", _targetDirection.y);
+        _animator.SetTrigger("Attack");
+    }
+
+    public void AnimationEventHandler(string animEvent)
+    {
+        if (animEvent == "Hit")
+        {
+            _knockbackVelocity += _status.AttackSelfKnockforward * _targetDirection;
+
+            // Apply Damage and Knockback to enemies in range
+            foreach (EnemyStatus enemy in _enemiesToDamage)
+            {
+                enemy.ApplyDamage(_status.AttackDamage);
+                enemy.ApplyKnockbackFrom(Position, _status.AttackKnockback);
+                if (_status.StunOnAttack)
+                    enemy.AddEffect(new StunnedEffect(_status.StunDuration));
+            }
+
+            _enemiesToDamage.Clear();
+        }
+        else if (animEvent == "Die")
+        {
+            _gameController.OnDeath(_status);
         }
     }
 
@@ -96,8 +137,9 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        // TODO: Play death animation and then call on death
-        _gameController.OnDeath(_status);
+        _animator.SetTrigger("Die");
+        _status.IsControllable = false;
+        _dir = Vector2.zero;
     }
 
     private void BeStunned()
@@ -108,7 +150,7 @@ public class PlayerController : MonoBehaviour
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
     {
         if (knockback <= float.Epsilon) return;
-        Vector2 direction = _rb.position - position;
+        Vector2 direction = Position - position;
         _knockbackVelocity += knockback * direction.normalized;
     }
 

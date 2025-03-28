@@ -49,7 +49,7 @@ class UpgradesController : MonoBehaviour
         UpdateEnabledButtons();
 
 
-        if (_remainingUpgrades <= 0)
+        if (_remainingUpgrades <= 0 && !_player.HasAvailableSlots())
         {
             _targetAlpha = 0f;
             _gameController.OnFinishedUpgrading();

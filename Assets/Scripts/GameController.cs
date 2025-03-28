@@ -3,6 +3,8 @@ using UnityEngine;
 
 class GameController : MonoBehaviour
 {
+    [SerializeField] bool _demoMode;
+
     private UpgradesController _upgradesController;
     private HUDController _hudController;
     private Animator _camerasAnimator;
@@ -12,7 +14,7 @@ class GameController : MonoBehaviour
     private PlayerStatus _player;
     private bool isPaused;
 
-    public bool IsDemoMode => SceneController.Instance.IsDemoMode;
+    public bool IsDemoMode => SceneController.Instance.IsDemoMode || _demoMode;
 
     void Awake()
     {
@@ -74,9 +76,14 @@ class GameController : MonoBehaviour
         _waveController.NextWave();
     }
 
-    public void OnDeath(PlayerStatus player)
+    public void OnDeath(PlayerStatus player) =>
+        StartCoroutine(HandlePlayerDeath());
+
+    private IEnumerator HandlePlayerDeath()
     {
-        // Do something nice
+        _camerasAnimator.SetTrigger("PlayerDied");
+        yield return _waveNumberDisplay.DisplayPlayerDead();
+        yield return new WaitForSeconds(4f);
         SceneController.Instance.GoToMainMenu();
     }
 

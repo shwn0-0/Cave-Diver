@@ -1,10 +1,10 @@
-using System;
 using Unity.Mathematics;
 using UnityEngine;
 
 class PlayerStatus : Status
 {
     [SerializeField] private PlayerAbilitiesConfig _abilitiesConfig;
+    [SerializeField] private UpgradesConfig _upgradesConfig;
 
     private HUDController _hudController;
     private PlayerController _controller;
@@ -30,8 +30,6 @@ class PlayerStatus : Status
             _hudController.SetShield(Shield, MaxShield);
         }
     }
-
-    public int AbilitySlots => _abilitySlots;
 
     void Awake()
     {
@@ -62,24 +60,23 @@ class PlayerStatus : Status
             case Upgrade.C4Ability:
                 HandleAbilityUpgrade(upgrade);
                 break;
-            // FIXME: Create config for magic numbers and add max values as well
             case Upgrade.AttackDamage:
-                BonusDamage += 2f;
+                BonusAttackDamage += _upgradesConfig.BonusAttackDamage;
                 break;
             case Upgrade.AttackSpeed:
-                AttackSpeedMultiplier += 0.25f;
+                AttackSpeedMultiplier += _upgradesConfig.BonusAttackSpeed;
                 break;
             case Upgrade.AbilityHaste:
-                AbilityHaste += 0.05f;
+                AbilityHaste += _upgradesConfig.BonusAblityHaste;
                 break;
             case Upgrade.MoveSpeed:
-                BonusMoveSpeed += 0.5f;
+                BonusMoveSpeed += _upgradesConfig.BonusMoveSpeed;
                 break;
             case Upgrade.Health:
-                BonusHealth += 25f;
+                BonusHealth += _upgradesConfig.BonusHealth;
                 break;
             case Upgrade.Shield:
-                BonusShield += 25f;
+                BonusShield += _upgradesConfig.BonusShield;
                 break;
             default:
                 Debug.LogError($"Unhandled Upgrade {upgrade}");
@@ -104,12 +101,12 @@ class PlayerStatus : Status
 
     public bool HasAvailableSlot(Upgrade upgrade)
     {
-        if (_abilitySlots <= _controller.AbilityCount)
-            return false;
-
-        IAbility ability = GetUpgradeAbility(upgrade);
-        return ability == null;
+        if (!HasAvailableSlots()) return false;
+        return GetUpgradeAbility(upgrade) == null;
     }
+
+    public bool HasAvailableSlots() =>
+        _abilitySlots > _controller.AbilityCount;
 
     private void HandleAbilityUpgrade(Upgrade upgrade)
     {

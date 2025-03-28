@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26f50fdb98ae4295a3fa373cd77d19a, type: 3}
+  m_Name: Abilities Config
+  m_EditorClassIdentifier: 
+  _boostAbilityDuration: 2
+  _boostAbilityCooldown: 4
+  _boostAbilityAmount: 2
+  _shieldAbilityDuration: 2
+  _shieldAbilityCooldown: 4
+  _shieldAbilityHealPercentage: 0.2
+  _c4AbilityCooldown: 10
+  _c4AbilityDamage: 25
+  _c4AbilityDuration: 3
+  _c4AbilityStunDuration: 2
+  _c4AbilityKnockbackForce: 40
+  _lureAbilityCooldown: 15
+  _lureAbilityDuration: 3

@@ -13,14 +13,14 @@ abstract class Status : MonoBehaviour
     private float _bonusSheild = 0f;
 
     public float AbilityHaste { get; set; }
-    public float AttackDamage => (_config.AttackDamage + BonusDamage) * DamageMultiplier;
+    public float AttackDamage => (_config.AttackDamage + BonusAttackDamage) * DamageMultiplier;
     public float AttackAngle => _config.AttackAngle;
     public float AttackRange => _config.AttackRange;
     public float AttackSpeed => _config.AttackSpeed * AttackSpeedMultiplier;
     public float AttackSpeedMultiplier { get; set; }
     public float AttackKnockback => _config.AttackKnockback;
     public float AttackSelfKnockforward => _config.AttackSelfKnockforward;
-    public float BonusDamage { get; set; }
+    public float BonusAttackDamage { get; set; }
     public float BonusHealth { 
         get => _bonusHealth;
         set {
@@ -70,7 +70,7 @@ abstract class Status : MonoBehaviour
         AttackSpeedMultiplier = 1.0f;
 
         AbilityHaste = 0f;
-        BonusDamage = 0f;
+        BonusAttackDamage = 0f;
         BonusHealth = 0f;
         BonusMoveSpeed = 0f;
         BonusShield = 0f;
@@ -91,7 +91,7 @@ abstract class Status : MonoBehaviour
     }
 
     public void PercentHeal(float percentage) =>
-        Health = math.min(MaxHealth, Health * (1f + percentage));
+        Health = math.min(MaxHealth, Health + MaxHealth * (1f + percentage));
 
     public virtual void ApplyDamage(float damage)
     {

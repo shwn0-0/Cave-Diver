@@ -1,0 +1,5863 @@
+fileFormatVersion: 2
+guid: 904d7f772938b4153ab0c6975b545cc5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1944242532961195617
+    second: Warrior_spritesheet_allanim_0
+  - first:
+      213: 819813226871038877
+    second: Warrior_spritesheet_allanim_1
+  - first:
+      213: -7434634926600912043
+    second: Warrior_spritesheet_allanim_2
+  - first:
+      213: -1405493004413164760
+    second: Warrior_spritesheet_allanim_3
+  - first:
+      213: -6256048756863466722
+    second: Warrior_spritesheet_allanim_4
+  - first:
+      213: 1745207422392141205
+    second: Warrior_spritesheet_allanim_5
+  - first:
+      213: -1492388746521826120
+    second: Warrior_spritesheet_allanim_6
+  - first:
+      213: -8157741165357631045
+    second: Warrior_spritesheet_allanim_7
+  - first:
+      213: 9111540027882977061
+    second: Warrior_spritesheet_allanim_8
+  - first:
+      213: 121400075123859420
+    second: Warrior_spritesheet_allanim_9
+  - first:
+      213: -68791308737834279
+    second: Warrior_spritesheet_allanim_10
+  - first:
+      213: 2910843914980696288
+    second: Warrior_spritesheet_allanim_11
+  - first:
+      213: 4883281659139952493
+    second: Warrior_spritesheet_allanim_12
+  - first:
+      213: -2290141063236739923
+    second: Warrior_spritesheet_allanim_13
+  - first:
+      213: -3158453538516574117
+    second: Warrior_spritesheet_allanim_14
+  - first:
+      213: 3229847777254486059
+    second: Warrior_spritesheet_allanim_15
+  - first:
+      213: -4606195488683469616
+    second: Warrior_spritesheet_allanim_16
+  - first:
+      213: 932627693238490229
+    second: Warrior_spritesheet_allanim_17
+  - first:
+      213: 3582724045135132685
+    second: Warrior_spritesheet_allanim_18
+  - first:
+      213: 1866063239375346898
+    second: Warrior_spritesheet_allanim_19
+  - first:
+      213: 4884643110368194099
+    second: Warrior_spritesheet_allanim_20
+  - first:
+      213: -8019779002485386210
+    second: Warrior_spritesheet_allanim_21
+  - first:
+      213: -7888413789324403500
+    second: Warrior_spritesheet_allanim_22
+  - first:
+      213: 7478905281494370310
+    second: Warrior_spritesheet_allanim_23
+  - first:
+      213: 6679105188836397289
+    second: Warrior_spritesheet_allanim_24
+  - first:
+      213: -7486324672027328805
+    second: Warrior_spritesheet_allanim_25
+  - first:
+      213: 572092084504974713
+    second: Warrior_spritesheet_allanim_26
+  - first:
+      213: 8185647559313749936
+    second: Warrior_spritesheet_allanim_27
+  - first:
+      213: 7090575227437480520
+    second: Warrior_spritesheet_allanim_28
+  - first:
+      213: -2386265756735130107
+    second: Warrior_spritesheet_allanim_29
+  - first:
+      213: -771564559902212027
+    second: Warrior_spritesheet_allanim_30
+  - first:
+      213: 8122497946725850903
+    second: Warrior_spritesheet_allanim_31
+  - first:
+      213: -8621062723836807795
+    second: Warrior_spritesheet_allanim_32
+  - first:
+      213: 2023453732475744073
+    second: Warrior_spritesheet_allanim_33
+  - first:
+      213: 252629473629398296
+    second: Warrior_spritesheet_allanim_34
+  - first:
+      213: 3824905436870585000
+    second: Warrior_spritesheet_allanim_35
+  - first:
+      213: 8410375958172160731
+    second: Warrior_spritesheet_allanim_36
+  - first:
+      213: -1870608807444105179
+    second: Warrior_spritesheet_allanim_37
+  - first:
+      213: 6954871107099999611
+    second: Warrior_spritesheet_allanim_38
+  - first:
+      213: -6110122472263116247
+    second: Warrior_spritesheet_allanim_39
+  - first:
+      213: -3878428476393355057
+    second: Warrior_spritesheet_allanim_40
+  - first:
+      213: 7996679815546571587
+    second: Warrior_spritesheet_allanim_41
+  - first:
+      213: -3429192604939298099
+    second: Warrior_spritesheet_allanim_42
+  - first:
+      213: 5958438586470695348
+    second: Warrior_spritesheet_allanim_43
+  - first:
+      213: -4256636528107699926
+    second: Warrior_spritesheet_allanim_44
+  - first:
+      213: -6861848306507276489
+    second: Warrior_spritesheet_allanim_45
+  - first:
+      213: -8882838605919506059
+    second: Warrior_spritesheet_allanim_46
+  - first:
+      213: 5340032028849584511
+    second: Warrior_spritesheet_allanim_47
+  - first:
+      213: 6820271553126040081
+    second: Warrior_spritesheet_allanim_48
+  - first:
+      213: -7099876449670721317
+    second: Warrior_spritesheet_allanim_49
+  - first:
+      213: -753092063988278525
+    second: Warrior_spritesheet_allanim_50
+  - first:
+      213: -3204051440032464711
+    second: Warrior_spritesheet_allanim_51
+  - first:
+      213: -6378649593348222855
+    second: Warrior_spritesheet_allanim_52
+  - first:
+      213: 2403207719716531104
+    second: Warrior_spritesheet_allanim_53
+  - first:
+      213: -956141475506454685
+    second: Warrior_spritesheet_allanim_54
+  - first:
+      213: 5194743579321317243
+    second: Warrior_spritesheet_allanim_55
+  - first:
+      213: -1490129998659246658
+    second: Warrior_spritesheet_allanim_56
+  - first:
+      213: -5365780565592796028
+    second: Warrior_spritesheet_allanim_57
+  - first:
+      213: 4908958772937039998
+    second: Warrior_spritesheet_allanim_58
+  - first:
+      213: -6894195215682269805
+    second: Warrior_spritesheet_allanim_59
+  - first:
+      213: -6832712504754023579
+    second: Warrior_spritesheet_allanim_60
+  - first:
+      213: -5361091394897858006
+    second: Warrior_spritesheet_allanim_61
+  - first:
+      213: -3632455011671114399
+    second: Warrior_spritesheet_allanim_62
+  - first:
+      213: -553796264232715347
+    second: Warrior_spritesheet_allanim_63
+  - first:
+      213: -6738080024224379608
+    second: Warrior_spritesheet_allanim_64
+  - first:
+      213: -66526793128103580
+    second: Warrior_spritesheet_allanim_65
+  - first:
+      213: -6636682299607810616
+    second: Warrior_spritesheet_allanim_66
+  - first:
+      213: 5126435103069124202
+    second: Warrior_spritesheet_allanim_67
+  - first:
+      213: -4853985274327628983
+    second: Warrior_spritesheet_allanim_68
+  - first:
+      213: -3065428365663444831
+    second: Warrior_spritesheet_allanim_69
+  - first:
+      213: 7746153542046229491
+    second: Warrior_spritesheet_allanim_70
+  - first:
+      213: -3235687880467480308
+    second: Warrior_spritesheet_allanim_71
+  - first:
+      213: 5726349365996561346
+    second: Warrior_spritesheet_allanim_72
+  - first:
+      213: -6505551348891346854
+    second: Warrior_spritesheet_allanim_73
+  - first:
+      213: -107490165754778160
+    second: Warrior_spritesheet_allanim_74
+  - first:
+      213: -6175418217251686683
+    second: Warrior_spritesheet_allanim_75
+  - first:
+      213: 3591480462400732881
+    second: Warrior_spritesheet_allanim_76
+  - first:
+      213: -4847640776503839698
+    second: Warrior_spritesheet_allanim_77
+  - first:
+      213: 7845875228957030814
+    second: Warrior_spritesheet_allanim_78
+  - first:
+      213: -3230962179499934247
+    second: Warrior_spritesheet_allanim_79
+  - first:
+      213: 1797296139815278567
+    second: Warrior_spritesheet_allanim_80
+  - first:
+      213: -6163984721024551239
+    second: Warrior_spritesheet_allanim_81
+  - first:
+      213: -4488736722028917309
+    second: Warrior_spritesheet_allanim_82
+  - first:
+      213: -8343343597509480806
+    second: Warrior_spritesheet_allanim_83
+  - first:
+      213: -1289945189109758147
+    second: Warrior_spritesheet_allanim_84
+  - first:
+      213: -8761762961491652933
+    second: Warrior_spritesheet_allanim_85
+  - first:
+      213: -6028497824482248738
+    second: Warrior_spritesheet_allanim_86
+  - first:
+      213: -8378210915737423367
+    second: Warrior_spritesheet_allanim_87
+  - first:
+      213: -4816519628531478391
+    second: Warrior_spritesheet_allanim_88
+  - first:
+      213: -3152604610835053648
+    second: Warrior_spritesheet_allanim_89
+  - first:
+      213: -3989264180857895582
+    second: Warrior_spritesheet_allanim_90
+  - first:
+      213: 6413354725689277087
+    second: Warrior_spritesheet_allanim_91
+  - first:
+      213: -1525191290043093384
+    second: Warrior_spritesheet_allanim_92
+  - first:
+      213: -6793223354353669858
+    second: Warrior_spritesheet_allanim_93
+  - first:
+      213: 7573812821766990771
+    second: Warrior_spritesheet_allanim_94
+  - first:
+      213: -2171880641801419835
+    second: Warrior_spritesheet_allanim_95
+  - first:
+      213: 1578896050637735573
+    second: Warrior_spritesheet_allanim_96
+  - first:
+      213: 1304283233227667534
+    second: Warrior_spritesheet_allanim_97
+  - first:
+      213: 8909417833804122194
+    second: Warrior_spritesheet_allanim_98
+  - first:
+      213: -3136492108218282955
+    second: Warrior_spritesheet_allanim_99
+  - first:
+      213: 925898384498447903
+    second: Warrior_spritesheet_allanim_100
+  - first:
+      213: -3855256779060266174
+    second: Warrior_spritesheet_allanim_101
+  - first:
+      213: 7471917227457539494
+    second: Warrior_spritesheet_allanim_102
+  - first:
+      213: 1097319913433500544
+    second: Warrior_spritesheet_allanim_103
+  - first:
+      213: 4232701998349309893
+    second: Warrior_spritesheet_allanim_104
+  - first:
+      213: 8919612656095727796
+    second: Warrior_spritesheet_allanim_105
+  - first:
+      213: -7232609067022068524
+    second: Warrior_spritesheet_allanim_106
+  - first:
+      213: 8512008154650163258
+    second: Warrior_spritesheet_allanim_107
+  - first:
+      213: -2033174761154383146
+    second: Warrior_spritesheet_allanim_108
+  - first:
+      213: 8154951257198665930
+    second: Warrior_spritesheet_allanim_109
+  - first:
+      213: 8684731801622384078
+    second: Warrior_spritesheet_allanim_110
+  - first:
+      213: 2936662832338481026
+    second: Warrior_spritesheet_allanim_111
+  - first:
+      213: 7422157374260696325
+    second: Warrior_spritesheet_allanim_112
+  - first:
+      213: -6548444150434119022
+    second: Warrior_spritesheet_allanim_113
+  - first:
+      213: 6610809049956337815
+    second: Warrior_spritesheet_allanim_114
+  - first:
+      213: 5528629244703391225
+    second: Warrior_spritesheet_allanim_115
+  - first:
+      213: -8399125282475597956
+    second: Warrior_spritesheet_allanim_116
+  - first:
+      213: -7335756789356542834
+    second: Warrior_spritesheet_allanim_117
+  - first:
+      213: 3736658091878450080
+    second: Warrior_spritesheet_allanim_118
+  - first:
+      213: -5896450237741477859
+    second: Warrior_spritesheet_allanim_119
+  - first:
+      213: -6407784768489953459
+    second: Warrior_spritesheet_allanim_120
+  - first:
+      213: 6050419015226444159
+    second: Warrior_spritesheet_allanim_121
+  - first:
+      213: 8065861504979203236
+    second: Warrior_spritesheet_allanim_122
+  - first:
+      213: -8928624659320988878
+    second: Warrior_spritesheet_allanim_123
+  - first:
+      213: -8488206922010197347
+    second: Warrior_spritesheet_allanim_124
+  - first:
+      213: 119840360486689136
+    second: Warrior_spritesheet_allanim_125
+  - first:
+      213: -7197000546511764933
+    second: Warrior_spritesheet_allanim_126
+  - first:
+      213: -3917997315298174003
+    second: Warrior_spritesheet_allanim_127
+  - first:
+      213: -400464663908034326
+    second: Warrior_spritesheet_allanim_128
+  - first:
+      213: -1689174474437702802
+    second: Warrior_spritesheet_allanim_129
+  - first:
+      213: 7858936852205298575
+    second: Warrior_spritesheet_allanim_130
+  - first:
+      213: 7365682538216044173
+    second: Warrior_spritesheet_allanim_131
+  - first:
+      213: -5882441358159836443
+    second: Warrior_spritesheet_allanim_132
+  - first:
+      213: -8620253122340444479
+    second: Warrior_spritesheet_allanim_133
+  - first:
+      213: 7443996217951910823
+    second: Warrior_spritesheet_allanim_134
+  - first:
+      213: -1208073137944471706
+    second: Warrior_spritesheet_allanim_135
+  - first:
+      213: -1283546081831223999
+    second: Warrior_spritesheet_allanim_136
+  - first:
+      213: 1269317708349121881
+    second: Warrior_spritesheet_allanim_137
+  - first:
+      213: -6130107877010184127
+    second: Warrior_spritesheet_allanim_138
+  - first:
+      213: -2029173128667125107
+    second: Warrior_spritesheet_allanim_139
+  - first:
+      213: -8526313141705385341
+    second: Warrior_spritesheet_allanim_140
+  - first:
+      213: 7340133709977572582
+    second: Warrior_spritesheet_allanim_141
+  - first:
+      213: -6823115212168131313
+    second: Warrior_spritesheet_allanim_142
+  - first:
+      213: 3197769950218872096
+    second: Warrior_spritesheet_allanim_143
+  - first:
+      213: -7422774942216540452
+    second: Warrior_spritesheet_allanim_144
+  - first:
+      213: 8175974743817807197
+    second: Warrior_spritesheet_allanim_145
+  - first:
+      213: -867610314074462072
+    second: Warrior_spritesheet_allanim_146
+  - first:
+      213: 5146495291542488976
+    second: Warrior_spritesheet_allanim_147
+  - first:
+      213: -7671500914004791640
+    second: Warrior_spritesheet_allanim_148
+  - first:
+      213: 9005503024242633087
+    second: Warrior_spritesheet_allanim_149
+  - first:
+      213: 1916649625439996920
+    second: Warrior_spritesheet_allanim_150
+  - first:
+      213: 7299041636986803655
+    second: Warrior_spritesheet_allanim_151
+  - first:
+      213: -2371583574798133243
+    second: Warrior_spritesheet_allanim_152
+  - first:
+      213: -172820937783645802
+    second: Warrior_spritesheet_allanim_153
+  - first:
+      213: 1038347299689091608
+    second: Warrior_spritesheet_allanim_154
+  - first:
+      213: -7792697097344861706
+    second: Warrior_spritesheet_allanim_155
+  - first:
+      213: -1668688432676354745
+    second: Warrior_spritesheet_allanim_156
+  - first:
+      213: 4517575846911668736
+    second: Warrior_spritesheet_allanim_157
+  - first:
+      213: 2120089329453941992
+    second: Warrior_spritesheet_allanim_158
+  - first:
+      213: -3328416858772226974
+    second: Warrior_spritesheet_allanim_159
+  - first:
+      213: -7655501251903690475
+    second: Warrior_spritesheet_allanim_160
+  - first:
+      213: -4381966642287233150
+    second: Warrior_spritesheet_allanim_161
+  - first:
+      213: 2354876704907157020
+    second: Warrior_spritesheet_allanim_162
+  - first:
+      213: 4846419500725402607
+    second: Warrior_spritesheet_allanim_163
+  - first:
+      213: 7172734787326208737
+    second: Warrior_spritesheet_allanim_164
+  - first:
+      213: -8524472659818211562
+    second: Warrior_spritesheet_allanim_165
+  - first:
+      213: -7950719896574628002
+    second: Warrior_spritesheet_allanim_166
+  - first:
+      213: 283137886015957591
+    second: Warrior_spritesheet_allanim_167
+  - first:
+      213: -160874441723477584
+    second: Warrior_spritesheet_allanim_168
+  - first:
+      213: -2394506269672409786
+    second: Warrior_spritesheet_allanim_169
+  - first:
+      213: -9222526418911695905
+    second: Warrior_spritesheet_allanim_170
+  - first:
+      213: 3060259831600865750
+    second: Warrior_spritesheet_allanim_171
+  - first:
+      213: 8828130480803312900
+    second: Warrior_spritesheet_allanim_172
+  - first:
+      213: 4133797333364605584
+    second: Warrior_spritesheet_allanim_173
+  - first:
+      213: 4160035307008131272
+    second: Warrior_spritesheet_allanim_174
+  - first:
+      213: 6787969971715649747
+    second: Warrior_spritesheet_allanim_175
+  - first:
+      213: -2611884740076236484
+    second: Warrior_spritesheet_allanim_176
+  - first:
+      213: 1421075805505944160
+    second: Warrior_spritesheet_allanim_177
+  - first:
+      213: -6633685410144759862
+    second: Warrior_spritesheet_allanim_178
+  - first:
+      213: 2012561672829335755
+    second: Warrior_spritesheet_allanim_179
+  - first:
+      213: -245740303903025368
+    second: Warrior_spritesheet_allanim_180
+  - first:
+      213: 11754339913834975
+    second: Warrior_spritesheet_allanim_181
+  - first:
+      213: 4447035239153998540
+    second: Warrior_spritesheet_allanim_182
+  - first:
+      213: 2831589721935357205
+    second: Warrior_spritesheet_allanim_183
+  - first:
+      213: -3162977761953852099
+    second: Warrior_spritesheet_allanim_184
+  - first:
+      213: 4640460813042452216
+    second: Warrior_spritesheet_allanim_185
+  - first:
+      213: -7813767230339341592
+    second: Warrior_spritesheet_allanim_186
+  - first:
+      213: -857405135859259262
+    second: Warrior_spritesheet_allanim_187
+  - first:
+      213: 4009294461290345094
+    second: Warrior_spritesheet_allanim_188
+  - first:
+      213: -1676309059222818146
+    second: Warrior_spritesheet_allanim_189
+  - first:
+      213: 6617473688178823299
+    second: Warrior_spritesheet_allanim_190
+  - first:
+      213: -7032244849983135637
+    second: Warrior_spritesheet_allanim_191
+  - first:
+      213: -4827386606123698119
+    second: Warrior_spritesheet_allanim_192
+  - first:
+      213: -8442326422834452905
+    second: Warrior_spritesheet_allanim_193
+  - first:
+      213: -441997616313058578
+    second: Warrior_spritesheet_allanim_194
+  - first:
+      213: 5921266587930895945
+    second: Warrior_spritesheet_allanim_195
+  - first:
+      213: -633550626307039501
+    second: Warrior_spritesheet_allanim_196
+  - first:
+      213: 7152038512868480621
+    second: Warrior_spritesheet_allanim_197
+  - first:
+      213: -9008964168339900532
+    second: Warrior_spritesheet_allanim_198
+  - first:
+      213: 7930223984906125806
+    second: Warrior_spritesheet_allanim_199
+  - first:
+      213: -7561359759360414761
+    second: Warrior_spritesheet_allanim_200
+  - first:
+      213: 3916496632538914832
+    second: Warrior_spritesheet_allanim_201
+  - first:
+      213: 2049187104419204300
+    second: Warrior_spritesheet_allanim_202
+  - first:
+      213: -2185039259770764108
+    second: Warrior_spritesheet_allanim_203
+  - first:
+      213: -3917753482714778013
+    second: Warrior_spritesheet_allanim_204
+  - first:
+      213: 8865209599123697783
+    second: Warrior_spritesheet_allanim_205
+  - first:
+      213: 6863834345401359508
+    second: Warrior_spritesheet_allanim_206
+  - first:
+      213: 1993227148377154196
+    second: Warrior_spritesheet_allanim_207
+  - first:
+      213: 4234162082283982817
+    second: Warrior_spritesheet_allanim_208
+  - first:
+      213: -6863774548306335307
+    second: Warrior_spritesheet_allanim_209
+  - first:
+      213: -7871897344169523597
+    second: Warrior_spritesheet_allanim_210
+  - first:
+      213: 1446968278311057099
+    second: Warrior_spritesheet_allanim_211
+  - first:
+      213: -8302453197609064842
+    second: Warrior_spritesheet_allanim_212
+  - first:
+      213: 4200807609400710923
+    second: Warrior_spritesheet_allanim_213
+  - first:
+      213: -4535341004805593878
+    second: Warrior_spritesheet_allanim_214
+  - first:
+      213: -5619594816603357706
+    second: Warrior_spritesheet_allanim_215
+  - first:
+      213: 1427570235159330156
+    second: Warrior_spritesheet_allanim_216
+  - first:
+      213: -9043388448371398740
+    second: Warrior_spritesheet_allanim_217
+  - first:
+      213: -2145988818032599654
+    second: Warrior_spritesheet_allanim_218
+  - first:
+      213: 2778960489913482892
+    second: Warrior_spritesheet_allanim_219
+  - first:
+      213: 4088114049485905343
+    second: Warrior_spritesheet_allanim_220
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1144
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9964a1a7b9a405e0800000000000000
+      internalID: -1944242532961195617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1144
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d93a0d949cf806b00800000000000000
+      internalID: 819813226871038877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1144
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5538d35bceed2d890800000000000000
+      internalID: -7434634926600912043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_3
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1144
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82328a12f8fae7ce0800000000000000
+      internalID: -1405493004413164760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_4
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1144
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1301a53dcc0e29a0800000000000000
+      internalID: -6256048756863466722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_5
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1144
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5950f0777e8383810800000000000000
+      internalID: 1745207422392141205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_6
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1144
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bca6c09758f94be0800000000000000
+      internalID: -1492388746521826120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_7
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1144
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9f645b1a1e9ce80800000000000000
+      internalID: -8157741165357631045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_8
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1144
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527b7be5161b27e70800000000000000
+      internalID: 9111540027882977061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_9
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 1144
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf9671a9bc4fa100800000000000000
+      internalID: 121400075123859420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_10
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1144
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d21c0f4baa9b0ff0800000000000000
+      internalID: -68791308737834279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_11
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1144
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e0280d4e15656820800000000000000
+      internalID: 2910843914980696288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1064
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f8737dbc6e4c340800000000000000
+      internalID: 4883281659139952493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1064
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac1d3036d8c730e0800000000000000
+      internalID: -2290141063236739923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_14
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1064
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50e42dad3bea24d0800000000000000
+      internalID: -3158453538516574117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_15
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1064
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b20b6d1e079b2dc20800000000000000
+      internalID: 3229847777254486059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_16
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1064
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4d3039b918310c0800000000000000
+      internalID: -4606195488683469616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_17
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1064
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5741c2b12fb51fc00800000000000000
+      internalID: 932627693238490229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_18
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1064
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08b786798468b130800000000000000
+      internalID: 3582724045135132685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_19
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1064
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dcd16f11a695e910800000000000000
+      internalID: 1866063239375346898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_20
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1064
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e2e08670db9c340800000000000000
+      internalID: 4884643110368194099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_21
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1064
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e14d8b3ec7504b090800000000000000
+      internalID: -8019779002485386210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_22
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1064
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc96060479b68290800000000000000
+      internalID: -7888413789324403500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_23
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1064
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 608c3448ab86ac760800000000000000
+      internalID: 7478905281494370310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_24
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0df0628c2f0bc50800000000000000
+      internalID: 6679105188836397289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_25
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bde7192006b3b1890800000000000000
+      internalID: -7486324672027328805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_26
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9755bb348ba70f700800000000000000
+      internalID: 572092084504974713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_27
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b77075f513499170800000000000000
+      internalID: 8185647559313749936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_28
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a78941a98c66260800000000000000
+      internalID: 7090575227437480520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_29
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506bf1eefe742eed0800000000000000
+      internalID: -2386265756735130107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_30
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5408fb5ee1ada45f0800000000000000
+      internalID: -771564559902212027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_31
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f1f6309d8e8b070800000000000000
+      internalID: 8122497946725850903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_32
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8578570125db5880800000000000000
+      internalID: -8621062723836807795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_33
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94fa7afe270c41c10800000000000000
+      internalID: 2023453732475744073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_34
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8156973fa25818300800000000000000
+      internalID: 252629473629398296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_35
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 984
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aaa128ca3bc41530800000000000000
+      internalID: 3824905436870585000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_36
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 904
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd25656bf58a7b470800000000000000
+      internalID: 8410375958172160731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_37
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 904
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528b39653334a06e0800000000000000
+      internalID: -1870608807444105179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_38
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 904
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7db2556c6aa48060800000000000000
+      internalID: 6954871107099999611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_39
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 904
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a10aafbfb743ba0800000000000000
+      internalID: -6110122472263116247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_40
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 904
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc880d979dd0d2ac0800000000000000
+      internalID: -3878428476393355057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_41
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 904
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b803c8ce9e9fe60800000000000000
+      internalID: 7996679815546571587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_42
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 904
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca52349e7f0960d0800000000000000
+      internalID: -3429192604939298099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_43
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 904
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b101924350a0b250800000000000000
+      internalID: 5958438586470695348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_44
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 904
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a21403c51a36de4c0800000000000000
+      internalID: -4256636528107699926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_45
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 904
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f94042251d5c0a0800000000000000
+      internalID: -6861848306507276489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_46
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 904
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571ba09e951d9b480800000000000000
+      internalID: -8882838605919506059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_47
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 904
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79b9c866da9b1a40800000000000000
+      internalID: 5340032028849584511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_48
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 823
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11287cb97d876ae50800000000000000
+      internalID: 6820271553126040081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_49
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 823
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0173c5cfb287d90800000000000000
+      internalID: -7099876449670721317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_50
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 823
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b10d202ca7c85f0800000000000000
+      internalID: -753092063988278525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_51
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 822
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b049cae03ce883d0800000000000000
+      internalID: -3204051440032464711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_52
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 824
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9701ac98dfb7a77a0800000000000000
+      internalID: -6378649593348222855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_53
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 824
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab2e2730b8e95120800000000000000
+      internalID: 2403207719716531104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_54
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 824
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f7b65d46a1bb2f0800000000000000
+      internalID: -956141475506454685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_55
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 824
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7730b033cf671840800000000000000
+      internalID: 5194743579321317243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_56
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 824
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb523c849aef15be0800000000000000
+      internalID: -1490129998659246658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_57
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 824
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4849525310be885b0800000000000000
+      internalID: -5365780565592796028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_58
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 824
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7023f5ceff102440800000000000000
+      internalID: 4908958772937039998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_59
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 824
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d8f057af5e250a0800000000000000
+      internalID: -6894195215682269805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_60
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 744
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56354cd9d245d21a0800000000000000
+      internalID: -6832712504754023579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_61
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 744
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22b5b6d7c39995b0800000000000000
+      internalID: -5361091394897858006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_62
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 744
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d71c6996de69dc0800000000000000
+      internalID: -3632455011671114399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_63
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 744
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab78785b358058f0800000000000000
+      internalID: -553796264232715347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_64
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 744
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82d43f7fae78d72a0800000000000000
+      internalID: -6738080024224379608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_65
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 744
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 461bd8feb36a31ff0800000000000000
+      internalID: -66526793128103580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_66
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 744
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cdf0c47c94c5e3a0800000000000000
+      internalID: -6636682299607810616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_67
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 744
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a663782b091c42740800000000000000
+      internalID: 5126435103069124202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_68
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 744
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94389ba4c1e23acb0800000000000000
+      internalID: -4853985274327628983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_69
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 744
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a0693c84296575d0800000000000000
+      internalID: -3065428365663444831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_70
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 744
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f3ac490b9ddf7b60800000000000000
+      internalID: 7746153542046229491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_71
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 744
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0103b024078813d0800000000000000
+      internalID: -3235687880467480308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_72
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 664
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3220ca864187f40800000000000000
+      internalID: 5726349365996561346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_73
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 664
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58944d1483a7b5a0800000000000000
+      internalID: -6505551348891346854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_74
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 664
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dda655834e128ef0800000000000000
+      internalID: -107490165754778160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_75
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 664
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e6bc35a9d18c4aa0800000000000000
+      internalID: -6175418217251686683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_76
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 664
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1deb62bb37087d130800000000000000
+      internalID: 3591480462400732881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_77
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 664
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e243acdc568b9bcb0800000000000000
+      internalID: -4847640776503839698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_78
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 664
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e99350693f522ec60800000000000000
+      internalID: 7845875228957030814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_79
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 664
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd3f2024015923d0800000000000000
+      internalID: -3230962179499934247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_80
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 664
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7ded1115741f810800000000000000
+      internalID: 1797296139815278567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_81
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 664
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6756eed80257aa0800000000000000
+      internalID: -6163984721024551239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_82
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 664
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd0731dbbdc4b1c0800000000000000
+      internalID: -4488736722028917309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_83
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 664
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9eea67f33d763c80800000000000000
+      internalID: -8343343597509480806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_84
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 584
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3783675fa1391ee0800000000000000
+      internalID: -1289945189109758147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_85
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 584
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe8d122207f76680800000000000000
+      internalID: -8761762961491652933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_86
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 584
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed735824b29765ca0800000000000000
+      internalID: -6028497824482248738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_87
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 584
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1bb22df8d9abb80800000000000000
+      internalID: -8378210915737423367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_88
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 584
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9805fa7bae8482db0800000000000000
+      internalID: -4816519628531478391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_89
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 584
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b30be54fc2bf34d0800000000000000
+      internalID: -3152604610835053648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_90
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 589
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26586c01d5943a8c0800000000000000
+      internalID: -3989264180857895582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_91
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 580
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a3843c420d00950800000000000000
+      internalID: 6413354725689277087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_92
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 582
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e267e3a9e65dae0800000000000000
+      internalID: -1525191290043093384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_93
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 584
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19acdbe95f99b1a0800000000000000
+      internalID: -6793223354353669858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_94
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 584
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb68b432a69b1960800000000000000
+      internalID: 7573812821766990771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_95
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 584
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c301ea301eebd1e0800000000000000
+      internalID: -2171880641801419835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_96
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 589
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596878bb79d59e510800000000000000
+      internalID: 1578896050637735573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_97
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 584
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e487803b0beb91210800000000000000
+      internalID: 1304283233227667534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_98
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 500
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258cc63d05c94ab70800000000000000
+      internalID: 8909417833804122194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_99
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 502
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c45d0ab01f874d0800000000000000
+      internalID: -3136492108218282955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_100
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 504
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f165322dca379dc00800000000000000
+      internalID: 925898384498447903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_101
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 504
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b323ea2606f7ac0800000000000000
+      internalID: -3855256779060266174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_102
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 504
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ad6ab5612591b760800000000000000
+      internalID: 7471917227457539494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_103
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 495
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08b8a2db5a67a3f00800000000000000
+      internalID: 1097319913433500544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_104
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 495
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c752bbaa049dba30800000000000000
+      internalID: 4232701998349309893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_105
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 498
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b01aacd374d8cb70800000000000000
+      internalID: 8919612656095727796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_106
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 495
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d451e0af5c90ab90800000000000000
+      internalID: -7232609067022068524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_107
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 504
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38b62f615ab02670800000000000000
+      internalID: 8512008154650163258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_108
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 504
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d27a13b356b8c3e0800000000000000
+      internalID: -2033174761154383146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_109
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 504
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac0a3fd26f43c2170800000000000000
+      internalID: 8154951257198665930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_110
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 504
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd8d355f8d568870800000000000000
+      internalID: 8684731801622384078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_111
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 424
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28fa0a2794f11c820800000000000000
+      internalID: 2936662832338481026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_112
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 424
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505dadfbeccc00760800000000000000
+      internalID: 7422157374260696325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_113
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 424
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 292c3e58db04f15a0800000000000000
+      internalID: -6548444150434119022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_114
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 424
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798c59c2ecf4ebb50800000000000000
+      internalID: 6610809049956337815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_115
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 424
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fdb1619103a9bc40800000000000000
+      internalID: 5528629244703391225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_116
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 424
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7f1a0a5e00507b80800000000000000
+      internalID: -8399125282475597956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_117
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 408
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e844ebb0118223a90800000000000000
+      internalID: -7335756789356542834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_118
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 407
+        width: 25
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a30185acb64bd330800000000000000
+      internalID: 3736658091878450080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_119
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 411
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d10d6afdfb99b2ea0800000000000000
+      internalID: -5896450237741477859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_120
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 411
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d476ff4f3b9f217a0800000000000000
+      internalID: -6407784768489953459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_121
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 455
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7947d0b90867f350800000000000000
+      internalID: 6050419015226444159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_122
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 412
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a478c3dd42bfef60800000000000000
+      internalID: 8065861504979203236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_123
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 443
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b1160ad27271480800000000000000
+      internalID: -8928624659320988878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_124
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 419
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d920291e6c4d33a80800000000000000
+      internalID: -8488206922010197347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_125
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 411
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07950944c22c9a100800000000000000
+      internalID: 119840360486689136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_126
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 414
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32cfd0622e1f1c90800000000000000
+      internalID: -7197000546511764933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_127
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 411
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcbd7be333a70a9c0800000000000000
+      internalID: -3917997315298174003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_128
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 424
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae85aaa8283417af0800000000000000
+      internalID: -400464663908034326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_129
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 415
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6bcb7fd3c8de88e0800000000000000
+      internalID: -1689174474437702802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_130
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 344
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f836cebbd6d801d60800000000000000
+      internalID: 7858936852205298575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_131
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 379
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d863aa25e39283660800000000000000
+      internalID: 7365682538216044173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_132
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 358
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea01d250ce5d5ea0800000000000000
+      internalID: -5882441358159836443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_133
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 344
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c622f01575be5880800000000000000
+      internalID: -8620253122340444479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_134
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 344
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abff58ce136e4760800000000000000
+      internalID: 7443996217951910823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_135
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 344
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667d026b1ef0c3fe0800000000000000
+      internalID: -1208073137944471706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_136
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 328
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14dfa9b93adef2ee0800000000000000
+      internalID: -1283546081831223999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_137
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 331
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95523490bb58d9110800000000000000
+      internalID: 1269317708349121881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_138
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 327
+        width: 25
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148ebf35d5b7deaa0800000000000000
+      internalID: -6130107877010184127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_139
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 375
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a270e5acde6d3e0800000000000000
+      internalID: -2029173128667125107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_140
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 331
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ad7e83f537ca980800000000000000
+      internalID: -8526313141705385341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_141
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 334
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4551338b46dd560800000000000000
+      internalID: 7340133709977572582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_142
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 331
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d872d6ddc6f41a0800000000000000
+      internalID: -6823115212168131313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_143
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 331
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025e634c3d2c06c20800000000000000
+      internalID: 3197769950218872096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_144
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 335
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde238184810df890800000000000000
+      internalID: -7422774942216540452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_145
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 344
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5563d916b5e67170800000000000000
+      internalID: 8175974743817807197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_146
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 358
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88860222401a5f3f0800000000000000
+      internalID: -867610314074462072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_147
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 379
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0974c9a43360c6740800000000000000
+      internalID: 5146495291542488976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_148
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 344
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aee8a6609a598590800000000000000
+      internalID: -7671500914004791640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_149
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 344
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7920bf8949f9fc70800000000000000
+      internalID: 9005503024242633087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_150
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 363
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb8c33fdae499a10800000000000000
+      internalID: 1916649625439996920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_151
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 336
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5526562b76b4560800000000000000
+      internalID: 7299041636986803655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_152
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 343
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508910dcd41761fd0800000000000000
+      internalID: -2371583574798133243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_153
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 336
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699e7a1d5440a9df0800000000000000
+      internalID: -172820937783645802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_154
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 339
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812547f1e53f86e00800000000000000
+      internalID: 1038347299689091608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_155
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 343
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9ba860747cad390800000000000000
+      internalID: -7792697097344861706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_156
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 336
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745c58926b0a7d8e0800000000000000
+      internalID: -1668688432676354745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_157
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 336
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 002fd013c47a1be30800000000000000
+      internalID: 4517575846911668736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_158
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 332
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4c23e23021c6d10800000000000000
+      internalID: 2120089329453941992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_159
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 264
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26cb57c60861fc1d0800000000000000
+      internalID: -3328416858772226974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_160
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 264
+        width: 20
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519e8b60c2232c590800000000000000
+      internalID: -7655501251903690475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_161
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 243
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 287bbd43e802033c0800000000000000
+      internalID: -4381966642287233150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_162
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 262
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e55dde2e33ea020800000000000000
+      internalID: 2354876704907157020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_163
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 219
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb7345cbd0f14340800000000000000
+      internalID: 4846419500725402607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_164
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 263
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea6aaa494caa8360800000000000000
+      internalID: 7172734787326208737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_165
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 253
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 617910ec74df2b980800000000000000
+      internalID: -8524472659818211562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_166
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 264
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fe908f06e59a190800000000000000
+      internalID: -7950719896574628002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_167
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 239
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75aaf6e3868ede300800000000000000
+      internalID: 283137886015957591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_168
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 243
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b102af2c8574cdf0800000000000000
+      internalID: -160874441723477584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_169
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 264
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645fabffb3105ced0800000000000000
+      internalID: -2394506269672409786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_170
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 219
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdbec15c511030080800000000000000
+      internalID: -9222526418911695905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_171
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 264
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d167f65a1a387a20800000000000000
+      internalID: 3060259831600865750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_172
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 253
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 405741b16e1d38a70800000000000000
+      internalID: 8828130480803312900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_173
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 264
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09287acd5c23e5930800000000000000
+      internalID: 4133797333364605584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_174
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 239
+        width: 54
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c08d47221a6bb930800000000000000
+      internalID: 4160035307008131272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_175
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 264
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d0312e99b6b33e50800000000000000
+      internalID: 6787969971715649747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_176
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 264
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c311e71daa8b0cbd0800000000000000
+      internalID: -2611884740076236484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_177
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 240
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a751a7aeca8b310800000000000000
+      internalID: 1421075805505944160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_178
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 241
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf41a8244a60f3a0800000000000000
+      internalID: -6633685410144759862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_179
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 240
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc8fe8dad2e0eeb10800000000000000
+      internalID: 2012561672829335755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_180
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 241
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8271ddede74f69cf0800000000000000
+      internalID: -245740303903025368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_181
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 195
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd122278282c92000800000000000000
+      internalID: 11754339913834975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_182
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 202
+        width: 57
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cca1b651dfa07bd30800000000000000
+      internalID: 4447035239153998540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_183
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 223
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 515aa9589d3db4720800000000000000
+      internalID: 2831589721935357205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_184
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 226
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35d742db78da14d0800000000000000
+      internalID: -3162977761953852099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_185
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 213
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f60483f58a366040800000000000000
+      internalID: 4640460813042452216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_186
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 195
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e229066a1cef8390800000000000000
+      internalID: -7813767230339341592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_187
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 202
+        width: 57
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28863885292e914f0800000000000000
+      internalID: -857405135859259262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_188
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 213
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682f6250210e3a730800000000000000
+      internalID: 4009294461290345094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_189
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 226
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e923147cacd8cb8e0800000000000000
+      internalID: -1676309059222818146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_190
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 223
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 380946e224df5db50800000000000000
+      internalID: 6617473688178823299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_191
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 165
+        width: 47
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b606f2f3192786e90800000000000000
+      internalID: -7032244849983135637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_192
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 167
+        width: 50
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938b484557da10db0800000000000000
+      internalID: -4827386606123698119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_193
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 184
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 756ee0909d4d6da80800000000000000
+      internalID: -8442326422834452905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_194
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 184
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea37108285bdd9f0800000000000000
+      internalID: -441997616313058578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_195
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 184
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946a20ae6909c2250800000000000000
+      internalID: 5921266587930895945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_196
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 184
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe1eb3ef0d2537f0800000000000000
+      internalID: -633550626307039501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_197
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 184
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6650736225214360800000000000000
+      internalID: 7152038512868480621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_198
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 184
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87b0e702dab9f280800000000000000
+      internalID: -9008964168339900532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_199
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 184
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1cc99b2b0dd0e60800000000000000
+      internalID: 7930223984906125806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_200
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 184
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dba3645c57a01790800000000000000
+      internalID: -7561359759360414761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_201
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 184
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010ee72dfe03a5630800000000000000
+      internalID: 3916496632538914832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_202
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 162
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cccc73d70dc207c10800000000000000
+      internalID: 2049187104419204300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_203
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 104
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4c41dbe5e2da1e0800000000000000
+      internalID: -2185039259770764108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_204
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 104
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3667c31f6f751a9c0800000000000000
+      internalID: -3917753482714778013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_205
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 104
+        width: 18
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770b627192d870b70800000000000000
+      internalID: 8865209599123697783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_206
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 99
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c16c298fc314f50800000000000000
+      internalID: 6863834345401359508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_207
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 99
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4926fa7e78d59ab10800000000000000
+      internalID: 1993227148377154196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_208
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 97
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef07f3faf3c2ca30800000000000000
+      internalID: 4234162082283982817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_209
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 96
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b965d50a69feb0a0800000000000000
+      internalID: -6863774548306335307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_210
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 94
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3764f64921761c290800000000000000
+      internalID: -7871897344169523597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_211
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 101
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc63df59bf9a41410800000000000000
+      internalID: 1446968278311057099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_212
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 101
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676a4381ec2c7cc80800000000000000
+      internalID: -8302453197609064842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_213
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 101
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07561093444c4a30800000000000000
+      internalID: 4200807609400710923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_214
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 101
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4ac49a26b3f01c0800000000000000
+      internalID: -4535341004805593878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_215
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 21
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fdfab6c9403302b0800000000000000
+      internalID: -5619594816603357706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_216
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 21
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6db796b09fbfc310800000000000000
+      internalID: 1427570235159330156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_217
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 24
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7a3f0ce1e6f7280800000000000000
+      internalID: -9043388448371398740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_218
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 24
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9dd4393a8ae732e0800000000000000
+      internalID: -2145988818032599654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_219
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 24
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e732e87d9d09620800000000000000
+      internalID: 2778960489913482892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior_spritesheet_allanim_220
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 24
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd14e87116ebb830800000000000000
+      internalID: 4088114049485905343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Warrior_spritesheet_allanim_0: -1944242532961195617
+      Warrior_spritesheet_allanim_1: 819813226871038877
+      Warrior_spritesheet_allanim_10: -68791308737834279
+      Warrior_spritesheet_allanim_100: 925898384498447903
+      Warrior_spritesheet_allanim_101: -3855256779060266174
+      Warrior_spritesheet_allanim_102: 7471917227457539494
+      Warrior_spritesheet_allanim_103: 1097319913433500544
+      Warrior_spritesheet_allanim_104: 4232701998349309893
+      Warrior_spritesheet_allanim_105: 8919612656095727796
+      Warrior_spritesheet_allanim_106: -7232609067022068524
+      Warrior_spritesheet_allanim_107: 8512008154650163258
+      Warrior_spritesheet_allanim_108: -2033174761154383146
+      Warrior_spritesheet_allanim_109: 8154951257198665930
+      Warrior_spritesheet_allanim_11: 2910843914980696288
+      Warrior_spritesheet_allanim_110: 8684731801622384078
+      Warrior_spritesheet_allanim_111: 2936662832338481026
+      Warrior_spritesheet_allanim_112: 7422157374260696325
+      Warrior_spritesheet_allanim_113: -6548444150434119022
+      Warrior_spritesheet_allanim_114: 6610809049956337815
+      Warrior_spritesheet_allanim_115: 5528629244703391225
+      Warrior_spritesheet_allanim_116: -8399125282475597956
+      Warrior_spritesheet_allanim_117: -7335756789356542834
+      Warrior_spritesheet_allanim_118: 3736658091878450080
+      Warrior_spritesheet_allanim_119: -5896450237741477859
+      Warrior_spritesheet_allanim_12: 4883281659139952493
+      Warrior_spritesheet_allanim_120: -6407784768489953459
+      Warrior_spritesheet_allanim_121: 6050419015226444159
+      Warrior_spritesheet_allanim_122: 8065861504979203236
+      Warrior_spritesheet_allanim_123: -8928624659320988878
+      Warrior_spritesheet_allanim_124: -8488206922010197347
+      Warrior_spritesheet_allanim_125: 119840360486689136
+      Warrior_spritesheet_allanim_126: -7197000546511764933
+      Warrior_spritesheet_allanim_127: -3917997315298174003
+      Warrior_spritesheet_allanim_128: -400464663908034326
+      Warrior_spritesheet_allanim_129: -1689174474437702802
+      Warrior_spritesheet_allanim_13: -2290141063236739923
+      Warrior_spritesheet_allanim_130: 7858936852205298575
+      Warrior_spritesheet_allanim_131: 7365682538216044173
+      Warrior_spritesheet_allanim_132: -5882441358159836443
+      Warrior_spritesheet_allanim_133: -8620253122340444479
+      Warrior_spritesheet_allanim_134: 7443996217951910823
+      Warrior_spritesheet_allanim_135: -1208073137944471706
+      Warrior_spritesheet_allanim_136: -1283546081831223999
+      Warrior_spritesheet_allanim_137: 1269317708349121881
+      Warrior_spritesheet_allanim_138: -6130107877010184127
+      Warrior_spritesheet_allanim_139: -2029173128667125107
+      Warrior_spritesheet_allanim_14: -3158453538516574117
+      Warrior_spritesheet_allanim_140: -8526313141705385341
+      Warrior_spritesheet_allanim_141: 7340133709977572582
+      Warrior_spritesheet_allanim_142: -6823115212168131313
+      Warrior_spritesheet_allanim_143: 3197769950218872096
+      Warrior_spritesheet_allanim_144: -7422774942216540452
+      Warrior_spritesheet_allanim_145: 8175974743817807197
+      Warrior_spritesheet_allanim_146: -867610314074462072
+      Warrior_spritesheet_allanim_147: 5146495291542488976
+      Warrior_spritesheet_allanim_148: -7671500914004791640
+      Warrior_spritesheet_allanim_149: 9005503024242633087
+      Warrior_spritesheet_allanim_15: 3229847777254486059
+      Warrior_spritesheet_allanim_150: 1916649625439996920
+      Warrior_spritesheet_allanim_151: 7299041636986803655
+      Warrior_spritesheet_allanim_152: -2371583574798133243
+      Warrior_spritesheet_allanim_153: -172820937783645802
+      Warrior_spritesheet_allanim_154: 1038347299689091608
+      Warrior_spritesheet_allanim_155: -7792697097344861706
+      Warrior_spritesheet_allanim_156: -1668688432676354745
+      Warrior_spritesheet_allanim_157: 4517575846911668736
+      Warrior_spritesheet_allanim_158: 2120089329453941992
+      Warrior_spritesheet_allanim_159: -3328416858772226974
+      Warrior_spritesheet_allanim_16: -4606195488683469616
+      Warrior_spritesheet_allanim_160: -7655501251903690475
+      Warrior_spritesheet_allanim_161: -4381966642287233150
+      Warrior_spritesheet_allanim_162: 2354876704907157020
+      Warrior_spritesheet_allanim_163: 4846419500725402607
+      Warrior_spritesheet_allanim_164: 7172734787326208737
+      Warrior_spritesheet_allanim_165: -8524472659818211562
+      Warrior_spritesheet_allanim_166: -7950719896574628002
+      Warrior_spritesheet_allanim_167: 283137886015957591
+      Warrior_spritesheet_allanim_168: -160874441723477584
+      Warrior_spritesheet_allanim_169: -2394506269672409786
+      Warrior_spritesheet_allanim_17: 932627693238490229
+      Warrior_spritesheet_allanim_170: -9222526418911695905
+      Warrior_spritesheet_allanim_171: 3060259831600865750
+      Warrior_spritesheet_allanim_172: 8828130480803312900
+      Warrior_spritesheet_allanim_173: 4133797333364605584
+      Warrior_spritesheet_allanim_174: 4160035307008131272
+      Warrior_spritesheet_allanim_175: 6787969971715649747
+      Warrior_spritesheet_allanim_176: -2611884740076236484
+      Warrior_spritesheet_allanim_177: 1421075805505944160
+      Warrior_spritesheet_allanim_178: -6633685410144759862
+      Warrior_spritesheet_allanim_179: 2012561672829335755
+      Warrior_spritesheet_allanim_18: 3582724045135132685
+      Warrior_spritesheet_allanim_180: -245740303903025368
+      Warrior_spritesheet_allanim_181: 11754339913834975
+      Warrior_spritesheet_allanim_182: 4447035239153998540
+      Warrior_spritesheet_allanim_183: 2831589721935357205
+      Warrior_spritesheet_allanim_184: -3162977761953852099
+      Warrior_spritesheet_allanim_185: 4640460813042452216
+      Warrior_spritesheet_allanim_186: -7813767230339341592
+      Warrior_spritesheet_allanim_187: -857405135859259262
+      Warrior_spritesheet_allanim_188: 4009294461290345094
+      Warrior_spritesheet_allanim_189: -1676309059222818146
+      Warrior_spritesheet_allanim_19: 1866063239375346898
+      Warrior_spritesheet_allanim_190: 6617473688178823299
+      Warrior_spritesheet_allanim_191: -7032244849983135637
+      Warrior_spritesheet_allanim_192: -4827386606123698119
+      Warrior_spritesheet_allanim_193: -8442326422834452905
+      Warrior_spritesheet_allanim_194: -441997616313058578
+      Warrior_spritesheet_allanim_195: 5921266587930895945
+      Warrior_spritesheet_allanim_196: -633550626307039501
+      Warrior_spritesheet_allanim_197: 7152038512868480621
+      Warrior_spritesheet_allanim_198: -9008964168339900532
+      Warrior_spritesheet_allanim_199: 7930223984906125806
+      Warrior_spritesheet_allanim_2: -7434634926600912043
+      Warrior_spritesheet_allanim_20: 4884643110368194099
+      Warrior_spritesheet_allanim_200: -7561359759360414761
+      Warrior_spritesheet_allanim_201: 3916496632538914832
+      Warrior_spritesheet_allanim_202: 2049187104419204300
+      Warrior_spritesheet_allanim_203: -2185039259770764108
+      Warrior_spritesheet_allanim_204: -3917753482714778013
+      Warrior_spritesheet_allanim_205: 8865209599123697783
+      Warrior_spritesheet_allanim_206: 6863834345401359508
+      Warrior_spritesheet_allanim_207: 1993227148377154196
+      Warrior_spritesheet_allanim_208: 4234162082283982817
+      Warrior_spritesheet_allanim_209: -6863774548306335307
+      Warrior_spritesheet_allanim_21: -8019779002485386210
+      Warrior_spritesheet_allanim_210: -7871897344169523597
+      Warrior_spritesheet_allanim_211: 1446968278311057099
+      Warrior_spritesheet_allanim_212: -8302453197609064842
+      Warrior_spritesheet_allanim_213: 4200807609400710923
+      Warrior_spritesheet_allanim_214: -4535341004805593878
+      Warrior_spritesheet_allanim_215: -5619594816603357706
+      Warrior_spritesheet_allanim_216: 1427570235159330156
+      Warrior_spritesheet_allanim_217: -9043388448371398740
+      Warrior_spritesheet_allanim_218: -2145988818032599654
+      Warrior_spritesheet_allanim_219: 2778960489913482892
+      Warrior_spritesheet_allanim_22: -7888413789324403500
+      Warrior_spritesheet_allanim_220: 4088114049485905343
+      Warrior_spritesheet_allanim_23: 7478905281494370310
+      Warrior_spritesheet_allanim_24: 6679105188836397289
+      Warrior_spritesheet_allanim_25: -7486324672027328805
+      Warrior_spritesheet_allanim_26: 572092084504974713
+      Warrior_spritesheet_allanim_27: 8185647559313749936
+      Warrior_spritesheet_allanim_28: 7090575227437480520
+      Warrior_spritesheet_allanim_29: -2386265756735130107
+      Warrior_spritesheet_allanim_3: -1405493004413164760
+      Warrior_spritesheet_allanim_30: -771564559902212027
+      Warrior_spritesheet_allanim_31: 8122497946725850903
+      Warrior_spritesheet_allanim_32: -8621062723836807795
+      Warrior_spritesheet_allanim_33: 2023453732475744073
+      Warrior_spritesheet_allanim_34: 252629473629398296
+      Warrior_spritesheet_allanim_35: 3824905436870585000
+      Warrior_spritesheet_allanim_36: 8410375958172160731
+      Warrior_spritesheet_allanim_37: -1870608807444105179
+      Warrior_spritesheet_allanim_38: 6954871107099999611
+      Warrior_spritesheet_allanim_39: -6110122472263116247
+      Warrior_spritesheet_allanim_4: -6256048756863466722
+      Warrior_spritesheet_allanim_40: -3878428476393355057
+      Warrior_spritesheet_allanim_41: 7996679815546571587
+      Warrior_spritesheet_allanim_42: -3429192604939298099
+      Warrior_spritesheet_allanim_43: 5958438586470695348
+      Warrior_spritesheet_allanim_44: -4256636528107699926
+      Warrior_spritesheet_allanim_45: -6861848306507276489
+      Warrior_spritesheet_allanim_46: -8882838605919506059
+      Warrior_spritesheet_allanim_47: 5340032028849584511
+      Warrior_spritesheet_allanim_48: 6820271553126040081
+      Warrior_spritesheet_allanim_49: -7099876449670721317
+      Warrior_spritesheet_allanim_5: 1745207422392141205
+      Warrior_spritesheet_allanim_50: -753092063988278525
+      Warrior_spritesheet_allanim_51: -3204051440032464711
+      Warrior_spritesheet_allanim_52: -6378649593348222855
+      Warrior_spritesheet_allanim_53: 2403207719716531104
+      Warrior_spritesheet_allanim_54: -956141475506454685
+      Warrior_spritesheet_allanim_55: 5194743579321317243
+      Warrior_spritesheet_allanim_56: -1490129998659246658
+      Warrior_spritesheet_allanim_57: -5365780565592796028
+      Warrior_spritesheet_allanim_58: 4908958772937039998
+      Warrior_spritesheet_allanim_59: -6894195215682269805
+      Warrior_spritesheet_allanim_6: -1492388746521826120
+      Warrior_spritesheet_allanim_60: -6832712504754023579
+      Warrior_spritesheet_allanim_61: -5361091394897858006
+      Warrior_spritesheet_allanim_62: -3632455011671114399
+      Warrior_spritesheet_allanim_63: -553796264232715347
+      Warrior_spritesheet_allanim_64: -6738080024224379608
+      Warrior_spritesheet_allanim_65: -66526793128103580
+      Warrior_spritesheet_allanim_66: -6636682299607810616
+      Warrior_spritesheet_allanim_67: 5126435103069124202
+      Warrior_spritesheet_allanim_68: -4853985274327628983
+      Warrior_spritesheet_allanim_69: -3065428365663444831
+      Warrior_spritesheet_allanim_7: -8157741165357631045
+      Warrior_spritesheet_allanim_70: 7746153542046229491
+      Warrior_spritesheet_allanim_71: -3235687880467480308
+      Warrior_spritesheet_allanim_72: 5726349365996561346
+      Warrior_spritesheet_allanim_73: -6505551348891346854
+      Warrior_spritesheet_allanim_74: -107490165754778160
+      Warrior_spritesheet_allanim_75: -6175418217251686683
+      Warrior_spritesheet_allanim_76: 3591480462400732881
+      Warrior_spritesheet_allanim_77: -4847640776503839698
+      Warrior_spritesheet_allanim_78: 7845875228957030814
+      Warrior_spritesheet_allanim_79: -3230962179499934247
+      Warrior_spritesheet_allanim_8: 9111540027882977061
+      Warrior_spritesheet_allanim_80: 1797296139815278567
+      Warrior_spritesheet_allanim_81: -6163984721024551239
+      Warrior_spritesheet_allanim_82: -4488736722028917309
+      Warrior_spritesheet_allanim_83: -8343343597509480806
+      Warrior_spritesheet_allanim_84: -1289945189109758147
+      Warrior_spritesheet_allanim_85: -8761762961491652933
+      Warrior_spritesheet_allanim_86: -6028497824482248738
+      Warrior_spritesheet_allanim_87: -8378210915737423367
+      Warrior_spritesheet_allanim_88: -4816519628531478391
+      Warrior_spritesheet_allanim_89: -3152604610835053648
+      Warrior_spritesheet_allanim_9: 121400075123859420
+      Warrior_spritesheet_allanim_90: -3989264180857895582
+      Warrior_spritesheet_allanim_91: 6413354725689277087
+      Warrior_spritesheet_allanim_92: -1525191290043093384
+      Warrior_spritesheet_allanim_93: -6793223354353669858
+      Warrior_spritesheet_allanim_94: 7573812821766990771
+      Warrior_spritesheet_allanim_95: -2171880641801419835
+      Warrior_spritesheet_allanim_96: 1578896050637735573
+      Warrior_spritesheet_allanim_97: 1304283233227667534
+      Warrior_spritesheet_allanim_98: 8909417833804122194
+      Warrior_spritesheet_allanim_99: -3136492108218282955
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

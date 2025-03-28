@@ -1,4 +1,3 @@
-using Unity.Mathematics;
 using UnityEngine;
 
 class EnemyController : MonoBehaviour
@@ -13,17 +12,18 @@ class EnemyController : MonoBehaviour
     private WaveController _waveController;
     private Rigidbody2D _rb;
 
+    public Vector2 Position => _rb.position;
     public bool IsStunned => _status.IsStunned;
     public bool IsDead => _status.IsDead;
     public bool IsTargetInRange =>
-        _status.Target != null && Vector2.Distance(_rb.position, _status.Target.position) <= _status.AttackRange;
+        _status.Target != null && Vector2.Distance(Position, _status.Target.position) <= _status.AttackRange;
 
     // Avoid frequent state flips by staying in AttackState until after Attack is off cooldown
     // It would be better to stay in Idle until we can attack but I don't feel like
     // going through the effort of updating the State Machine now. Maybe enemies just get tired
     // after trying to attack or something idk.
     public bool FinishedAttacking => _attacked && _attackCooldown <= 0f;
-    private Vector2 TargetDirection => (_status.Target.position - _rb.position).normalized;
+    private Vector2 TargetDirection => (_status.Target.position - Position).normalized;
 
     void Awake()
     {
@@ -46,13 +46,12 @@ class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!_status.IsControllable) return;
         HandleMovement();
     }
 
     private void HandleMovement()
     {
-        _rb.MovePosition(_rb.position + (_walkingVelocity + _knockbackVelocity) * Time.fixedDeltaTime);
+        _rb.MovePosition(Position + (_walkingVelocity + _knockbackVelocity) * Time.fixedDeltaTime);
         _knockbackVelocity -= _knockbackVelocity * _status.KnockbackFriction; // static friction applied to knockback only
     }
 
@@ -111,7 +110,7 @@ class EnemyController : MonoBehaviour
             if (_status.TargetStatus != null && !_status.TargetStatus.IsDead && IsTargetInRange)
             {
                 _status.TargetStatus.ApplyDamage(_status.AttackDamage);
-                _status.TargetStatus.ApplyKnockbackFrom(_rb.position, _status.AttackKnockback);            
+                _status.TargetStatus.ApplyKnockbackFrom(Position, _status.AttackKnockback);            
                 if (_status.StunOnAttack)
                     _status.TargetStatus.AddEffect(new StunnedEffect(_status.StunDuration));
             }
@@ -124,7 +123,6 @@ class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        _knockbackVelocity = Vector2.zero; // fix enemy flying off when being reused
         _status.IsControllable = false;
         _animator.SetTrigger("Die");
     }
@@ -132,13 +130,15 @@ class EnemyController : MonoBehaviour
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
     {
         if (knockback <= float.Epsilon) return;
-        Vector2 direction = _rb.position - position;
+        Vector2 direction = Position - position;
         _knockbackVelocity = knockback * direction.normalized;
     }
 
     public void Reset()
     {
         ChangeStates(State.Idle);
+
+        _knockbackVelocity = Vector2.zero;
 
         // Reset the animator the IDLE so enemies don't spawn attacking
         _animator.SetFloat("dx", 0);

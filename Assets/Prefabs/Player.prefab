@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4473153209336988803}
   - component: {fileID: 1844415214289339992}
+  - component: {fileID: 1533406561755789720}
   - component: {fileID: 2454630884256434965}
   - component: {fileID: 7702402572954918230}
   - component: {fileID: 1760992695849237502}
@@ -80,10 +81,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1617714205
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 844614100658345283, guid: 766672536c6654139a251d17e1396585, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +94,29 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!95 &1533406561755789720
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303425210373626327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10db769cfb583422a90e4749dfb104c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2454630884256434965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: dc9670dbd8624466cb46641ad72e12ad, type: 2}
   _abilitiesConfig: {fileID: 11400000, guid: 34244ea51ee9c411a849cae4b92f8f12, type: 2}
+  _upgradesConfig: {fileID: 11400000, guid: 1517fe81df38c4894b01e40484028d87, type: 2}
 --- !u!58 &6617101426219656305
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -308,8 +332,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0, y: 0.63}
+  m_Size: {x: 0.88, y: 1.79}
   m_Direction: 0
 --- !u!50 &8088191916265970373
 Rigidbody2D:
