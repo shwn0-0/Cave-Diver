@@ -22,7 +22,13 @@ class MainMenuButton : MonoBehaviour
                 _sceneController.GoToMainScene(true);
                 break;
             case Button.Quit:
-                throw new NotImplementedException();
+#if UNITY_STANDALONE
+                Application.Quit();
+#endif
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#endif
+                break;
             default:
                 Debug.LogError("Unhandled MainMenu Button");
                 break;
