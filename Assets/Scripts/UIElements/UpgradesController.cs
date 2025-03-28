@@ -40,13 +40,19 @@ class UpgradesController : MonoBehaviour
 
     public void OnUpgrade(UpgradeButton button)
     {
-        if (!IsButtonAbilityUnlock(button))
+        bool isAbilityUnlock = IsButtonAbilityUnlock(button);
+
+        _player.AddUpgrade(button.Upgrade);
+        if (!isAbilityUnlock)
         {
             _remainingUpgrades -= 1;
             _ruDisplay.SetRemainingUpgrades(_remainingUpgrades);
         }
-        _player.AddUpgrade(button.Upgrade);
         UpdateEnabledButtons();
+
+        // If we just unlocked the ability don't allow upgrades
+        if (isAbilityUnlock)
+            button.IsEnabled = false;
 
 
         if (_remainingUpgrades <= 0 && !_player.HasAvailableSlots())

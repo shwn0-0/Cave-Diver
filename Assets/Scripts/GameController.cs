@@ -68,6 +68,7 @@ class GameController : MonoBehaviour
             }
             else 
             {
+                // Maybe make this configurable in the future
                 if (_waveController.CurrentWave % 5 == 0)
                     _player.UnlockAbilitySlot();
                 _upgradesController.Show(1);
