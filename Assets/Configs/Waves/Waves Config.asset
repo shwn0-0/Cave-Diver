@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91eb5817f5494151a8a35dc3b86b24a, type: 3}
   m_Name: Waves Config
   m_EditorClassIdentifier: 
-  slimeStartAmount: 4
+  finalWave: 20
+  slimeStartAmount: 2
   slimeIncreasePeriod: 1
-  slimeIncreaseAmount: 4
-  trollStartAmount: 2
+  slimeIncreaseAmount: 2
+  trollStartAmount: 4
   trollIncreasePeriod: 1
   trollIncreaseAmount: 2
   orcStartAmount: 0

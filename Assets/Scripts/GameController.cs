@@ -48,20 +48,30 @@ class GameController : MonoBehaviour
     private IEnumerator HandleWaveEnd()
     {
         yield return new WaitForSeconds(1f);
-        _camerasAnimator.SetTrigger("End Wave");
         _player.IsControllable = false;
-        if (IsDemoMode)
+
+        if (_waveController.IsFinalWave)
         {
-            _upgradesController.Show(4);
+            _player.LookDown();
+            _camerasAnimator.SetTrigger("GameEnd");
+            _hudController.Hide();
+            yield return _waveNumberDisplay.DisplayPlayerWon();
+            yield return new WaitForSeconds(4f);
+            SceneController.Instance.GoToMainMenu();
         }
-        else if (_waveController.CurrentWave % 5 == 0)
+        else
         {
-            _player.UnlockAbilitySlot();
-            _upgradesController.Show(2);
-        }
-        else    
-        {
-            _upgradesController.Show(1);
+            _camerasAnimator.SetTrigger("End Wave");
+            if (IsDemoMode)
+            {
+                _upgradesController.Show(4);
+            }
+            else 
+            {
+                if (_waveController.CurrentWave % 5 == 0)
+                    _player.UnlockAbilitySlot();
+                _upgradesController.Show(1);
+            }
         }
     }
 
@@ -70,18 +80,19 @@ class GameController : MonoBehaviour
     private IEnumerator HandleWaveStart()
     {
         _player.transform.position = Vector3.zero;
+        _player.LookDown();
         _camerasAnimator.SetTrigger("Start Wave");
+        yield return _waveNumberDisplay.DisplayWave(_waveController.CurrentWave + 1, _waveController.IsFinalWave);
         _player.IsControllable = true;
-        yield return _waveNumberDisplay.DisplayWave(_waveController.CurrentWave + 1);
         _waveController.NextWave();
     }
 
-    public void OnDeath(PlayerStatus player) =>
+    public void OnPlayerDeath() =>
         StartCoroutine(HandlePlayerDeath());
 
     private IEnumerator HandlePlayerDeath()
     {
-        _camerasAnimator.SetTrigger("PlayerDied");
+        _camerasAnimator.SetTrigger("GameEnd");
         yield return _waveNumberDisplay.DisplayPlayerDead();
         yield return new WaitForSeconds(4f);
         SceneController.Instance.GoToMainMenu();
@@ -108,6 +119,4 @@ class GameController : MonoBehaviour
         _pauseScreenController.Hide();
         Time.timeScale = 1f;
     }
-
-
 }

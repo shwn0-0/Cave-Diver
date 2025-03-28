@@ -12,15 +12,18 @@ abstract class Status : MonoBehaviour
     private float _bonusHealth = 0f;
     private float _bonusSheild = 0f;
 
-    public float AbilityHaste { get; set; }
     public float AttackDamage => (_config.AttackDamage + BonusAttackDamage) * DamageMultiplier;
+    public float BonusAttackDamage { get; set; }
+    public float DamageMultiplier { get; set; }
+
     public float AttackAngle => _config.AttackAngle;
     public float AttackRange => _config.AttackRange;
-    public float AttackSpeed => _config.AttackSpeed * AttackSpeedMultiplier;
-    public float AttackSpeedMultiplier { get; set; }
+    public float AttackSpeed => _config.AttackSpeed;
     public float AttackKnockback => _config.AttackKnockback;
     public float AttackSelfKnockforward => _config.AttackSelfKnockforward;
-    public float BonusAttackDamage { get; set; }
+
+    public float MaxHealth => _config.MaxHealth + BonusHealth;
+    public virtual float Health { get; set; }
     public float BonusHealth { 
         get => _bonusHealth;
         set {
@@ -30,7 +33,9 @@ abstract class Status : MonoBehaviour
             Health += _bonusHealth - oldValue; // Add new value and subtract old value
         } 
     }
-    public float BonusMoveSpeed { get; set; }
+
+    public float MaxShield => _config.MaxShield + BonusShield;
+    public virtual float Shield { get; set; }
     public float BonusShield {
         get => _bonusSheild;
         set {
@@ -40,9 +45,11 @@ abstract class Status : MonoBehaviour
             Shield += _bonusSheild - oldValue; // Add new value and subtract old value
         }
     }
-    public float DamageMultiplier { get; set; }
-    public virtual float Health { get; set; }
-    public float MaxHealth => _config.MaxHealth + BonusHealth;
+
+    public float MoveSpeed => (_config.MoveSpeed + BonusMoveSpeed) * MoveSpeedMultiplier;
+    public float BonusMoveSpeed { get; set; }
+    public float MoveSpeedMultiplier { get; set; }
+
     public bool IsControllable { get; set; }
     public bool IsDead => Health <= 0f;
     public bool IsInvulnerable
@@ -56,10 +63,7 @@ abstract class Status : MonoBehaviour
     }
     public bool IsStunned { get; set; }
     public float KnockbackFriction => _config.KnockbackFriction;
-    public float MoveSpeed => (_config.MoveSpeed + BonusMoveSpeed) * MoveSpeedMultiplier;
-    public float MoveSpeedMultiplier { get; set; }
-    public virtual float Shield { get; set; }
-    public float MaxShield => _config.MaxShield + BonusShield;
+
     public bool StunOnAttack => _config.StunOnAttack;
     public float StunDuration => _config.StunDuration;
 
@@ -67,9 +71,6 @@ abstract class Status : MonoBehaviour
     {
         DamageMultiplier = 1.0f;
         MoveSpeedMultiplier = 1.0f;
-        AttackSpeedMultiplier = 1.0f;
-
-        AbilityHaste = 0f;
         BonusAttackDamage = 0f;
         BonusHealth = 0f;
         BonusMoveSpeed = 0f;
@@ -80,18 +81,24 @@ abstract class Status : MonoBehaviour
         IsStunned = false;
     }
 
-    public void AddEffect(IStatusEffect effect) =>
-        StartCoroutine(HandleEffect(effect));
+    public void AddEffect(IStatusEffect effect) {
+        if (gameObject.activeSelf)
+            StartCoroutine(HandleEffect(effect));
+    }
 
     private IEnumerator HandleEffect(IStatusEffect effect)
     {
-        _effects.Add(effect);
-        yield return effect.Apply(this);
-        _effects.Remove(effect);
+        // Don't apply stunned if invulnerable
+        if (!IsInvulnerable || effect is not StunnedEffect)
+        {
+            _effects.Add(effect);
+            yield return effect.Apply(this);
+            _effects.Remove(effect);
+        }
     }
 
     public void PercentHeal(float percentage) =>
-        Health = math.min(MaxHealth, Health + MaxHealth * (1f + percentage));
+        Health = math.min(MaxHealth, Health + (MaxHealth * percentage));
 
     public virtual void ApplyDamage(float damage)
     {

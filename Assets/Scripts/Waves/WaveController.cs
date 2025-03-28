@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
-using System;
 
 class WaveController : MonoBehaviour
 {
@@ -14,8 +12,9 @@ class WaveController : MonoBehaviour
     private GameController _gameController;
     private int _waveNumber;
 
-    public int CurrentWave => _waveNumber;
     private WavesConfig Config =>  _gameController.IsDemoMode ? _demoConfig : _config;
+    public int CurrentWave => _waveNumber;
+    public bool IsFinalWave => _waveNumber == Config.FinalWave;
 
     void Awake()
     {

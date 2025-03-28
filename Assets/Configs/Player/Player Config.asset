@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackDamage: 10
   _attackAngle: 45
-  _attackRange: 5
+  _attackRange: 4
   _attackSpeed: 1.5
   _attackKnockback: 25
   _attackSelfKnockforward: 15
-  _stunOnAttack: 0
-  _stunDuration: 0
+  _stunOnAttack: 1
+  _stunDuration: 0.2
   _maxHealth: 100
   _maxShields: 100
   _moveSpeed: 5

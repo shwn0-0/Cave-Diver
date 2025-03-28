@@ -46,7 +46,7 @@ class C4Ability : IAbility
         if (Placed)
         {
             if (_c4.IsTriggered && _remainingCooldown < float.Epsilon)
-                _remainingCooldown = _config.C4AbilityCooldown * (1 - _player.AbilityHaste);
+                _remainingCooldown = _config.C4AbilityCooldown;
             
             if (!_c4.IsActive)
             {

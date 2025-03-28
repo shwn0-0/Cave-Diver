@@ -4,12 +4,8 @@ public enum Upgrade
     ShieldAbility,
     LureAbility,
     C4Ability,
-    AttackDamage,
-    AbilityHaste,
-    AttackSpeed,
-    MoveSpeed,
-    Health,
-    Shield,
+    AttackDamage_MoveSpeed,
+    Health_Shield,
 }
 
 public static class UpgradeExtensions

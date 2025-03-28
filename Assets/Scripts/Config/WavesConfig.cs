@@ -3,6 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName="Waves Config", menuName = "Configs/WavesConfig")]
 class WavesConfig : ScriptableObject
 {
+    [SerializeField] int finalWave;
+    public int FinalWave => finalWave;
+
+
     [Header("Slime")]
     [SerializeField, Min(0)] int slimeStartAmount;
     [SerializeField, Min(1)] int slimeIncreasePeriod;

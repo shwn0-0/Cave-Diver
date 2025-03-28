@@ -25,7 +25,7 @@ class LureAbility : IAbility
     public bool Activate()
     {
         if (!IsAvailable) return false;
-        _remainingCooldown = _config.LureAbilityCooldown * (1 - _player.AbilityHaste);
+        _remainingCooldown = _config.LureAbilityCooldown;
         _lure = _cache.GetObject<Lure>(
             ObjectType.Lure,
             _player.transform.position, 

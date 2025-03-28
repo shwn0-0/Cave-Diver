@@ -3,7 +3,7 @@ using UnityEngine;
 
 class MainMenuButton : MonoBehaviour
 {
-    [SerializeField] private Button button;
+    [SerializeField] private Button _button;
     private SceneController _sceneController;
 
     void Awake()
@@ -13,7 +13,7 @@ class MainMenuButton : MonoBehaviour
 
     public void OnButtonClick()
     {
-        switch (button)
+        switch (_button)
         {
             case Button.Play:
                 _sceneController.GoToMainScene();
@@ -30,7 +30,7 @@ class MainMenuButton : MonoBehaviour
 #endif
                 break;
             default:
-                throw new NotImplementedException("Unhandled Main Menu Button");
+                throw new NotImplementedException($"Unhandled Main Menu Button {_button}");
         }
     }
 

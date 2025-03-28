@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -60,27 +61,16 @@ class PlayerStatus : Status
             case Upgrade.C4Ability:
                 HandleAbilityUpgrade(upgrade);
                 break;
-            case Upgrade.AttackDamage:
+            case Upgrade.AttackDamage_MoveSpeed:
                 BonusAttackDamage += _upgradesConfig.BonusAttackDamage;
-                break;
-            case Upgrade.AttackSpeed:
-                AttackSpeedMultiplier += _upgradesConfig.BonusAttackSpeed;
-                break;
-            case Upgrade.AbilityHaste:
-                AbilityHaste += _upgradesConfig.BonusAblityHaste;
-                break;
-            case Upgrade.MoveSpeed:
                 BonusMoveSpeed += _upgradesConfig.BonusMoveSpeed;
                 break;
-            case Upgrade.Health:
+            case Upgrade.Health_Shield:
                 BonusHealth += _upgradesConfig.BonusHealth;
-                break;
-            case Upgrade.Shield:
                 BonusShield += _upgradesConfig.BonusShield;
                 break;
             default:
-                Debug.LogError($"Unhandled Upgrade {upgrade}");
-                break;
+                throw new NotImplementedException($"Unhandled Upgrade {upgrade}");
         }
     }
 
@@ -134,4 +124,6 @@ class PlayerStatus : Status
         Upgrade.C4Ability => new C4Ability(_abilitiesConfig, this, _objCache),
         _ => null
     };
+
+    public void LookDown() => _controller.LookDown();
 }

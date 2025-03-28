@@ -34,13 +34,9 @@ public class PlayerController : MonoBehaviour
 
         if (!_status.IsControllable) return;
 
-        if (_status.IsDead)
-            Die();
-        else if (_status.IsStunned)
-            BeStunned();
-        else
-            HandleAttack();
-
+        HandleDie();
+        HandleStunned();
+        HandleAttack();
         HandleCooldowns();
     }
 
@@ -74,7 +70,7 @@ public class PlayerController : MonoBehaviour
     
     private void HandleAttack()
     {
-        if (!_isHoldingAttack || _attackCooldown > float.Epsilon) return;
+        if (_status.IsDead || _status.IsStunned || !_isHoldingAttack || _attackCooldown > float.Epsilon) return;
         _attackCooldown += 1 / _status.AttackSpeed;
 
         Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -117,7 +113,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (animEvent == "Die")
         {
-            _gameController.OnDeath(_status);
+            _gameController.OnPlayerDeath();
         }
     }
 
@@ -140,16 +136,19 @@ public class PlayerController : MonoBehaviour
 
     public void Attack(bool attack) => _isHoldingAttack = attack;
 
-    private void Die()
+    private void HandleDie()
     {
+        if (!_status.IsDead) return;
+        _dir = Vector2.zero;
         _animator.SetTrigger("Die");
         _status.IsControllable = false;
-        _dir = Vector2.zero;
     }
 
-    private void BeStunned()
+    private void HandleStunned()
     {
-        _dir = Vector2.zero;
+        _animator.SetBool("IsStunned", _status.IsStunned);
+        if (_status.IsStunned)
+            _dir = Vector2.zero;
     }
 
     public void ApplyKnockbackFrom(Vector2 position, float knockback)
@@ -164,6 +163,22 @@ public class PlayerController : MonoBehaviour
 
     public T GetAbility<T>() where T : IAbility =>
         (T)_abilities.Where(a => a is T).SingleOrDefault();
+
+    public void LookDown()
+    {
+        // Stop moving
+        _dir = Vector2.zero;
+        _knockbackVelocity = Vector2.zero;
+
+        // Play down idle animation and make sure we don't go anywhere
+        _animator.SetFloat("dx", 0f);
+        _animator.SetFloat("dy", 0f);
+        _animator.SetBool("IsRunning", false);
+        _animator.SetBool("IsStunned", false);
+        _animator.ResetTrigger("Die");
+        _animator.ResetTrigger("Attack");
+        _animator.Play("Idle.IdleDown");
+    }
 
     // Maintain a set of nearby enemies
     void OnTriggerEnter2D(Collider2D collision)

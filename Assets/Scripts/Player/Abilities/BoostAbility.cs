@@ -25,7 +25,7 @@ class BoostAbility : IAbility
     public bool Activate()
     {
         if (!IsAvailable) return false;
-        _remainingCooldown = _cooldown * (1 - _player.AbilityHaste);
+        _remainingCooldown = _cooldown;
 
         _player.AddEffect(new SpeedBoostEffect(_amount, _duration));
 

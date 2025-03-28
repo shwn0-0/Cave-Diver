@@ -7,16 +7,18 @@ class EnemyController : MonoBehaviour
     private bool _attacked;
     private State _currentState;
     private Vector2 _knockbackVelocity;
+    private Rigidbody2D _rb;
     private EnemyStatus _status;
     private Vector2 _walkingVelocity;
     private WaveController _waveController;
-    private Rigidbody2D _rb;
 
     public Vector2 Position => _rb.position;
     public bool IsStunned => _status.IsStunned;
     public bool IsDead => _status.IsDead;
     public bool IsTargetInRange =>
-        _status.Target != null && Vector2.Distance(Position, _status.Target.position) <= _status.AttackRange;
+        _status.Target != null 
+        && (_status.TargetStatus == null || !_status.TargetStatus.IsDead)
+        && Vector2.Distance(Position, _status.Target.position) <= _status.AttackRange;
 
     // Avoid frequent state flips by staying in AttackState until after Attack is off cooldown
     // It would be better to stay in Idle until we can attack but I don't feel like
@@ -81,7 +83,6 @@ class EnemyController : MonoBehaviour
 
     public void BeRunning()
     {
-        // TODO: Add fancy path finding
         _walkingVelocity = _status.MoveSpeed * TargetDirection;
         _animator.SetBool("IsRunning", true);
     }

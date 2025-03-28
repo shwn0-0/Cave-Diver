@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91eb5817f5494151a8a35dc3b86b24a, type: 3}
   m_Name: Demo Waves Config
   m_EditorClassIdentifier: 
+  finalWave: 3
   slimeStartAmount: 0
   slimeIncreasePeriod: 10
   slimeIncreaseAmount: 1

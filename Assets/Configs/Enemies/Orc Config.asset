@@ -17,10 +17,10 @@ MonoBehaviour:
   _attackRange: 4
   _attackSpeed: 0.25
   _attackKnockback: 50
-  _attackSelfKnockforward: 10
+  _attackSelfKnockforward: 0
   _stunOnAttack: 1
-  _stunDuration: 0.5
-  _maxHealth: 50
+  _stunDuration: 1
+  _maxHealth: 60
   _maxShields: 0
-  _moveSpeed: 3
-  _knockbackFriction: 0.5
+  _moveSpeed: 3.5
+  _knockbackFriction: 0.3

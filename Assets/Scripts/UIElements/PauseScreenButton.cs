@@ -25,7 +25,7 @@ class PauseScreenButton : MonoBehaviour
                 break;
             
             default:
-                throw new NotImplementedException("Unhandled Pause Screen Button");
+                throw new NotImplementedException($"Unhandled Pause Screen Button {_button}");
         }
     }
 

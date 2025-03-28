@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Abilities Config
   m_EditorClassIdentifier: 
   _boostAbilityDuration: 2
-  _boostAbilityCooldown: 4
+  _boostAbilityCooldown: 6
   _boostAbilityAmount: 2
-  _shieldAbilityDuration: 2
-  _shieldAbilityCooldown: 4
+  _shieldAbilityDuration: 4
+  _shieldAbilityCooldown: 25
   _shieldAbilityHealPercentage: 0.2
-  _c4AbilityCooldown: 10
+  _c4AbilityCooldown: 15
   _c4AbilityDamage: 25
   _c4AbilityDuration: 3
   _c4AbilityStunDuration: 2
   _c4AbilityKnockbackForce: 40
-  _lureAbilityCooldown: 15
-  _lureAbilityDuration: 3
+  _lureAbilityCooldown: 20
+  _lureAbilityDuration: 5

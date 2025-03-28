@@ -62,7 +62,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StunRight
+  m_Name: StunnedRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -429,7 +429,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StunDown
+  m_Name: StunnedDown
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1358,7 +1358,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StunUp
+  m_Name: StunnedUp
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -2083,7 +2083,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StunLeft
+  m_Name: StunnedLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
