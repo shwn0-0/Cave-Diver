@@ -30,8 +30,7 @@ class MainMenuButton : MonoBehaviour
 #endif
                 break;
             default:
-                Debug.LogError("Unhandled MainMenu Button");
-                break;
+                throw new NotImplementedException("Unhandled Main Menu Button");
         }
     }
 
