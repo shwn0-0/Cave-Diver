@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7862a9799a4bb4817d5bd590a24cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxRadius: 7
-  _minRadius: 2
+  _maxRadius: 3
+  _minRadius: 0.5
+  _angle: 45
   _spawnDelay: 1.5
