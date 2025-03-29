@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -99,23 +100,27 @@ abstract class Status : MonoBehaviour
         _statusEffectsDisplay.UpdateWithLatest();
     }
 
-    public void AddEffect(IStatusEffect effect)
+    public void AddEffect(IStatusEffect newEffect)
     {
-        if (gameObject.activeSelf)
-            StartCoroutine(HandleEffect(effect));
+        if (!gameObject.activeSelf) return;
+        // Don't apply stunned if invulnerable
+        if (IsInvulnerable && newEffect is StunnedEffect) return;
+
+        // If effect already applied, extend duration instead of replacing it.
+        var effect = _effects.Find(effect => effect.GetType() == newEffect.GetType());
+        if (effect != null)
+            effect.Duration = newEffect.Duration;
+        else
+            StartCoroutine(HandleEffect(newEffect));
     }
 
-    private IEnumerator HandleEffect(IStatusEffect effect)
+    private IEnumerator HandleEffect(IStatusEffect newEffect)
     {
-        // Don't apply stunned if invulnerable
-        if (!IsInvulnerable || effect is not StunnedEffect)
-        {
-            _effects.Add(effect);
-            _statusEffectsDisplay.UpdateWithLatest();
-            yield return effect.Apply(this);
-            _effects.Remove(effect);
-            _statusEffectsDisplay.UpdateWithLatest();
-        }
+        _effects.Add(newEffect);
+        _statusEffectsDisplay.UpdateWithLatest();
+        yield return newEffect.Apply(this);
+        _effects.Remove(newEffect);
+        _statusEffectsDisplay.UpdateWithLatest();
     }
 
     public void PercentHeal(float percentage) =>

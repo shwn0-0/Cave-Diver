@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Mono.Cecil.Cil;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -12,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private readonly List<IAbility> _abilities = new();
     private float _attackCooldown;
     private int _attackCount;
+    private bool _attacking;
     private Vector2 _dir;
     private readonly HashSet<EnemyStatus> _enemies = new();
     private IEnumerable<EnemyStatus> _enemiesToDamage;
@@ -73,7 +76,6 @@ public class PlayerController : MonoBehaviour
     private void HandleAttack()
     {
         if (_status.IsDead || _status.IsStunned || !_isHoldingAttack || _attackCooldown > float.Epsilon) return;
-        _attackCooldown += 1 / _status.AttackSpeed;
 
         Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 currentPos = Position;
@@ -96,9 +98,13 @@ public class PlayerController : MonoBehaviour
         // Set both directions in case player doesn't move after/during attack
         _animator.SetFloat("dx", _targetDirection.x);
         _animator.SetFloat("dy", _targetDirection.y);
+
         _animator.SetInteger("AttackCount", _attackCount);
         _animator.SetTrigger("Attack");
+
+        _attackCooldown += 1 / _status.AttackSpeed;
         _attackCount = (_attackCount + 1) % 3;
+        _attacking = true;
     }
 
     public void AnimationEventHandler(string animEvent)
@@ -116,6 +122,7 @@ public class PlayerController : MonoBehaviour
                 if (_status.StunOnAttack)
                     enemy.AddEffect(new StunnedEffect(_status.StunDuration));
             }
+            _attacking = false;
         }
         else if (animEvent == "Die")
         {
@@ -143,7 +150,7 @@ public class PlayerController : MonoBehaviour
     public void Attack(bool attack)
     {
         _isHoldingAttack = attack;
-        _attackCount = 0; // reset attack count on attack or release hold
+        if (!_attacking) _attackCount = 0;
     }
 
     private void HandleDie()

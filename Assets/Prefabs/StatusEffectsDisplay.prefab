@@ -361,9 +361,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5445054856847784240}
-  - component: {fileID: 887804113373339360}
   - component: {fileID: 7612541855500533377}
   - component: {fileID: 1351433360954787165}
+  - component: {fileID: 887804113373339360}
   m_Layer: 3
   m_Name: StatusEffectsDisplay
   m_TagString: Untagged
@@ -394,23 +394,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &887804113373339360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7740977836162690061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dec6955b64f24cf38e8bf5dcda891d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageBoostSprite: {fileID: -5857388591847029359, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
-  _luredSprite: {fileID: 4545377945811096002, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
-  _shieldSprite: {fileID: -6982349727415611825, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
-  _speedBoostSprite: {fileID: -2156568560382257065, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
-  _stunnedSprite: {fileID: -842668109249255211, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
 --- !u!223 &7612541855500533377
 Canvas:
   m_ObjectHideFlags: 0
@@ -460,3 +443,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &887804113373339360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7740977836162690061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dec6955b64f24cf38e8bf5dcda891d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageBoostSprite: {fileID: -5857388591847029359, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
+  _luredSprite: {fileID: 4545377945811096002, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
+  _shieldSprite: {fileID: -6982349727415611825, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
+  _speedBoostSprite: {fileID: -2156568560382257065, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
+  _stunnedSprite: {fileID: -842668109249255211, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}

@@ -3,19 +3,21 @@ using UnityEngine;
 
 class StunnedEffect : IStatusEffect
 {
-    private readonly float _duration;
-
-    public float Duration => _duration;
+    public float Duration { get; set; }
 
     public StunnedEffect(float duration)
     {
-        _duration = duration;
+        Duration = duration;
     }
 
     public IEnumerator Apply(Status target)
     {
         target.IsStunned = true;
-        yield return new WaitForSeconds(_duration);
+        while (Duration > 0f)
+        {
+            yield return new WaitForEndOfFrame();
+            Duration -= Time.deltaTime;
+        }
         target.IsStunned = false;
     }
 }

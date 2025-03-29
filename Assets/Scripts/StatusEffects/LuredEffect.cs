@@ -4,13 +4,12 @@ using UnityEngine;
 class LuredEffect : IStatusEffect
 {
     private readonly Rigidbody2D _target;
-    private readonly float _duration;
 
-    public float Duration => _duration;
+    public float Duration { get; set; }
 
     public LuredEffect(float duration, Rigidbody2D target)
     {
-        _duration = duration;
+        Duration = duration;
         _target = target;
     }
 
@@ -20,7 +19,11 @@ class LuredEffect : IStatusEffect
         {
             Rigidbody2D oldTarget = enemyStatus.Target;
             enemyStatus.Target = _target;
-            yield return new WaitForSeconds(_duration);
+            while (Duration > 0f)
+            {
+                yield return new WaitForEndOfFrame();
+                Duration -= Time.deltaTime;
+            }
             enemyStatus.Target = oldTarget;
         }
         else

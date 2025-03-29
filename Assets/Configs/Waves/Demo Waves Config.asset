@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Demo Waves Config
   m_EditorClassIdentifier: 
   finalWave: 3
-  slimeFirstWave: 2
+  slimeFirstWave: 4
   slimeStartAmount: 8
   slimeIncreasePeriod: 1
   slimeIncreaseAmount: 0
-  trollFirstWave: 1
+  trollFirstWave: 4
   trollStartAmount: 8
   trollIncreasePeriod: 1
   trollIncreaseAmount: 0
-  orcFirstWave: 3
+  orcFirstWave: 1
   orcStartAmount: 4
   orcIncreasePeriod: 1
   orcIncreaseAmount: 0

@@ -4,20 +4,23 @@ using UnityEngine;
 class DamageBoostEffect : IStatusEffect
 {
     private readonly float _amount;
-    private readonly float _duration;
 
-    public float Duration => _duration;
+    public float Duration { get; set; }
 
     public DamageBoostEffect(float amount, float duration)
     {
         _amount = amount;
-        _duration = duration;
+        Duration = duration;
     }
 
     public IEnumerator Apply(Status target)
     {
         target.DamageMultiplier += _amount;
-        yield return new WaitForSeconds(_duration);
+        while (Duration > 0f)
+        {
+            yield return new WaitForEndOfFrame();
+            Duration -= Time.deltaTime;
+        }
         target.DamageMultiplier -= _amount;
     }
 }
