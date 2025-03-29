@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91eb5817f5494151a8a35dc3b86b24a, type: 3}
   m_Name: Demo Waves Config
   m_EditorClassIdentifier: 
-  finalWave: 1
-  slimeStartAmount: 4
+  finalWave: 3
+  slimeFirstWave: 2
+  slimeStartAmount: 8
   slimeIncreasePeriod: 1
-  slimeIncreaseAmount: 2
-  trollStartAmount: 4
+  slimeIncreaseAmount: 0
+  trollFirstWave: 1
+  trollStartAmount: 8
   trollIncreasePeriod: 1
-  trollIncreaseAmount: 4
-  orcStartAmount: 2
+  trollIncreaseAmount: 0
+  orcFirstWave: 3
+  orcStartAmount: 4
   orcIncreasePeriod: 1
-  orcIncreaseAmount: 2
+  orcIncreaseAmount: 0

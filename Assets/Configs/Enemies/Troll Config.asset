@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c3deb5257ef4c43802a0607163b3eb, type: 3}
   m_Name: Troll Config
   m_EditorClassIdentifier: 
-  _attackDamage: 20
+  _attackDamage: 10
   _attackAngle: 0
   _attackRange: 2
-  _attackSpeed: 1
+  _attackSpeed: 0.5
   _attackKnockback: 0
   _attackSelfKnockforward: 10
+  _dieOnAttack: 0
   _stunOnAttack: 0
   _stunDuration: 0
-  _maxHealth: 30
+  _maxHealth: 20
   _maxShields: 0
   _moveSpeed: 5
   _knockbackFriction: 0.1

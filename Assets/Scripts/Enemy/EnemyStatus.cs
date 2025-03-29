@@ -17,8 +17,9 @@ class EnemyStatus : Status, ICacheableObject
     public ObjectType Type { get; private set; }
     public Vector2 Position => _controller.Position;
 
-    public void Awake()
+    new void Awake()
     {
+        base.Awake();
         _controller = GetComponent<EnemyController>();
     }
 
@@ -26,7 +27,7 @@ class EnemyStatus : Status, ICacheableObject
     {
         if (objConfig is Config config)
         {
-            base.Init();
+            Init();
             _controller.Reset();
             Type = config.type;
             Target = config.target;

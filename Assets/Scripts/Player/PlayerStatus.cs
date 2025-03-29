@@ -32,8 +32,9 @@ class PlayerStatus : Status
         }
     }
 
-    void Awake()
+    new void Awake()
     {
+        base.Awake();
         _controller = GetComponent<PlayerController>();
         _hudController = FindFirstObjectByType<HUDController>();
         _objCache = FindFirstObjectByType<ObjectCache>();

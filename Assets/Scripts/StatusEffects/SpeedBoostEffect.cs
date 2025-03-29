@@ -8,7 +8,7 @@ class SpeedBoostEffect : IStatusEffect
 
     public float Duration => _duration;
 
-    public SpeedBoostEffect (float amount, float duration)
+    public SpeedBoostEffect(float amount, float duration)
     {
         _amount = amount;
         _duration = duration;

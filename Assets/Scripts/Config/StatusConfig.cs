@@ -10,6 +10,7 @@ class StatusConfig : ScriptableObject
     [SerializeField] private float _attackSpeed;
     [SerializeField] private float _attackKnockback;
     [SerializeField] private float _attackSelfKnockforward;
+    [SerializeField] private bool _dieOnAttack;
     [SerializeField] private bool _stunOnAttack;
     [SerializeField] private float _stunDuration;
     public float AttackDamage => _attackDamage;
@@ -18,6 +19,7 @@ class StatusConfig : ScriptableObject
     public float AttackSpeed => _attackSpeed;
     public float AttackKnockback => _attackKnockback;
     public float AttackSelfKnockforward => _attackSelfKnockforward;
+    public bool DieOnAttack => _dieOnAttack;
     public bool StunOnAttack => _stunOnAttack;
     public float StunDuration => _stunDuration;
     

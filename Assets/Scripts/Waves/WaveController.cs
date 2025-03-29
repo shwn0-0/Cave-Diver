@@ -26,8 +26,8 @@ class WaveController : MonoBehaviour
 
     public void NextWave()
     {
-        var (num_slimes, num_trolls, num_orcs) = Config.NumEnemies(_waveNumber); // _waveNumber - 1 but we increment after
         _waveNumber += 1;
+        var (num_slimes, num_trolls, num_orcs) = Config.NumEnemies(_waveNumber);
 
         for (int i = 0; i < _spawners.Length; i++)
         {

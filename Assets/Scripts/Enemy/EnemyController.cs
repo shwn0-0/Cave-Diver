@@ -156,6 +156,11 @@ class EnemyController : MonoBehaviour
                 if (_status.StunOnAttack)
                     _status.TargetStatus.AddEffect(new StunnedEffect(_status.StunDuration));
             }
+
+            if (_status.DieOnAttack)
+            {
+                _status.Health = 0f;
+            }
         }
         else if (animEvent == "Die")
         {

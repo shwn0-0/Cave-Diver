@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 class GameController : MonoBehaviour
@@ -27,6 +28,7 @@ class GameController : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60; // Fixed FPS
         Time.timeScale = 1f; // Fix game frozen when reseting after pausing
         _hudController.Show();
 
@@ -47,6 +49,7 @@ class GameController : MonoBehaviour
     {
         _player.transform.position = Vector3.zero;
         _player.LookDown();
+        _player.Shield = _player.MaxShield;
         _camerasAnimator.SetTrigger("Start Wave");
         yield return _waveNumberDisplay.DisplayWave(_waveController.CurrentWave + 1, _waveController.FinalWaveIsNext);
         _player.IsControllable = true;

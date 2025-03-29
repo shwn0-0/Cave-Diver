@@ -16,20 +16,12 @@ class AbilityUIConfig : ScriptableObject
     public Color UnlockedColor => _unlockedColor;
     public Color CooldownColor => _cooldownColor;
 
-    public Sprite GetSprite (IAbility ability)
+    public Sprite GetSprite (IAbility ability) => ability switch
     {
-        if (ability is BoostAbility)
-            return _boostAbilityIcon;
-
-        if (ability is ShieldAbility)
-            return _shieldAbilityIcon;
-
-        if (ability is C4Ability)
-            return _c4AbilityIcon;
-
-        if (ability is LureAbility)
-            return _lureAbilityIcon;
-        
-        return null;
-    }
+        BoostAbility => _boostAbilityIcon,
+        ShieldAbility => _shieldAbilityIcon,
+        C4Ability => _c4AbilityIcon,
+        LureAbility => _lureAbilityIcon,
+        _ => null
+    };
 }

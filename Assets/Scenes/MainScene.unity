@@ -18057,26 +18057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cameras
       objectReference: {fileID: 0}
-    - target: {fileID: 5577290631837935496, guid: 12e7360b0160b4f749cc49f22e8f4ecd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577290631837935496, guid: 12e7360b0160b4f749cc49f22e8f4ecd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7106586909526938210, guid: 12e7360b0160b4f749cc49f22e8f4ecd, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 714001630}
-    - target: {fileID: 9071099999720577466, guid: 12e7360b0160b4f749cc49f22e8f4ecd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071099999720577466, guid: 12e7360b0160b4f749cc49f22e8f4ecd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

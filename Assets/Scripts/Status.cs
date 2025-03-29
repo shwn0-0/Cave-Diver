@@ -12,6 +12,7 @@ abstract class Status : MonoBehaviour
     private bool _isInvulnerable = false;
     private float _bonusHealth = 0f;
     private float _bonusSheild = 0f;
+    private StatusEffectsDisplay _statusEffectsDisplay;
 
     public float BaseAttackDamage => _config.AttackDamage;
     public float BonusAttackDamage { get; set; }
@@ -23,24 +24,29 @@ abstract class Status : MonoBehaviour
     public float AttackSpeed => _config.AttackSpeed;
     public float AttackKnockback => _config.AttackKnockback;
     public float AttackSelfKnockforward => _config.AttackSelfKnockforward;
+    public bool DieOnAttack => _config.DieOnAttack;
 
     public float MaxHealth => _config.MaxHealth + BonusHealth;
     public virtual float Health { get; set; }
-    public float BonusHealth { 
+    public float BonusHealth
+    {
         get => _bonusHealth;
-        set {
+        set
+        {
             // NOTE: HUD gets updated when health changes so need to update health last.
             var oldValue = _bonusHealth;
             _bonusHealth = value;
             Health += _bonusHealth - oldValue; // Add new value and subtract old value
-        } 
+        }
     }
 
     public float MaxShield => _config.MaxShield + BonusShield;
     public virtual float Shield { get; set; }
-    public float BonusShield {
+    public float BonusShield
+    {
         get => _bonusSheild;
-        set {
+        set
+        {
             // NOTE: HUD gets updated when shield changes so need to update shield last.
             var oldValue = _bonusSheild;
             _bonusSheild = value;
@@ -71,7 +77,12 @@ abstract class Status : MonoBehaviour
 
     public ReadOnlyCollection<IStatusEffect> StatusEffects => _effects.AsReadOnly();
 
-    public virtual void Init()
+    public void Awake()
+    {
+        _statusEffectsDisplay = GetComponentInChildren<StatusEffectsDisplay>();
+    }
+
+    public void Init()
     {
         DamageMultiplier = 1.0f;
         MoveSpeedMultiplier = 1.0f;
@@ -83,9 +94,13 @@ abstract class Status : MonoBehaviour
         Health = MaxHealth;
         Shield = MaxShield;
         IsStunned = false;
+
+        _effects.Clear();
+        _statusEffectsDisplay.UpdateWithLatest();
     }
 
-    public void AddEffect(IStatusEffect effect) {
+    public void AddEffect(IStatusEffect effect)
+    {
         if (gameObject.activeSelf)
             StartCoroutine(HandleEffect(effect));
     }
@@ -96,8 +111,10 @@ abstract class Status : MonoBehaviour
         if (!IsInvulnerable || effect is not StunnedEffect)
         {
             _effects.Add(effect);
+            _statusEffectsDisplay.UpdateWithLatest();
             yield return effect.Apply(this);
             _effects.Remove(effect);
+            _statusEffectsDisplay.UpdateWithLatest();
         }
     }
 

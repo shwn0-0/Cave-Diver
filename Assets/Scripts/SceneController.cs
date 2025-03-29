@@ -8,15 +8,15 @@ public class SceneController : MonoBehaviour
 
     void OnEnable()
     {
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(gameObject); 
-        } 
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
         else
-        { 
-            Instance = this; 
+        {
+            Instance = this;
             DontDestroyOnLoad(Instance);
-        } 
+        }
     }
 
     public void GoToMainScene(bool IsDemo = false)
