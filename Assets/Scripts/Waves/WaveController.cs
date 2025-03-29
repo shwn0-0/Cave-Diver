@@ -51,7 +51,7 @@ class WaveController : MonoBehaviour
         return amount + ((curr < overlap) ? 1 : 0);
     }
 
-    public void OnDeath(EnemyStatus enemy)
+    public void OnEnemyDeath(EnemyStatus enemy)
     {
         _enemies.Remove(enemy);
         _objCache.ReturnObject(enemy.Type, enemy);
