@@ -60,7 +60,7 @@ class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _player.IsControllable = false;
 
-        if (_waveController.FinalWaveIsNext)
+        if (_waveController.WasFinalWave)
         {
             _player.LookDown();
             _camerasAnimator.SetTrigger("GameEnd");

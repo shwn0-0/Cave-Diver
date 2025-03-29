@@ -15,6 +15,7 @@ class WaveController : MonoBehaviour
     private WavesConfig Config =>  _gameController.IsDemoMode ? _demoConfig : _config;
     public int CurrentWave => _waveNumber;
     public bool FinalWaveIsNext => _waveNumber + 1 >= Config.FinalWave;
+    public bool WasFinalWave => _waveNumber >= Config.FinalWave;
 
     void Awake()
     {
