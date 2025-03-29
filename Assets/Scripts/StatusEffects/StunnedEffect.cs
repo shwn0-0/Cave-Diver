@@ -5,6 +5,8 @@ class StunnedEffect : IStatusEffect
 {
     private readonly float _duration;
 
+    public float Duration => _duration;
+
     public StunnedEffect(float duration)
     {
         _duration = duration;

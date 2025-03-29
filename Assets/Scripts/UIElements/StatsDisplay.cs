@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Text;
 using TMPro;
@@ -28,7 +29,7 @@ public class StatsDisplay : MonoBehaviour
             .Append("Status Effects:\n")
             .AppendJoin('\n',
                 _player.StatusEffects
-                    .Select(effect => $"   {effect.GetType().Name}")
+                    .Select(effect => $"   {effect.GetType().Name} ({TimeSpan.FromSeconds(effect.Duration):%s}s)")
                     .DefaultIfEmpty("    None")
             )
             .Append("\n\nStats:\n")

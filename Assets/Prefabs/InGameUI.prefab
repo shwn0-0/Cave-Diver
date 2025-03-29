@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.007843138}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -88,7 +88,7 @@ CanvasGroup:
   m_GameObject: {fileID: 510813505949998277}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &8054144713437159869
@@ -4084,8 +4084,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4755072817787595652}
-  - {fileID: 679433077155455308}
   - {fileID: 221080126388397556}
+  - {fileID: 679433077155455308}
   - {fileID: 1097167956777276266}
   m_Father: {fileID: 5857640241012265696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

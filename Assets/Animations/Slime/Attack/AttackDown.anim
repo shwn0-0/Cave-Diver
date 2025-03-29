@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -30768008936975092, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
+      value: {fileID: -8396677606282467379, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
     - time: 0.083333336
-      value: {fileID: 6377038040503388740, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
+      value: {fileID: -8731443405074317232, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
     - time: 0.16666667
-      value: {fileID: -4382621316070446580, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
+      value: {fileID: 6867903231501075070, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
     - time: 0.25
-      value: {fileID: -1785121587859498471, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
+      value: {fileID: 4845711075431204506, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -30768008936975092, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
-    - {fileID: 6377038040503388740, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
-    - {fileID: -4382621316070446580, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
-    - {fileID: -1785121587859498471, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
+    - {fileID: -8396677606282467379, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
+    - {fileID: -8731443405074317232, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
+    - {fileID: 6867903231501075070, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
+    - {fileID: 4845711075431204506, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -79,7 +79,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.16666667
+  - time: 0.25
     functionName: AnimationEventHandler
     data: Hit
     objectReferenceParameter: {fileID: 0}

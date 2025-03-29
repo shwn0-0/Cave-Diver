@@ -3,14 +3,17 @@ using UnityEngine;
 class EnemyController : MonoBehaviour
 {
     private Animator _animator;
-    private float _attackCooldown;
-    private bool _attacked;
-    private State _currentState;
-    private Vector2 _knockbackVelocity;
     private Rigidbody2D _rb;
     private EnemyStatus _status;
-    private Vector2 _walkingVelocity;
     private WaveController _waveController;
+
+    private bool _attacking;
+    private float _attackCooldown;
+    private float _attackCheckCooldown;
+    private bool _checked;
+    private State _currentState;
+    private Vector2 _knockbackVelocity;
+    private Vector2 _walkingVelocity;
 
     public Vector2 Position => _rb.position;
     public bool IsStunned => _status.IsStunned;
@@ -20,11 +23,13 @@ class EnemyController : MonoBehaviour
         && (_status.TargetStatus == null || !_status.TargetStatus.IsDead)
         && Vector2.Distance(Position, _status.Target.position) <= _status.AttackRange;
 
-    // Avoid frequent state flips by staying in AttackState until after Attack is off cooldown
+    // Avoid frequent state flips by staying in AttackState for a few milliseconds 
+    // after changing from IdleState.
     // It would be better to stay in Idle until we can attack but I don't feel like
-    // going through the effort of updating the State Machine now. Maybe enemies just get tired
-    // after trying to attack or something idk.
-    public bool FinishedAttacking => _attacked && _attackCooldown <= 0f;
+    // going through the effort of updating the State Machine now.
+    // attacking bool ensure we don't exit before the animation ends
+    // checked bool ensures we try to attack at least once before exiting
+    public bool FinishedAttacking => !_attacking && _checked && _attackCheckCooldown <= 0f;
     private Vector2 TargetDirection => (_status.Target.position - Position).normalized;
 
     void Awake()
@@ -61,6 +66,9 @@ class EnemyController : MonoBehaviour
     {
         if (_attackCooldown > 0f)
             _attackCooldown -= Time.deltaTime;
+
+        if (_attackCheckCooldown > 0f)
+            _attackCheckCooldown -= Time.deltaTime;
     }
 
     public void ChangeStates(State newState)
@@ -74,17 +82,26 @@ class EnemyController : MonoBehaviour
         if (newState is not StunnedState)
             _animator.SetBool("IsStunned", false);
 
-        // Reset attacked once we transition out of Attack state
+        // Only reset checked after leaving attack state
         if (_currentState is AttackState && newState is IdleState)
-            _attacked = false;
+            _checked = false;
 
         _currentState = newState;
     }
 
     public void BeRunning()
     {
-        _walkingVelocity = _status.MoveSpeed * TargetDirection;
-        _animator.SetBool("IsRunning", true);
+        // stop moving if the target is dead
+        if (_status.TargetStatus != null && _status.TargetStatus.IsDead)
+        {
+            _walkingVelocity = Vector2.zero;
+            _animator.SetBool("IsRunning", false);
+        }
+        else
+        {
+            _walkingVelocity = _status.MoveSpeed * TargetDirection;
+            _animator.SetBool("IsRunning", true);
+        }
     }
 
     public void BeStunned()
@@ -94,18 +111,25 @@ class EnemyController : MonoBehaviour
 
     public void BeAttacking()
     {
+        if (_attackCheckCooldown > 0f) return;
+        _checked = true;
+        _attackCheckCooldown = 0.2f; // stay in attack state for 0.2 seconds before we're allowed to leave
+
         if (_attackCooldown > 0f) return;
         _attackCooldown = 1 / _status.AttackSpeed;
-        _attacked = true;
 
         if (_status.TargetStatus == null || !_status.TargetStatus.IsDead)
+        {
             _animator.SetTrigger("Attack");
+            _attacking = true; 
+        }
     }
 
     public void AnimationEventHandler(string animEvent)
     {
         if (animEvent == "Hit")
         {
+            _attacking = false; 
             _knockbackVelocity = _status.AttackSelfKnockforward * TargetDirection;
 
             if (_status.TargetStatus != null && !_status.TargetStatus.IsDead && IsTargetInRange)
@@ -137,18 +161,10 @@ class EnemyController : MonoBehaviour
 
     public void Reset()
     {
-        ChangeStates(State.Idle);
-
+        _attackCheckCooldown = 0f;
+        _attackCooldown = 0f;
+        _currentState = State.Idle;
         _knockbackVelocity = Vector2.zero;
-
-        // Reset the animator the IDLE so enemies don't spawn attacking
-        _animator.SetFloat("dx", 0);
-        _animator.SetFloat("dy", 0);
-        _animator.SetBool("IsStunned", false);
-        _animator.SetBool("IsRunning", false);
-        _animator.ResetTrigger("Attack");
-        _animator.ResetTrigger("Die");
-        _animator.Update(0f);
-        _animator.Play("Idle.IdleDown", 0, 0f);
+        _walkingVelocity = Vector2.zero;
     }
 }

@@ -3,8 +3,6 @@ using UnityEngine;
 
 class GameController : MonoBehaviour
 {
-    [SerializeField] bool _demoMode;
-
     private UpgradesController _upgradesController;
     private HUDController _hudController;
     private Animator _camerasAnimator;
@@ -14,7 +12,7 @@ class GameController : MonoBehaviour
     private PlayerStatus _player;
     private bool isPaused;
 
-    public bool IsDemoMode => SceneController.Instance.IsDemoMode || _demoMode;
+    public bool IsDemoMode => SceneController.Instance.IsDemoMode;
 
     void Awake()
     {
@@ -43,6 +41,18 @@ class GameController : MonoBehaviour
         }
     }
 
+    public void OnFinishedUpgrading() => StartCoroutine(HandleWaveStart());
+
+    private IEnumerator HandleWaveStart()
+    {
+        _player.transform.position = Vector3.zero;
+        _player.LookDown();
+        _camerasAnimator.SetTrigger("Start Wave");
+        yield return _waveNumberDisplay.DisplayWave(_waveController.CurrentWave + 1, _waveController.FinalWaveIsNext);
+        _player.IsControllable = true;
+        _waveController.NextWave();
+    }
+
     public void OnWaveEnd() => StartCoroutine(HandleWaveEnd());
 
     private IEnumerator HandleWaveEnd()
@@ -50,7 +60,7 @@ class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _player.IsControllable = false;
 
-        if (_waveController.IsFinalWave)
+        if (_waveController.FinalWaveIsNext)
         {
             _player.LookDown();
             _camerasAnimator.SetTrigger("GameEnd");
@@ -74,18 +84,6 @@ class GameController : MonoBehaviour
                 _upgradesController.Show(1);
             }
         }
-    }
-
-    public void OnFinishedUpgrading() => StartCoroutine(HandleWaveStart());
-
-    private IEnumerator HandleWaveStart()
-    {
-        _player.transform.position = Vector3.zero;
-        _player.LookDown();
-        _camerasAnimator.SetTrigger("Start Wave");
-        yield return _waveNumberDisplay.DisplayWave(_waveController.CurrentWave + 1, _waveController.IsFinalWave);
-        _player.IsControllable = true;
-        _waveController.NextWave();
     }
 
     public void OnPlayerDeath() =>

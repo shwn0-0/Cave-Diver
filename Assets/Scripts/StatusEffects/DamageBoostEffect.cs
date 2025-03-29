@@ -6,6 +6,8 @@ class DamageBoostEffect : IStatusEffect
     private readonly float _amount;
     private readonly float _duration;
 
+    public float Duration => _duration;
+
     public DamageBoostEffect(float amount, float duration)
     {
         _amount = amount;

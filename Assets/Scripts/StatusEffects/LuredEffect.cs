@@ -3,8 +3,10 @@ using UnityEngine;
 
 class LuredEffect : IStatusEffect
 {
-    private readonly float _duration;
     private readonly Rigidbody2D _target;
+    private readonly float _duration;
+
+    public float Duration => _duration;
 
     public LuredEffect(float duration, Rigidbody2D target)
     {

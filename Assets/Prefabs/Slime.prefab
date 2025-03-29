@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5402938289888926719}
   - component: {fileID: 1980846533627875003}
   - component: {fileID: 8475962537236768301}
-  - component: {fileID: 5837330841679990836}
+  - component: {fileID: 2126577327357822483}
   - component: {fileID: 7407552132460121808}
   - component: {fileID: 2689615392814669661}
   - component: {fileID: 1594876159303332080}
@@ -81,12 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 1617714205
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8426883092206652821, guid: e5b2797611ad9462c8a7f825d7a165b1, type: 3}
+  m_Sprite: {fileID: -6106608630469967388, guid: 828b8594e944144a78e61e8d033516fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.63, y: 0.43}
+  m_Size: {x: 2.1, y: 1.3333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -114,8 +114,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &5837330841679990836
-CircleCollider2D:
+--- !u!70 &2126577327357822483
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -148,8 +148,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.12, y: 0}
-  m_Radius: 0.45
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2, y: 0.25}
+  m_Direction: 1
 --- !u!50 &7407552132460121808
 Rigidbody2D:
   serializedVersion: 5
@@ -163,7 +164,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 100
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

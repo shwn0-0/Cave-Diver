@@ -44,18 +44,28 @@ class ObjectCache : MonoBehaviour
     public T GetObject<T>(ObjectType type, Vector3 position, IObjectConfig objConfig) where T : ICacheableObject
     {
         Queue<GameObject> objectQueue = GetObjectQueue(type);
-        GameObject gameObj = (objectQueue.Count == 0) ? Instantiate(GetPrefab(type)) : objectQueue.Dequeue();
+        GameObject gameObj;
+        if (objectQueue.Count == 0) 
+        {
+            gameObj = Instantiate(GetPrefab(type), position, Quaternion.identity);
+        } 
+        else
+        {
+            gameObj = objectQueue.Dequeue();
+            gameObj.transform.position = position;
+        }
+
         gameObj.SetActive(true);
-        gameObj.transform.position = position;
         T obj = gameObj.GetComponent<T>();
         obj.Init(objConfig);
         return obj;
     }
 
-    public void ReturnObject(ObjectType type, MonoBehaviour obj)
+    public void ReturnObject<T>(ObjectType type, T obj) where T : MonoBehaviour, ICacheableObject
     {
         Queue<GameObject> objectQueue = GetObjectQueue(type);
         GameObject gameObj = obj.gameObject;
+        obj.Destroy();
         gameObj.SetActive(false);
         objectQueue.Enqueue(gameObj);
     }

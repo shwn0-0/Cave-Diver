@@ -38,6 +38,12 @@ class EnemyStatus : Status, ICacheableObject
         }
     }
 
+    public void Destroy()
+    {
+        IsControllable = false;
+        _controller.Reset();
+    }
+
     public override void ApplyKnockbackFrom(Vector2 position, float knockbackForce) =>
         _controller.ApplyKnockbackFrom(position, knockbackForce);
 

@@ -1,4 +1,4 @@
-class State
+abstract class State
 {
     public static State Idle { get; } = new IdleState();
     public static State Attack { get; } = new AttackState();
@@ -6,5 +6,5 @@ class State
     public static State Stunned { get; } = new StunnedState();
     public static State Dead { get; } = new DeadState();
 
-    public virtual void Run(EnemyController controller) {}
+    public abstract void Run(EnemyController controller);
 }

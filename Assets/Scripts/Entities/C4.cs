@@ -4,13 +4,12 @@ using UnityEngine;
 class C4 : MonoBehaviour, ICacheableObject
 {
     private readonly HashSet<EnemyStatus> _enemies = new();
-    private bool _isActive;
     private float _remainingTime;
     private Transform _transform;
     private Config _config;
     private Animator _animator;
 
-    public bool IsActive => _isActive;
+    public bool IsActive { get; private set; }
     public bool IsTriggered { get; private set; }
 
     void Awake()
@@ -21,7 +20,7 @@ class C4 : MonoBehaviour, ICacheableObject
 
     void Update()
     {
-        if (!_isActive) return;
+        if (!IsActive || IsTriggered) return;
 
         if (_remainingTime > 0f)
         {
@@ -29,8 +28,8 @@ class C4 : MonoBehaviour, ICacheableObject
             return;
         }
 
-        _animator.SetTrigger("Trigger");
         IsTriggered = true;
+        _animator.SetTrigger("Trigger");
         foreach (EnemyStatus enemy in _enemies)
         {
             enemy.ApplyDamage(_config.damage);
@@ -38,8 +37,6 @@ class C4 : MonoBehaviour, ICacheableObject
             if (_config.isUpgraded)
                 enemy.AddEffect(new StunnedEffect(_config.stunDuration));
         }
-
-        _enemies.Clear();
     }
 
     public void Init(IObjectConfig objConfig)
@@ -48,9 +45,16 @@ class C4 : MonoBehaviour, ICacheableObject
         {
             _config = config;
             _remainingTime = config.duration;
-            IsTriggered = false;
-            _isActive = true;
+            IsActive = true;
         }
+    }
+
+    public void Destroy()
+    {
+        IsTriggered = false;
+        IsActive = false;
+        _remainingTime = 0f;
+        _enemies.Clear();
     }
 
     public void Trigger() => _remainingTime = 0.0f;
@@ -58,7 +62,7 @@ class C4 : MonoBehaviour, ICacheableObject
     public void AnimationEventHandler(string animEvent)
     {
         if (animEvent == "Exploded")
-            _isActive = false;
+            IsActive = false;
     }
 
     void OnTriggerEnter2D(Collider2D collider)

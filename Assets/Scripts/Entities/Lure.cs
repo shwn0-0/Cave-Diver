@@ -7,16 +7,19 @@ class Lure : MonoBehaviour, ICacheableObject
     private readonly List<Rigidbody2D> _enemies = new();
 
     private float _remainingTime;
-    private bool _isActive = false;
     private bool _isUpgraded = false;
     private Rigidbody2D _rb;
 
-    public bool IsActive => _isActive;
+    public bool IsActive { get; private set; }
 
+    void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
-        if (!_isActive) return;
+        if (!IsActive) return;
 
         if (_remainingTime > 0f)
         {
@@ -24,8 +27,7 @@ class Lure : MonoBehaviour, ICacheableObject
             return;
         }
 
-        _enemies.Clear();
-        _isActive = false;
+        IsActive = false;
     }
 
     public void Init(IObjectConfig objConfig)
@@ -34,13 +36,19 @@ class Lure : MonoBehaviour, ICacheableObject
         {
             _remainingTime = config.duration;
             _isUpgraded = config.isUpgraded;
-            _rb = GetComponent<Rigidbody2D>();
-            _isActive = true;
+            IsActive = true;
         }
         else
         {
             Debug.LogError("Passed Invalid Config to Lure");
         }
+    }
+
+    public void Destroy()
+    {
+        IsActive = false;
+        _remainingTime = 0f;
+        _enemies.Clear();
     }
 
     void OnTriggerEnter2D(Collider2D collider)

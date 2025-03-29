@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boostAbilityDuration: 2
   _boostAbilityCooldown: 6
-  _boostAbilityAmount: 2
+  _boostAbilityAmount: 1
   _shieldAbilityDuration: 4
   _shieldAbilityCooldown: 25
   _shieldAbilityHealPercentage: 0.2

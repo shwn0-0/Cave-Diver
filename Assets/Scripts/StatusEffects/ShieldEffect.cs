@@ -5,6 +5,8 @@ class ShieldEffect : IStatusEffect
 {
     private readonly float _duration;
 
+    public float Duration => _duration;
+
     public ShieldEffect(float duration)
     {
         _duration = duration;
