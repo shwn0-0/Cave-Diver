@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
     private void HandleAttack()
     {
         if (_status.IsDead || _status.IsStunned || !_isHoldingAttack || _attackCooldown > float.Epsilon) return;
-        Debug.Log($"Attack Count: {_attackCount}");
         _attackCooldown += 1 / _status.AttackSpeed;
 
         Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
