@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private GameController _gameController;
     private readonly List<IAbility> _abilities = new();
     private readonly HashSet<EnemyStatus> _enemies = new();
-    private readonly List<EnemyStatus> _enemiesToDamage = new();
+    private IEnumerable<EnemyStatus> _enemiesToDamage;
     private Vector2 _targetDirection;
 
     public int AbilityCount => _abilities.Count;
@@ -79,15 +79,16 @@ public class PlayerController : MonoBehaviour
         Vector2 currentPos = Position;
         _targetDirection = (targetPos - currentPos).normalized;
 
-        foreach (EnemyStatus enemy in _enemies)
-        {
+        _enemiesToDamage = _enemies.Where(enemy => {
             Vector2 enemyDirection = enemy.Position - currentPos;
-            if (enemyDirection.magnitude > _status.AttackRange || 
-                (_attackCount < 2 && Vector2.Angle(_targetDirection, enemyDirection) > _status.AttackAngle))
-                continue;
-            
-            _enemiesToDamage.Add(enemy);
-        }
+            return (
+                enemyDirection.magnitude <= _status.AttackRange // Enemy in attack range
+                && ( // Check within attack cone if not spin attack
+                    _attackCount == 2
+                    || Vector2.Angle(_targetDirection, enemyDirection) <= _status.AttackAngle
+                )
+            );
+        });
 
         _animator.SetFloat("aDx", _targetDirection.x);
         _animator.SetFloat("aDy", _targetDirection.y);
@@ -96,7 +97,6 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat("dy", _targetDirection.y);
         _animator.SetInteger("AttackCount", _attackCount);
         _animator.SetTrigger("Attack");
-        _attackCount = (_attackCount + 1) % 3;
     }
 
     public void AnimationEventHandler(string animEvent)
@@ -113,8 +113,7 @@ public class PlayerController : MonoBehaviour
                 if (_status.StunOnAttack)
                     enemy.AddEffect(new StunnedEffect(_status.StunDuration));
             }
-
-            _enemiesToDamage.Clear();
+            _attackCount = (_attackCount + 1) % 3;
         }
         else if (animEvent == "Die")
         {
