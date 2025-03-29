@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -12,9 +13,10 @@ abstract class Status : MonoBehaviour
     private float _bonusHealth = 0f;
     private float _bonusSheild = 0f;
 
-    public float AttackDamage => (_config.AttackDamage + BonusAttackDamage) * DamageMultiplier;
+    public float BaseAttackDamage => _config.AttackDamage;
     public float BonusAttackDamage { get; set; }
     public float DamageMultiplier { get; set; }
+    public float AttackDamage => (BaseAttackDamage + BonusAttackDamage) * DamageMultiplier;
 
     public float AttackAngle => _config.AttackAngle;
     public float AttackRange => _config.AttackRange;
@@ -66,6 +68,8 @@ abstract class Status : MonoBehaviour
 
     public bool StunOnAttack => _config.StunOnAttack;
     public float StunDuration => _config.StunDuration;
+
+    public ReadOnlyCollection<IStatusEffect> StatusEffects => _effects.AsReadOnly();
 
     public virtual void Init()
     {

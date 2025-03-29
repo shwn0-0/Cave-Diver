@@ -6,7 +6,7 @@ public class SceneController : MonoBehaviour
     public static SceneController Instance { get; private set; }
     public bool IsDemoMode { get; private set; }
 
-    void Awake()
+    void OnEnable()
     {
         if (Instance != null && Instance != this) 
         { 

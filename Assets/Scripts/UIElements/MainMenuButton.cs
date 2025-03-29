@@ -3,25 +3,19 @@ using UnityEngine;
 
 class MainMenuButton : MonoBehaviour
 {
-    [SerializeField] private Button _button;
-    private SceneController _sceneController;
-
-    void Awake()
-    {
-        _sceneController = FindAnyObjectByType<SceneController>();
-    }
+    [SerializeField] private ButtonType _buttonType;    
 
     public void OnButtonClick()
     {
-        switch (_button)
+        switch (_buttonType)
         {
-            case Button.Play:
-                _sceneController.GoToMainScene();
+            case ButtonType.Play:
+                SceneController.Instance.GoToMainScene();
                 break;
-            case Button.Demo:
-                _sceneController.GoToMainScene(true);
+            case ButtonType.Demo:
+                SceneController.Instance.GoToMainScene(true);
                 break;
-            case Button.Quit:
+            case ButtonType.Quit:
 #if UNITY_STANDALONE
                 Application.Quit();
 #endif
@@ -30,11 +24,11 @@ class MainMenuButton : MonoBehaviour
 #endif
                 break;
             default:
-                throw new NotImplementedException($"Unhandled Main Menu Button {_button}");
+                throw new NotImplementedException($"Unhandled Main Menu Button {_buttonType}");
         }
     }
 
-    enum Button
+    enum ButtonType
     {
         Play,
         Demo,

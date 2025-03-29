@@ -1,35 +1,47 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 class PauseScreenButton : MonoBehaviour
 {
-    [SerializeField] Button _button;
+    [SerializeField] ButtonType _buttonType;
 
     GameController _controller;
+    Button _button;
+    bool _isEnabled;
+
+    public bool IsEnabled {
+        get => _isEnabled; 
+        set {
+            _isEnabled = value;
+            _button.interactable = value;
+        }
+    }
 
     void Awake()
     {
         _controller = FindFirstObjectByType<GameController>();
+        _button = GetComponent<Button>();
     }
 
     public void OnClick()
     {
-        switch (_button)
+        switch (_buttonType)
         {
-            case Button.Continue:
+            case ButtonType.Continue:
                 _controller.TogglePause();
                 break;
 
-            case Button.MainMenu:
+            case ButtonType.MainMenu:
                 SceneController.Instance.GoToMainMenu();
                 break;
             
             default:
-                throw new NotImplementedException($"Unhandled Pause Screen Button {_button}");
+                throw new NotImplementedException($"Unhandled Pause Screen Button {_buttonType}");
         }
     }
 
-    enum Button
+    enum ButtonType
     {
         Continue,
         MainMenu
