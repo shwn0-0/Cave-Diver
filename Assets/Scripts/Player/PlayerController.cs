@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool _isHoldingAttack;
-    private float _attackCooldown;
-    private int _attackCount;
     private Animator _animator;
-    private Vector2 _dir;
-    private Vector2 _knockbackVelocity;
     private PlayerStatus _status;
     private Rigidbody2D _rb;
     private GameController _gameController;
+
     private readonly List<IAbility> _abilities = new();
+    private float _attackCooldown;
+    private int _attackCount;
+    private Vector2 _dir;
     private readonly HashSet<EnemyStatus> _enemies = new();
     private IEnumerable<EnemyStatus> _enemiesToDamage;
+    private bool _isHoldingAttack;
+    private Vector2 _knockbackVelocity;
     private Vector2 _targetDirection;
 
     public int AbilityCount => _abilities.Count;
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        Vector2 walkingVelocity =  _status.IsControllable ? _dir * _status.MoveSpeed : Vector2.zero;
+        Vector2 walkingVelocity = _status.IsControllable ? _dir * _status.MoveSpeed : Vector2.zero;
         bool isRunning = walkingVelocity.magnitude > float.Epsilon;
         _animator.SetBool("IsRunning", isRunning);
 
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
         if (_attackCooldown > 0f)
             _attackCooldown -= Time.deltaTime;
     }
-    
+
     private void HandleAttack()
     {
         if (_status.IsDead || _status.IsStunned || !_isHoldingAttack || _attackCooldown > float.Epsilon) return;
@@ -78,7 +79,8 @@ public class PlayerController : MonoBehaviour
         Vector2 currentPos = Position;
         _targetDirection = (targetPos - currentPos).normalized;
 
-        _enemiesToDamage = _enemies.Where(enemy => {
+        _enemiesToDamage = _enemies.Where(enemy =>
+        {
             Vector2 enemyDirection = enemy.Position - currentPos;
             return (
                 enemyDirection.magnitude <= _status.AttackRange // Enemy in attack range
@@ -141,7 +143,7 @@ public class PlayerController : MonoBehaviour
     {
         _isHoldingAttack = attack;
         _attackCount = 0; // reset attack count on attack or release hold
-    } 
+    }
 
     private void HandleDie()
     {
