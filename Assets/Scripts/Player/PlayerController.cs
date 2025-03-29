@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             return (
                 enemyDirection.magnitude <= _status.AttackRange // Enemy in attack range
                 && ( // Check within attack cone if not spin attack
-                    _attackCount == 2
+                    _attackCount == 0 // incremented before lazy eval
                     || Vector2.Angle(_targetDirection, enemyDirection) <= _status.AttackAngle
                 )
             );
@@ -98,13 +98,15 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat("dy", _targetDirection.y);
         _animator.SetInteger("AttackCount", _attackCount);
         _animator.SetTrigger("Attack");
+        _attackCount = (_attackCount + 1) % 3;
     }
 
     public void AnimationEventHandler(string animEvent)
     {
         if (animEvent == "Hit")
         {
-            _knockbackVelocity += _status.AttackSelfKnockforward * _targetDirection;
+            if (_attackCount != 0)
+                _knockbackVelocity += _status.AttackSelfKnockforward * _targetDirection;
 
             // Apply Damage and Knockback to enemies in range
             foreach (EnemyStatus enemy in _enemiesToDamage)
@@ -114,7 +116,6 @@ public class PlayerController : MonoBehaviour
                 if (_status.StunOnAttack)
                     enemy.AddEffect(new StunnedEffect(_status.StunDuration));
             }
-            _attackCount = (_attackCount + 1) % 3;
         }
         else if (animEvent == "Die")
         {
