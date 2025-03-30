@@ -22,6 +22,6 @@ MonoBehaviour:
   trollIncreasePeriod: 1
   trollIncreaseAmount: 2
   orcFirstWave: 5
-  orcStartAmount: 2
-  orcIncreasePeriod: 3
-  orcIncreaseAmount: 1
+  orcStartAmount: 1
+  orcIncreasePeriod: 2
+  orcIncreaseAmount: 2
