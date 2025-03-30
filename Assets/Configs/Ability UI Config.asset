@@ -19,3 +19,4 @@ MonoBehaviour:
   _shieldAbilityIcon: {fileID: -6982349727415611825, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
   _c4AbilityIcon: {fileID: 6540540548935961993, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
   _lureAbilityIcon: {fileID: 4545377945811096002, guid: 70d360a7766cf4fdfbc8aaf6f11153aa, type: 3}
+  _noAbilityIcon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}

@@ -10,6 +10,7 @@ class AbilityUIConfig : ScriptableObject
     [SerializeField] Sprite _shieldAbilityIcon;
     [SerializeField] Sprite _c4AbilityIcon;
     [SerializeField] Sprite _lureAbilityIcon;
+    [SerializeField] Sprite _noAbilityIcon;
 
 
     public Color LockedColor => _lockedColor;
@@ -22,6 +23,6 @@ class AbilityUIConfig : ScriptableObject
         ShieldAbility => _shieldAbilityIcon,
         C4Ability => _c4AbilityIcon,
         LureAbility => _lureAbilityIcon,
-        _ => null
+        _ => _noAbilityIcon
     };
 }
