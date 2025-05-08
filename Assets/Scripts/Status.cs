@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
 abstract class Status : MonoBehaviour
 {
-    [SerializeField] private StatusConfig _config;
+    [SerializeField]
+    private StatusConfig _config;
 
     private readonly List<IStatusEffect> _effects = new();
     private bool _isInvulnerable = false;
     private float _bonusHealth = 0f;
-    private float _bonusSheild = 0f;
+    private float _bonusShield = 0f;
     private StatusEffectsDisplay _statusEffectsDisplay;
 
     public float BaseAttackDamage => _config.AttackDamage;
@@ -45,13 +45,13 @@ abstract class Status : MonoBehaviour
     public virtual float Shield { get; set; }
     public float BonusShield
     {
-        get => _bonusSheild;
+        get => _bonusShield;
         set
         {
             // NOTE: HUD gets updated when shield changes so need to update shield last.
-            var oldValue = _bonusSheild;
-            _bonusSheild = value;
-            Shield += _bonusSheild - oldValue; // Add new value and subtract old value
+            var oldValue = _bonusShield;
+            _bonusShield = value;
+            Shield += _bonusShield - oldValue; // Add new value and subtract old value
         }
     }
 
@@ -66,7 +66,8 @@ abstract class Status : MonoBehaviour
         get => _isInvulnerable;
         set
         {
-            if (value) Shield = MaxShield;
+            if (value)
+                Shield = MaxShield;
             _isInvulnerable = value;
         }
     }
@@ -102,9 +103,11 @@ abstract class Status : MonoBehaviour
 
     public void AddEffect(IStatusEffect newEffect)
     {
-        if (!gameObject.activeSelf) return;
+        if (!gameObject.activeSelf)
+            return;
         // Don't apply stunned if invulnerable
-        if (IsInvulnerable && newEffect is StunnedEffect) return;
+        if (IsInvulnerable && newEffect is StunnedEffect)
+            return;
 
         // If effect already applied, extend duration instead of replacing it.
         var effect = _effects.Find(effect => effect.GetType() == newEffect.GetType());
@@ -128,7 +131,8 @@ abstract class Status : MonoBehaviour
 
     public virtual void ApplyDamage(float damage)
     {
-        if (IsInvulnerable) return;
+        if (IsInvulnerable)
+            return;
         Health = math.max(0f, Health - math.max(0f, damage - Shield));
         Shield = math.max(0f, Shield - damage);
     }
