@@ -77,3 +77,7 @@ crashlytics-build.properties
 
 # MACOS Stuff
 .DS_Store
+
+# Dev Env Config
+.helix/
+.direnv
